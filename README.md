@@ -17,7 +17,7 @@ GameTerest allows users to view and comment on anticpated videogames. Users will
 
 ## Schemas
 
-```
+<!-- ```
 
 const userSchema = mongoose.Schema(
   {
@@ -52,18 +52,19 @@ const contactSchema = mongoose.Schema({
   message: { type: String, required: true, trim: true }
 })
 
-```
+``` -->
 
 #
 
 ## Whimsical
 
 Components Architecture
-![image](pictures/Volunteer-App-Architecture.png)
+[Click here](https://whimsical.com/gameterest-Dg4UiSceLQWpFjVuBActiX) to review our component architecture
 
 Design
 
-Click [here](https://www.figma.com/file/POIF6n9solHxRYnuyD3qLe/Gametrest?node-id=0%3A1) to view our design concept for GameTerest!
+[Click here](https://www.figma.com/file/POIF6n9solHxRYnuyD3qLe/Gametrest?node-id=0%3A1)
+to review our visual representation of the design of our application.  
 
 #
 
@@ -77,9 +78,9 @@ Listed above contains our roles, what are coding practices will be, and what are
 
 ## GitHub Project Board
 
-This contains a list of our MVP's and post-MVP's. Each person will be assigned something that is posted on the to-do list. When that person starts to work on it, they will drag it from the to-do into the in progress board. Once they have finished this they will put it in the done board and delete the assignment entry in the assignment board. As the project becomes clearer things may be added to the to-do list. Before assigning someone a task we will check in with each other if thats okay.
+The link below is a list of our MVP's and post-MVP's. Each person will be assigned set of tasks that are posted on the to-do list. Once they start working on this task, they will bring it to the to do half. After they have completed their assignment, they will put it in the done board. Additional tasks may be added as we continue this ambition, but we will consult with each other who would be okay with getting the new task.
 
-[GitHub Project Board](https://github.com/users/ImmanuelCurrah/projects/1/views/1)
+[GitHub Project Board]()
 
 #
 
