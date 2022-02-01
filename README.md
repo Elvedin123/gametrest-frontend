@@ -1,8 +1,8 @@
 # gametrest-frontend
 
-## Team JEVH
+## Team AstroDev
 
-<!-- ![teamLogo](pictures/astroscropped.jpg) -->
+![teamLogo](https://static.vecteezy.com/system/resources/previews/004/815/102/non_2x/cute-astronaut-working-as-a-programmer-free-vector.jpg)
 
 #
 
