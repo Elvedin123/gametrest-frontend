@@ -17,42 +17,38 @@ GameTerest allows users to view and comment on anticpated videogames. Users will
 
 ## Schemas
 
-<!-- ```
-
-const userSchema = mongoose.Schema(
-  {
-    userName: { type: String, required: true, trim: true },
-    firstName: { type: String, required: true, trim: true },
-    lastName: { type: String, required: true, trim: true },
-    email: { type: String, required: true, trim: true },
-    password: { type: String, required: true, trim: true },
-    confirmPassword: { type: String, required: true, trim: true },
-    isBusiness: false/true,
-    posts: [postSchema],
-  },
-  { timestamps: true }
+```
+const commentSchema = mongoose.Schema(
+    {
+        comment: { type: String, required: true, trim: true},
+    },
+    { timestamps: true }
 );
 
-const postSchema = mongoose.Schema(	{
-  title/event: { type: String, required: true, trim: true },
-	body/content: { type: String, required: true, trim: true },
-	numberNeeded: { type: Number, required: true, trim: true },
-	Comments: [commentSchema]
-}) {
+// const favoriteSchema = mongoose.Schema(
+//     {
+//         favorite:
+//     }
+// )
 
 
-const commentSchema = mongoose.Schema({
-  content: { type: String, required: true, trim: true },
-  likes: { type: Number, required: true, trim: true },
-})
+const userSchema = mongoose.Schema(
+    {
+        userName: { type: String, required: true, trim: true},
+        firstName: { type: String, required: true, trim: true},
+        lastName: { type: String, required: true, trim: true},
+        email: { type: String, required: true, trim: true},
+        password: { type: String, required: true, trim: true},
+        confirmPassword: { type: String, required: true, trim: true},
+        avatar: { type: String, required: true, trim: true},
+        comments: [commentSchema],
+        // favorites: [favoriteSchema],
+        isAdmin: false,
+    },
+    { timestamps: true }
+);
 
-const contactSchema = mongoose.Schema({
-  name: { type: String, required: true, trim: true },
-  email: { type: String, required: true, trim: true },
-  message: { type: String, required: true, trim: true }
-})
-
-``` -->
+```
 
 #
 
@@ -78,9 +74,9 @@ Listed above contains our roles, what are coding practices will be, and what are
 
 ## GitHub Project Board
 
-The link below is a list of our MVP's and post-MVP's. Each person will be assigned set of tasks that are posted on the to-do list. Once they start working on this task, they will bring it to the to do half. After they have completed their assignment, they will put it in the done board. Additional tasks may be added as we continue this ambition, but we will consult with each other who would be okay with getting the new task.
+The link below is a list of our MVP's and post-MVP's. Each person will be assigned set of tasks that are posted on the to-do list either individually or as a group. Once they start working on this task, they will bring it to the in progress. After they have completed their assignment, they will set it as done. Additional tasks may be added as we continue this ambition, but we will consult with each other who would be okay with getting the new task.
 
-[GitHub Project Board]()
+[GitHub Project Board](https://github.com/users/Elvedin123/projects/1/views/1)
 
 #
 
