@@ -74,7 +74,7 @@ Listed above contains our roles, what are coding practices will be, and what are
 
 ## GitHub Project Board
 
-The link below is a list of our MVP's and post-MVP's. Each person will be assigned set of tasks that are posted on the to-do list. Once they start working on this task, they will bring it to the to do half. After they have completed their assignment, they will put it in the done board. Additional tasks may be added as we continue this ambition, but we will consult with each other who would be okay with getting the new task.
+The link below is a list of our MVP's and post-MVP's. Each person will be assigned set of tasks that are posted on the to-do list either individually or as a group. Once they start working on this task, they will bring it to the in progress. After they have completed their assignment, they will set it as done. Additional tasks may be added as we continue this ambition, but we will consult with each other who would be okay with getting the new task.
 
 [GitHub Project Board](https://github.com/users/Elvedin123/projects/1/views/1)
 
