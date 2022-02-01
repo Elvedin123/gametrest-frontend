@@ -59,11 +59,12 @@ const contactSchema = mongoose.Schema({
 ## Whimsical
 
 Components Architecture
-![image](pictures/Volunteer-App-Architecture.png)
+[Click here](https://whimsical.com/gameterest-Dg4UiSceLQWpFjVuBActiX)
 
 Design
 
-Click [here](https://www.figma.com/file/POIF6n9solHxRYnuyD3qLe/Gametrest?node-id=0%3A1) to view our design concept for GameTerest!
+![image](https://www.figma.com/file/POIF6n9solHxRYnuyD3qLe/Gametrest?node-id=0%3A1)
+A visual representation of the design of our application.  
 
 #
 
@@ -79,6 +80,6 @@ Listed above contains our roles, what are coding practices will be, and what are
 
 This contains a list of our MVP's and post-MVP's. Each person will be assigned something that is posted on the to-do list. When that person starts to work on it, they will drag it from the to-do into the in progress board. Once they have finished this they will put it in the done board and delete the assignment entry in the assignment board. As the project becomes clearer things may be added to the to-do list. Before assigning someone a task we will check in with each other if thats okay.
 
-[GitHub Project Board](https://github.com/users/ImmanuelCurrah/projects/1/views/1)
+[GitHub Project Board]()
 
 #
