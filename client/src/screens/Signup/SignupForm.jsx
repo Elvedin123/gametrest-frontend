@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react"
-// import signUpLink "/"
+import { signUpLink } from "../../services/apiConfig";
 
 
 const defaultNewUser = {
@@ -27,11 +27,11 @@ function SigninForm(props) {
     }))
   }
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   await signUpLink(newUser);
-  //   console.log(newUser);
-  // };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await signUpLink(newUser);
+    console.log(newUser);
+  };
 
   const checkIfValid = () => {
     if (newUser.password === "" || newUser.confirmPassword === "") {
