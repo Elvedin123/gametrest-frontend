@@ -12,7 +12,7 @@ const defaultNewUser = {
   confirmPassword: "",
 }
 
-function SigninForm(props) {
+function SignupForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser);
   const [validationMessage, setValidationMessage] = useState("");
   const [valid, setValid] = useState(false);
@@ -118,4 +118,4 @@ function SigninForm(props) {
     </div >)
 }
 
-export default SigninForm;
+export default SignupForm;
