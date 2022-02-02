@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from "react"
+import { createUser } from "../../services/apiConfig.js";
 
 
 
 const defaultNewUser = {
-  userName: "",
+  userName: "", 
   firstName: "",
   lastName: "",
   email: "",
@@ -29,7 +30,7 @@ function SignupForm(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await signUpLink(newUser);
+    await createUser(newUser);
     console.log(newUser);
   };
 
