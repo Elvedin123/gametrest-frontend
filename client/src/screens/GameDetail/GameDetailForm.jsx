@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 export default function GameDetailForm() {
   // Schema calls for game, comment, and likes. I am assuming we just want to  edit the comment
@@ -30,7 +30,10 @@ export default function GameDetailForm() {
   }
 
   return (
-    <div>
+    <Layout>
+      <div>
 
-    </div>);
+      </div>
+    </Layout>
+  );
 }
