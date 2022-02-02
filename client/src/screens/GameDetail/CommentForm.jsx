@@ -29,6 +29,7 @@ export default function CommentForm() {
           placeholder="Tell us your thoughts on this game!"
           onChange={handleChange}
         />
+        <button>Submit</button>
       </form>
     </Layout>
   );
