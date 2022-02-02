@@ -2,19 +2,11 @@
 
 import axios from 'axios'
 
-let apiUrl
 
 const apiUrls = {
   production: 'https://gameterest-backend.herokuapp.com/api',
   development: 'http://localhost:3000/api'
 }
-
-if (window.location.hostname === 'localhost') {
-  apiUrl = apiUrls.development
-} else {
-  apiUrl = apiUrls.production
-}
-
 
 export const createUser = (props) => 
   axios({
