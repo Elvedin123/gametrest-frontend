@@ -3,8 +3,9 @@ import { useState, useEffect } from "react"
 import { createUser } from "../../services/apiConfig.js";
 
 
+
 const defaultNewUser = {
-  userName: "", 
+  userName: "",
   firstName: "",
   lastName: "",
   email: "",
@@ -14,7 +15,7 @@ const defaultNewUser = {
 
 function SignupForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser);
-  const [validationMessage, setValidationMessage] = useState("");
+  const [validationMessage, setMessage] = useState("");
   const [valid, setValid] = useState(false);
   const { username, firstName, lastName, email, password, passwordConfirmation } = props
 
@@ -34,16 +35,14 @@ function SignupForm(props) {
   };
 
   const checkIfValid = () => {
-    if (newUser.password === "" || newUser.confirmPassword === "") {
-      setValidationMessage("");
+    if (password === "" || passwordConfirmation === "") {
+      setMessage("");
       setValid(false);
-    } else if (newUser.password.length < 9) {
-      setValidationMessage("Short password! Must be at least 8 characters");
-    } else if (newUser.password !== newUser.confirmPassword) {
-      setValidationMessage("Password does not match!");
+    } else if (password !== passwordConfirmation) {
+      setMessage("Password does not match!");
       setValid(false);
     } else {
-      setValidationMessage("Password match!");
+      setMessage("Password match!");
       setValid(true);
     }
   };
@@ -55,7 +54,7 @@ function SignupForm(props) {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h3>{validationMessage}</h3>
         <input
           required
