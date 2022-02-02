@@ -15,8 +15,29 @@ if (window.location.hostname === 'localhost') {
   apiUrl = apiUrls.production
 }
 
-const api = axios.create({
-  baseURL: apiUrl
-})
 
-export default api
+export const createUser = (props) => 
+  axios({
+    method: 'post',
+    url: `${apiUrls.production}/signup`,
+    data: props,
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+export const loginUser = (props) => 
+  axios({
+    method: 'post',
+    url: `${apiUrls.production}/login`,
+    data: props,
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
