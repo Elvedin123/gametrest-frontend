@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 
+const default_input = {
+  comment: "",
+}
+
 export default function EditComment() {
-  const [comment, setComment] = useState({
-    comment: "",
-  })
+  const [comment, setComment] = useState(default_input);
 
   let { id } = useParams();
 
@@ -13,14 +15,14 @@ export default function EditComment() {
       setComment(comment)
     }
     fetchComment();
-  }, []);
+  }, [id]);
 
   const handleChange = (event) => {
     const { id, value } = event.target;
-    setComment({
-      ...comment,
+    setComment(prevInput => ({
+      ...prevInput,
       [id]: value,
-    })
+    }))
   }
 
   const handleSubmit = (event) => {
