@@ -36,7 +36,8 @@ export default function EditComment() {
       <form onSubmit={handleSubmit}>
         <input
           id="comment"
-          value={comment}
+          input={comment}
+          value={comment.comment} //This is supposed to call from the schema
           onChange={handleChange}
         />
       </form>
