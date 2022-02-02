@@ -17,7 +17,7 @@ function LoginForm(props) {
   const [form, setForm] = useState(defaultUser);
   const { email, password } = props
 
-  const handelChange = (event) => {
+  const handleChange = (event) => {
     const { id, value } = event.target;
     setForm((prevState) => ({
       ...prevState,
@@ -25,7 +25,7 @@ function LoginForm(props) {
     }))
   }
 
-  const handelError = () => {
+  const handleError = () => {
     const toggleForm = form.isError ? "danger" : "";
     if (form.isError) {
       return (
@@ -49,7 +49,7 @@ function LoginForm(props) {
           id="email"
           value={email}
           placeholder="Email"
-          onChange={handelChange}
+          onChange={handleChange}
         />
         <br />
         <input
@@ -58,10 +58,10 @@ function LoginForm(props) {
           id="password"
           value={password}
           placeholder="password"
-          onChanged={handelChange}
+          onChange={handleChange}
         />
         <br />
-        {handelError()}
+        {handleError()}
         <button>Login</button>
       </form>
     </div>)
