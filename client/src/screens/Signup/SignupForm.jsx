@@ -12,7 +12,7 @@ const defaultNewUser = {
   confirmPassword: "",
 }
 
-function SigninForm(props) {
+function SignupForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser);
   const [validationMessage, setValidationMessage] = useState("");
   const [valid, setValid] = useState(false);
@@ -62,7 +62,7 @@ function SigninForm(props) {
           type="type"
           id="username"
           value={username}
-          placeholder="User Name"
+          placeholder=""
           onchange={handelChange}
         />
         <br />
@@ -72,7 +72,7 @@ function SigninForm(props) {
           id="firstName"
           value={firstName}
           placeholder="First Name"
-          onChange={handelChange}
+          onchange={handelChange}
         />
         <br />
         <input
@@ -81,7 +81,7 @@ function SigninForm(props) {
           id="lastName"
           value={lastName}
           placeholder="Last Name"
-          onChange={handelChange}
+          onchange={handelChange}
         />
         <br />
         <input
@@ -90,7 +90,7 @@ function SigninForm(props) {
           id="email"
           value={email}
           placeholder="Email"
-          onChange={handelChange}
+          onchange={handelChange}
         />
         <br />
         <input
@@ -99,7 +99,7 @@ function SigninForm(props) {
           id="password"
           value={password}
           placeholder="Password"
-          onChange={handelChange}
+          onchange={handelChange}
         />
         <br />
         <input
@@ -108,7 +108,7 @@ function SigninForm(props) {
           id="passwordConfirmation"
           value={passwordConfirmation}
           placeholder="Password Confirmation"
-          onChange={handelChange}
+          onchange={handelChange}
         />
         <br />
         <button disabled={!valid}>
@@ -118,4 +118,4 @@ function SigninForm(props) {
     </div >)
 }
 
-export default SigninForm;
+export default SignupForm;
