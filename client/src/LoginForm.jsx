@@ -16,7 +16,13 @@ const defaultUser = {
 function LoginForm() {
   const [form, setForm] = useState(defaultUser);
 
-
+  const handelChange = (event) => {
+    const { id, value } = event.target;
+    setForm((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }))
+  }
 
 
 
