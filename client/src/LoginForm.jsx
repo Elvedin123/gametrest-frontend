@@ -24,6 +24,17 @@ function LoginForm() {
     }))
   }
 
+  const handelError = () => {
+    const toggleForm = form.isError ? "danger" : "";
+    if (form.isError) {
+      return (
+        <button type="submit" className={ } type="submit">
+          Login
+        </button>
+
+      )
+    }
+  }
 
 
 
@@ -47,8 +58,9 @@ function LoginForm() {
           value={ }
           placeholder="password"
           onChanged={ }
-
         />
+        <br />
+        {handelError()}
       </form>
     </div>)
 }
