@@ -62,6 +62,7 @@ function LoginForm(props) {
         />
         <br />
         {handelError()}
+        <button>Login</button>
       </form>
     </div>)
 }
