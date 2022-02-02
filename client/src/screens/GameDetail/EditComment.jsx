@@ -29,5 +29,15 @@ export default function EditComment() {
 
   }
 
-  return <div></div>;
+  return (
+    <Layout>
+      <form onSubmit={handleSubmit}>
+        <input
+          id="comment"
+          value={comment}
+          onChange={handleChange}
+        />
+      </form>
+    </Layout>
+  );
 }
