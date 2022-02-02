@@ -11,11 +11,21 @@ defaultNewUser = {
   confirmPassword: "",
 }
 
-function SigninForm() {
+function SigninForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser)
   const [validationMessage, setValidationMessage] = useState("");
   const [valid, setValid] = useState(false);
-  const { username, email, password, passwordConfirmation } = form
+  const { username, firstName, lastName, email, password, passwordConfirmation } = props
+
+
+  const handelChange = (event) => {
+    const { id, value } = event.target;
+    setForm((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }))
+  }
+
 
   const checkIfValid = () => {
     if (newUser.password === "" || newUser.confirmPassword === "") {
@@ -43,10 +53,55 @@ function SigninForm() {
           id="username"
           value={username}
           placeholder=""
-          onchange={ }
+          onchange={handelChange}
+        />
+        <br />
+        <input
+          required
+          type="type"
+          id="firstName"
+          value={firstName}
+          placeholder="First Name"
+          onchange={handelChange}
+        />
+        <br />
+        <input
+          required
+          type="type"
+          id="lastName"
+          value={lastName}
+          placeholder="Last Name"
+          onchange={handelChange}
+        />
+        <br />
+        <input
+          required
+          type="type"
+          id="email"
+          value={email}
+          placeholder="Email"
+          onchange={handelChange}
+        />
+        <br />
+        <input
+          required
+          type="password"
+          id="password"
+          value={password}
+          placeholder="Password"
+          onchange={handelChange}
+        />
+        <br />
+        <input
+          required
+          type="password"
+          id="passwordConfirmation"
+          value={passwordConfirmation}
+          placeholder="Password Confirmation"
+          onchange={handelChange}
         />
       </form>
-    </div>)
+    </div >)
 }
 
 export default SigninForm;
