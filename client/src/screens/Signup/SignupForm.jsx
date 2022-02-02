@@ -12,7 +12,7 @@ const defaultNewUser = {
   confirmPassword: "",
 }
 
-function SignupForm(props) {
+function SigninForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser);
   const [validationMessage, setValidationMessage] = useState("");
   const [valid, setValid] = useState(false);
@@ -56,13 +56,13 @@ function SignupForm(props) {
   return (
     <div>
       <form>
-        <h3>{setValidationMessage}</h3>
+        <h3>{validationMessage}</h3>
         <input
           required
           type="type"
           id="username"
           value={username}
-          placeholder=""
+          placeholder="User Name"
           onchange={handelChange}
         />
         <br />
@@ -72,7 +72,7 @@ function SignupForm(props) {
           id="firstName"
           value={firstName}
           placeholder="First Name"
-          onchange={handelChange}
+          onChange={handelChange}
         />
         <br />
         <input
@@ -81,7 +81,7 @@ function SignupForm(props) {
           id="lastName"
           value={lastName}
           placeholder="Last Name"
-          onchange={handelChange}
+          onChange={handelChange}
         />
         <br />
         <input
@@ -90,7 +90,7 @@ function SignupForm(props) {
           id="email"
           value={email}
           placeholder="Email"
-          onchange={handelChange}
+          onChange={handelChange}
         />
         <br />
         <input
@@ -99,7 +99,7 @@ function SignupForm(props) {
           id="password"
           value={password}
           placeholder="Password"
-          onchange={handelChange}
+          onChange={handelChange}
         />
         <br />
         <input
@@ -108,7 +108,7 @@ function SignupForm(props) {
           id="passwordConfirmation"
           value={passwordConfirmation}
           placeholder="Password Confirmation"
-          onchange={handelChange}
+          onChange={handelChange}
         />
         <br />
         <button disabled={!valid}>
@@ -118,4 +118,4 @@ function SignupForm(props) {
     </div >)
 }
 
-export default SignupForm;
+export default SigninForm;
