@@ -9,7 +9,7 @@ export default function GameDetail() {
 
   useEffect(() => {
     const fetchGame = async () => {
-      const game = await getGame(id);
+      const game = await getGame(id); //whatever is from the backend. 
       setGames(game);
       setLoaded(true);
     }
