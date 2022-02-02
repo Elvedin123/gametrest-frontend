@@ -63,7 +63,7 @@ function SigninForm(props) {
           id="username"
           value={username}
           placeholder="User Name"
-          onchange={handelChange}
+          onChange={handelChange}
         />
         <br />
         <input
