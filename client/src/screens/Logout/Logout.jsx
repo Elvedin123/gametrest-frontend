@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import {signOut} from '../../services' whatever the signout is
 
-export default function Logout() {
+export default function Logout(props) {
   const { setUser } = props;
   const navigate = useNavigate();
 
@@ -13,6 +13,6 @@ export default function Logout() {
       navigate('/');
     }
     signOutUser();
-  }, [navigate, setUser])
+  }, [])
   return ''
 };
