@@ -15,6 +15,7 @@ function SigninForm() {
   const [newUser, setNewUser] = useState(defaultNewUser)
   const [validationMessage, setValidationMessage] = useState("");
   const [valid, setValid] = useState(false);
+  const { username, email, password, passwordConfirmation } = form
 
   const checkIfValid = () => {
     if (newUser.password === "" || newUser.confirmPassword === "") {
@@ -32,9 +33,20 @@ function SigninForm() {
   };
 
 
-  return (<div>
 
-  </div>)
+  return (
+    <div>
+      <form>
+        <input
+          required
+          type="type"
+          id="username"
+          value={username}
+          placeholder=""
+          onchange={ }
+        />
+      </form>
+    </div>)
 }
 
 export default SigninForm;
