@@ -1,8 +1,9 @@
 import React from 'react';
-import { useState } from "react"
+import { useState, useEffect } from "react"
+// import signUpLink "/"
 
 
-defaultNewUser = {
+const defaultNewUser = {
   userName: "",
   firstName: "",
   lastName: "",
@@ -12,7 +13,7 @@ defaultNewUser = {
 }
 
 function SigninForm(props) {
-  const [newUser, setNewUser] = useState(defaultNewUser)
+  const [newUser, setNewUser] = useState(defaultNewUser);
   const [validationMessage, setValidationMessage] = useState("");
   const [valid, setValid] = useState(false);
   const { username, firstName, lastName, email, password, passwordConfirmation } = props
@@ -20,12 +21,17 @@ function SigninForm(props) {
 
   const handelChange = (event) => {
     const { id, value } = event.target;
-    setForm((prevState) => ({
+    setNewUser((prevState) => ({
       ...prevState,
       [id]: value,
     }))
   }
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   await signUpLink(newUser);
+  //   console.log(newUser);
+  // };
 
   const checkIfValid = () => {
     if (newUser.password === "" || newUser.confirmPassword === "") {
@@ -42,11 +48,15 @@ function SigninForm(props) {
     }
   };
 
-
+  useEffect(() => {
+    console.log("validator");
+    checkIfValid();
+  }, [password, passwordConfirmation]);
 
   return (
     <div>
       <form>
+        <h3>{setValidationMessage}</h3>
         <input
           required
           type="type"
@@ -100,6 +110,10 @@ function SigninForm(props) {
           placeholder="Password Confirmation"
           onchange={handelChange}
         />
+        <br />
+        <button disabled={!valid}>
+          SignUp
+        </button>
       </form>
     </div >)
 }
