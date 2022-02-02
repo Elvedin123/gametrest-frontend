@@ -13,8 +13,9 @@ const defaultUser = {
 
 
 
-function LoginForm() {
+function LoginForm(props) {
   const [form, setForm] = useState(defaultUser);
+  const { email, password } = props
 
   const handelChange = (event) => {
     const { id, value } = event.target;
@@ -28,7 +29,7 @@ function LoginForm() {
     const toggleForm = form.isError ? "danger" : "";
     if (form.isError) {
       return (
-        <button type="submit" className={ } type="submit">
+        <button type="submit" className={toggleForm}>
           Login
         </button>
 
@@ -46,18 +47,18 @@ function LoginForm() {
           required
           type="text"
           id="email"
-          value=""
+          value={email}
           placeholder="Email"
-          onChange={ }
+          onChange={handelChange}
         />
         <br />
         <input
           required
           type="password"
           id="password"
-          value={ }
+          value={password}
           placeholder="password"
-          onChanged={ }
+          onChanged={handelChange}
         />
         <br />
         {handelError()}
