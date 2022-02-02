@@ -58,7 +58,7 @@ function LoginForm(props) {
           id="password"
           value={password}
           placeholder="password"
-          onChanged={handelChange}
+          onChange={handelChange}
         />
         <br />
         {handelError()}
