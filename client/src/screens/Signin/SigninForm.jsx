@@ -56,7 +56,7 @@ function SigninForm(props) {
   return (
     <div>
       <form>
-        <h3>{setValidationMessage}</h3>
+        <h3>{validationMessage}</h3>
         <input
           required
           type="type"
