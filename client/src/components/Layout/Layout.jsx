@@ -1,6 +1,6 @@
 import './Layout.css'
-import Nav from '../Nav/Nav'
-import Footer from '../Footer/Footer'
+import Nav from '../Layout/Nav/Nav.jsx'
+import Footer from '../Layout/Footer/Footer.jsx'
 
 const Layout = (props) => (
   <div className='layout'>
