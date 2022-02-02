@@ -33,3 +33,16 @@ export const loginUser = (props) =>
     .catch((error) => {
       console.log(error)
     })
+
+export const logout = (props) => 
+  axios({
+    method: 'get',
+    url: `${apiUrls.production}/logout`,
+    data: props
+  })
+  .then((res) => {
+    return res.data
+  })
+  .catch((error) => {
+    console.log(error)
+  })
