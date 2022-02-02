@@ -2,8 +2,9 @@
 
 import axios from 'axios'
 
-
+const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
+  
   production: 'https://gameterest-backend.herokuapp.com/api',
   development: 'http://localhost:3000/api'
 }
@@ -11,7 +12,7 @@ const apiUrls = {
 export const createUser = (props) => 
   axios({
     method: 'post',
-    url: `${apiUrls.production}/signup`,
+    url: `${devProxy}${apiUrls.production}/signup`,
     data: props,
   })
     .then((res) => {
