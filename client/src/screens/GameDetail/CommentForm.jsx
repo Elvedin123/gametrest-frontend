@@ -1,24 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export default function GameDetailForm() {
+export default function CommentForm() {
   // Schema calls for game, comment, and likes. I am assuming we just want to  edit the comment
   const [comment, setComment] = useState({
     comment: "",
   })
 
-  let { id } = useParams();
-
-  useEffect(() => {
-    const fetchGame = async () => {
-      const comment = await getGame(id)
-      setComment(comment)
-    }
-    fetchGame();
-  }, []);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateComment(id, comment)
+    await createComment(id, comment) //Create Comment come from api
   }
 
   const handleChange = (event) => {
@@ -31,9 +21,15 @@ export default function GameDetailForm() {
 
   return (
     <Layout>
-      <div>
-
-      </div>
+      <form onSubmit={handleSubmit}>
+        <input
+          id='comment'
+          value={comment.comment} //Bad naming convention?
+          type="text"
+          placeholder="Tell us your thoughts on this game!"
+          onChange={handleChange}
+        />
+      </form>
     </Layout>
   );
 }
