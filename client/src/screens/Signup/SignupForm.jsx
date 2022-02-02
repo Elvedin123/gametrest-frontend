@@ -35,14 +35,14 @@ function SignupForm(props) {
   };
 
   const checkIfValid = () => {
-    if (password === "" || passwordConfirmation === "") {
-      setMessage("");
-      setValid(false);
-    } else if (password !== passwordConfirmation) {
+    if (password !== passwordConfirmation) {
       setMessage("Password does not match!");
       setValid(false);
+    } else if (password === "" || passwordConfirmation === "") {
+      setMessage("");
+      setValid(false);
     } else {
-      setMessage("Password match!");
+      setMessage("");
       setValid(true);
     }
   };
