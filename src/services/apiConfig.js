@@ -4,12 +4,12 @@ import axios from 'axios'
 
 const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
-  
+
   production: 'https://gameterest-backend.herokuapp.com/api',
   development: 'http://localhost:3000/api'
 }
 
-export const createUser = (props) => 
+export const createUser = (props) =>
   axios({
     method: 'post',
     url: `${devProxy}${apiUrls.production}/signup`,
@@ -22,7 +22,7 @@ export const createUser = (props) =>
       console.log(error)
     })
 
-export const loginUser = (props) => 
+export const loginUser = (props) =>
   axios({
     method: 'post',
     url: `${apiUrls.production}/login`,
@@ -35,15 +35,28 @@ export const loginUser = (props) =>
       console.log(error)
     })
 
-export const logout = (props) => 
+export const logout = (props) =>
   axios({
     method: 'get',
     url: `${apiUrls.production}/logout`,
     data: props
   })
-  .then((res) => {
-    return res.data
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+  // export const createComment = (props) => 
+  // axios({
+  //   method: 'post',
+  //   url: `${devProxy}${apiUrls.production}/signup`,
+  //   data: props,
+  // })
+  //   .then((res) => {
+  //     return res.data
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   })
