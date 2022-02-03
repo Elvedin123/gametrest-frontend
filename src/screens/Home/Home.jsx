@@ -1,8 +1,12 @@
-import './Home.module.css'
+import homepagecss from './Home.module.css'
 import Layout from '../../components/Layout/Layout.jsx'
 import { useState, useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
+
 import { Link } from 'react-router-dom';
+
+import Cards from '../../components/Cards/Cards';
+
 
 
 const Home = () => {
@@ -18,16 +22,22 @@ const Home = () => {
   // console.log(games);
   return (
     <Layout >
-      <div className='home'>
-        {/* {games.results} */}
-        {games.slice(0, 40).map((game) => {
+
+      <div className={homepagecss.home}>
+       
+        {games.map((game) => {
 
           return (
-            <Link to={`/games/${game.id}`}>
-              <div key={game.id}>
-                <img src={game.background_image} alt={game.name} />
-              </div>
+          <Link to={`/games/${game.id}`}>
+            <div key={game.id}>
+              <Cards
+                imageURL={game.background_image}
+                title={game.name}
+                genre={game.genre}
+              />
+            </div>
             </Link>
+
           )
         })}
       </div>
