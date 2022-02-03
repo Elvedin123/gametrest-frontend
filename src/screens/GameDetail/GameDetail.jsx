@@ -5,7 +5,7 @@ import Layout from '../../components/Layout/Layout.jsx';
 // import { CommentForm } from './CommentForm'
 // import { DeleteComment } from './DeleteComment' 
 import { getGames } from '../../services/gamesApi.js'
-// import { Layout } from '../../components/Layout/Layout.jsx'
+import CommentForm from './Comments/CommentForm.jsx';
 
 export default function GameDetail() {
   const [games, setGames] = useState([]);
@@ -49,10 +49,13 @@ export default function GameDetail() {
             })}
           </div>
           <h1>Reviews</h1>
-          <div className="Comment-section">
+          <div className="review-section">
             {            //backend comments
             }          </div>
         </div>
+      </div>
+      <div className="comment form">
+        <CommentForm />
       </div>
 
     </Layout>
