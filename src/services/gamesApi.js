@@ -1,5 +1,6 @@
 import axios from 'axios'
-const KEY = process.env.KEY
+// import "dotenv/config"
+// const KEY = process.env.REACT_APP_KEY
 const gameUrl = {
 
   production: `https://api.rawg.io/api/games`,
@@ -16,9 +17,9 @@ const gameUrl = {
 export const fetchGames = () =>
   axios({
     method: 'get',
-    url: `${gameUrl.production}?key=${KEY}`,
+    url: `${gameUrl.production}?key=234f3043425540a7b93ddd79611cd0d0`,
     headers: {
-      "Authorization": `Bearer ${KEY}`
+      "Authorization": `Bearer 234f3043425540a7b93ddd79611cd0d0`
 
     }
 
