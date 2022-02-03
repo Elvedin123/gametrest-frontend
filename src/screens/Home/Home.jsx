@@ -1,7 +1,8 @@
-import './Home.module.css'
+import homepagecss from './Home.module.css'
 import Layout from '../../components/Layout/Layout.jsx'
 import { useState, useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
+import Cards from '../../components/Cards/Cards';
 
 
 const Home = () => {
@@ -17,12 +18,17 @@ const Home = () => {
   // console.log(games);
   return (
     <Layout >
-      <div className='home'>
+
+      <div className={homepagecss.home}>
         {games.results}
         {games.map((game) => {
           return (
             <div key={game.id}>
-              <img src={game.background_image} alt={game.name} />
+              <Cards
+                imageURL={game.background_image}
+                title={game.name}
+                genre={game.genre}
+              />
             </div>
           )
         })}
