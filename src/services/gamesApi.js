@@ -28,3 +28,19 @@ export const fetchGames = () =>
     .catch((error) => {
       console.log(error)
     })
+
+export const getGames = (props) =>
+  axios({
+    method: 'get',
+    url: `${gameUrl.production}/${props}?key=${API_KEY}`,
+    headers: {
+      "Authorization": `Bearer ${API_KEY}`
+
+    }
+
+  }).then((res) => {
+    return res.data
+  })
+    .catch((error) => {
+      console.log(error)
+    })

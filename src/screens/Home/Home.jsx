@@ -2,6 +2,7 @@ import './Home.module.css'
 import Layout from '../../components/Layout/Layout.jsx'
 import { useState, useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -20,10 +21,13 @@ const Home = () => {
       <div className='home'>
         {/* {games.results} */}
         {games.slice(0, 40).map((game) => {
+
           return (
-            <div key={game.id}>
-              <img src={game.background_image} alt={game.name} />
-            </div>
+            <Link to={`/games/${game.id}`}>
+              <div key={game.id}>
+                <img src={game.background_image} alt={game.name} />
+              </div>
+            </Link>
           )
         })}
       </div>
