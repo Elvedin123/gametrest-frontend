@@ -1,6 +1,15 @@
 .header_container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
   height: 600px;
   width: 100%;
+  background-image: url("https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
 }
 
 .image{
