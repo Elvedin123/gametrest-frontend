@@ -41,6 +41,12 @@ export default function GameDetail() {
               Description
             </h3>
             <p>{games.description_raw}</p>
+            <h2>Genre</h2>
+            {games.genres.map((genre) => {
+              return (
+                <p>{genre.name}</p>
+              )
+            })}
           </div>
           <h1>Reviews</h1>
           <div className="Comment-section">
