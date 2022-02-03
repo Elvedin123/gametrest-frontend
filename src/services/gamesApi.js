@@ -1,5 +1,5 @@
 import axios from 'axios'
-// const KEY = process.env.KEY
+const KEY = process.env.KEY
 const gameUrl = {
 
   production: `https://api.rawg.io/api/games`,
@@ -16,9 +16,9 @@ const gameUrl = {
 export const fetchGames = () =>
   axios({
     method: 'get',
-    url: `${gameUrl.production}?key=234f3043425540a7b93ddd79611cd0d0`,
+    url: `${gameUrl.production}?key=${KEY}`,
     headers: {
-      "Authorization": "Bearer 234f3043425540a7b93ddd79611cd0d0"
+      "Authorization": `Bearer ${KEY}`
 
     }
 
