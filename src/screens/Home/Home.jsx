@@ -18,8 +18,8 @@ const Home = () => {
   return (
     <Layout >
       <div className='home'>
-        {games.results}
-        {games.map((game) => {
+        {/* {games.results} */}
+        {games.slice(0, 40).map((game) => {
           return (
             <div key={game.id}>
               <img src={game.background_image} alt={game.name} />
