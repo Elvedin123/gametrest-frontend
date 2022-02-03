@@ -2,15 +2,12 @@ import React from 'react';
 import headercss from './Header.module.css'
 
 function Header(props) {
-  const { imgURL, title } = props;
+  const { title } = props;
 
   return (
     <div className={headercss.header_container}>
       <div>
-        <img className={headercss.image} src={imgURL} alt="" />
-      </div>
-      <div>
-        <h1>
+        <h1 className={headercss.title_container}>
           {title}
         </h1>
       </div>
