@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# gametrest-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Team AstroDev
 
-## Available Scripts
+![teamLogo](https://static.vecteezy.com/system/resources/previews/004/815/102/non_2x/cute-astronaut-working-as-a-programmer-free-vector.jpg)
 
-In the project directory, you can run:
+#
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+GameTerest allows users to view and comment on anticpated videogames. Users will be shown a list of games in which they can like, add to their profile, and leave comments/reviews. Users will have to sign up in order to interact with the videogames, but guests can view games and read comments. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#
 
-### `npm run build`
+## Schemas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+const commentSchema = mongoose.Schema(
+    {
+        comment: { type: String, required: true, trim: true},
+    },
+    { timestamps: true }
+);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// const favoriteSchema = mongoose.Schema(
+//     {
+//         favorite:
+//     }
+// )
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+const userSchema = mongoose.Schema(
+    {
+        userName: { type: String, required: true, trim: true},
+        firstName: { type: String, required: true, trim: true},
+        lastName: { type: String, required: true, trim: true},
+        email: { type: String, required: true, trim: true},
+        password: { type: String, required: true, trim: true},
+        confirmPassword: { type: String, required: true, trim: true},
+        avatar: { type: String, required: true, trim: true},
+        comments: [commentSchema],
+        // favorites: [favoriteSchema],
+        isAdmin: false,
+    },
+    { timestamps: true }
+);
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Whimsical
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Components Architecture
+[Click here](https://whimsical.com/gameterest-Dg4UiSceLQWpFjVuBActiX) to review our component architecture
 
-## Learn More
+Design
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Click here](https://www.figma.com/file/POIF6n9solHxRYnuyD3qLe/Gametrest?node-id=0%3A1)
+to review our visual representation of the design of our application.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#
 
-### Code Splitting
+## Team Expectations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Team Expectations](https://docs.google.com/document/d/1gEEEZLYQv1FVZnj01EOuUKc1Dxf7jszYB9pLbA_D53M/edit?usp=sharing)
 
-### Analyzing the Bundle Size
+Listed above contains our roles, what are coding practices will be, and what are values/ expectations are as a team. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#
 
-### Making a Progressive Web App
+## GitHub Project Board
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The link below is a list of our MVP's and post-MVP's. Each person will be assigned set of tasks that are posted on the to-do list either individually or as a group. Once they start working on this task, they will bring it to the in progress. After they have completed their assignment, they will set it as done. Additional tasks may be added as we continue this ambition, but we will consult with each other who would be okay with getting the new task.
 
-### Advanced Configuration
+[GitHub Project Board](https://github.com/users/Elvedin123/projects/1/views/1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+#
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

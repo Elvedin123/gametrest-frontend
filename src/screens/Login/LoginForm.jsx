@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react"
-
+// import { loggingIn } from "../../services/apiConfig.js"
+// import { useNavigate } from "react-router-dom";
 
 const defaultUser = {
   email: "",
@@ -16,6 +17,7 @@ const defaultUser = {
 function LoginForm(props) {
   const [form, setForm] = useState(defaultUser);
   const { email, password } = props
+  // const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -30,12 +32,11 @@ function LoginForm(props) {
     if (form.isError) {
       return (
         <button type="submit" className={toggleForm}>
-          Login
+          {form.errorMsg}
         </button>
-
-      )
+      );
     }
-  }
+  };
 
 
 
