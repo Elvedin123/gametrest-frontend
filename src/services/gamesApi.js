@@ -28,4 +28,3 @@ export const fetchGames = () =>
     .catch((error) => {
       console.log(error)
     })
-console.log("API", API_KEY)
