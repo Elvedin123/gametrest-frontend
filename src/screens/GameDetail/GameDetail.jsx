@@ -19,7 +19,7 @@ export default function GameDetail() {
       setLoaded(true);
     }
     fetchGames();
-  }, [])
+  }, [id])
 
   console.log(games)
 
@@ -44,14 +44,14 @@ export default function GameDetail() {
             <h2>Genre</h2>
             {games.genres.map((genre) => {
               return (
-                <p>{genre.name}</p>
+                <p key={genre.id}>{genre.name}</p>
               )
             })}
           </div>
           <h1>Reviews</h1>
           <div className="Comment-section">
-            //backend comments
-          </div>
+            {            //backend comments
+            }          </div>
         </div>
       </div>
 
