@@ -20,8 +20,9 @@ const Home = () => {
     <Layout >
 
       <div className={homepagecss.home}>
-        {games.results}
+       
         {games.map((game) => {
+
           return (
             <div key={game.id}>
               <Cards
