@@ -2,8 +2,12 @@ import homepagecss from './Home.module.css'
 import Layout from '../../components/Layout/Layout.jsx'
 import { useState, useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
+
+import { Link } from 'react-router-dom';
+
 import Cards from '../../components/Cards/Cards';
 // import Header from '../../Header/Header';
+
 
 
 const Home = () => {
@@ -24,15 +28,19 @@ const Home = () => {
         title={games.name[1]}
       /> */}
       <div className={homepagecss.home}>
-        {games.results}
+       
         {games.map((game) => {
+
           return (
+          <Link to={`/games/${game.id}`}>
             <div key={game.id}>
               <Cards
                 imageURL={game.background_image}
                 title={game.name}
               />
             </div>
+            </Link>
+
           )
         })}
       </div>
