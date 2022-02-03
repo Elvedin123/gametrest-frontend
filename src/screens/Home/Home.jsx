@@ -3,6 +3,7 @@ import Layout from '../../components/Layout/Layout.jsx'
 import { useState, useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
 import Cards from '../../components/Cards/Cards';
+// import Header from '../../Header/Header';
 
 
 const Home = () => {
@@ -18,7 +19,10 @@ const Home = () => {
   // console.log(games);
   return (
     <Layout >
-
+      {/* <Header
+        imageURL={games.background_image[1]}
+        title={games.name[1]}
+      /> */}
       <div className={homepagecss.home}>
         {games.results}
         {games.map((game) => {
@@ -27,7 +31,6 @@ const Home = () => {
               <Cards
                 imageURL={game.background_image}
                 title={game.name}
-                genre={game.genre}
               />
             </div>
           )
