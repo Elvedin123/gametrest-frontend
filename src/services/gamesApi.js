@@ -18,7 +18,7 @@ export const fetchGames = () =>
     method: 'get',
     url: `${gameUrl.production}?key=${API_KEY}`,
     headers: {
-      // "Authorization": "Bearer 234f3043425540a7b93ddd79611cd0d0"
+      "Authorization": `Bearer ${API_KEY}`
 
     }
 
