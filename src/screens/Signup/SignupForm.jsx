@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState, useEffect } from "react"
+import React, {useCallback, useState, useEffect} from 'react';
 import { createUser } from "../../services/apiConfig.js";
-
+import {useNavigate}from "react-router-dom"
 
 
 const defaultNewUser = {
@@ -11,16 +10,29 @@ const defaultNewUser = {
   email: "",
   password: "",
   confirmPassword: "",
+  avatar:""
 }
 
 function SignupForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser);
   const [validationMessage, setMessage] = useState("");
   const [valid, setValid] = useState(false);
-  const { username, firstName, lastName, email, password, passwordConfirmation } = props
+  const { userName, firstName, lastName, email, password, confirmPassword, avatar } = props
+  const navigate = useNavigate();
 
-
-  const handelChange = (event) => {
+  const validate = useCallback(()=>{
+  if (password !== confirmPassword) {
+    setMessage("Password does not match!");
+    setValid(false);
+  } else if (password === "" || confirmPassword === "") {
+    setMessage("");
+    setValid(false);
+  } else {
+    setMessage("");
+    setValid(true);
+  }
+},[setValid, setMessage, password, confirmPassword]);
+ const handelChange = (event) => {
     const { id, value } = event.target;
     setNewUser((prevState) => ({
       ...prevState,
@@ -34,23 +46,26 @@ function SignupForm(props) {
     console.log(newUser);
   };
 
-  const checkIfValid = () => {
-    if (password !== passwordConfirmation) {
-      setMessage("Password does not match!");
-      setValid(false);
-    } else if (password === "" || passwordConfirmation === "") {
-      setMessage("");
-      setValid(false);
-    } else {
-      setMessage("");
-      setValid(true);
-    }
-  };
+  // const checkIfValid = () => {
+  //   // if (password !== confirmPassword) {
+  //   //   setMessage("Password does not match!");
+  //   //   setValid(false);
+  //   // } else if (password === "" || confirmPassword === "") {
+  //   //   setMessage("");
+  //   //   setValid(false);
+  //   // } else {
+  //   //   setMessage("");
+  //   //   setValid(true);
+  //   // }
+  // };
 
   useEffect(() => {
+    validate();
     console.log("validator");
-    checkIfValid();
-  }, [password, passwordConfirmation]);
+    return function cleanUp() {
+      navigate("/")
+    }
+}, [password, confirmPassword, navigate, validate]);
 
   return (
     <div>
@@ -58,16 +73,16 @@ function SignupForm(props) {
         <h3>{validationMessage}</h3>
         <input
           required
-          type="type"
-          id="username"
-          value={username}
+          type="text"
+          id="userName"
+          value={userName}
           placeholder="User Name"
           onChange={handelChange}
         />
         <br />
         <input
           required
-          type="type"
+          type="text"
           id="firstName"
           value={firstName}
           placeholder="First Name"
@@ -76,7 +91,7 @@ function SignupForm(props) {
         <br />
         <input
           required
-          type="type"
+          type="text"
           id="lastName"
           value={lastName}
           placeholder="Last Name"
@@ -85,7 +100,7 @@ function SignupForm(props) {
         <br />
         <input
           required
-          type="type"
+          type="text"
           id="email"
           value={email}
           placeholder="Email"
@@ -104,12 +119,21 @@ function SignupForm(props) {
         <input
           required
           type="password"
-          id="passwordConfirmation"
-          value={passwordConfirmation}
+          id="confirmPassword"
+          value={confirmPassword}
           placeholder="Password Confirmation"
           onChange={handelChange}
         />
         <br />
+        <input
+          required
+          type="text"
+          id="avatar"
+          value={avatar}
+          placeholder="A picture of you!"
+          onChange={handelChange}
+        /> 
+        <br/>
         <button disabled={!valid}>
           SignUp
         </button>
