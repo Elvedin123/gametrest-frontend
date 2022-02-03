@@ -4,8 +4,9 @@ import Layout from '../../components/Layout/Layout.jsx';
 // import { EditComment } from './EditComment'
 // import { CommentForm } from './CommentForm'
 // import { DeleteComment } from './DeleteComment' 
-import { getGames } from '../../services/gamesApi.js'
+import { getGames } from '../../services/gamesApi.js';
 import CommentForm from './Comments/CommentForm.jsx';
+import gamesdetailcss from './GameDetail.module.css'
 
 export default function GameDetail() {
   const [games, setGames] = useState([]);
@@ -29,14 +30,14 @@ export default function GameDetail() {
 
   return (
     <Layout>
-      <div className="game-container">
-        <div className="image">
+      <div className={gamesdetailcss.game_container}>
+        <div className={gamesdetailcss.image}>
           <img src={games.background_image} alt={games.name} />
         </div>
 
-        <div className="detail-container">
+        <div className={gamesdetailcss.detail_container}>
           <h1>{games.name}</h1>
-          <div className="games-details">
+          <div className={gamesdetailcss.games_details}>
             <h3>
               Description
             </h3>
@@ -49,12 +50,12 @@ export default function GameDetail() {
             })}
           </div>
           <h1>Reviews</h1>
-          <div className="review-section">
+          <div className={gamesdetailcss.review_section}>
             {            //backend comments
             }          </div>
         </div>
       </div>
-      <div className="comment form">
+      <div className={gamesdetailcss.comment_section}>
         <CommentForm />
       </div>
 
