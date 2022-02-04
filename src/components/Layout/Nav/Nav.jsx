@@ -2,10 +2,14 @@
 import { NavLink } from 'react-router-dom'
 import Navcss from './Nav.module.css'
 
+// if token is true, 
+const token = localStorage.getItem('token')
 const authenticatedOptions = (
   <>
+
     <NavLink className="link" to="/"><button>Home</button></NavLink>
     <NavLink className="link" to="/Logout"><button>Log Out</button></NavLink>
+
   </>
 )
 const unauthenticatedOptions = (
@@ -14,14 +18,13 @@ const unauthenticatedOptions = (
     <NavLink className="link" to="/login"><button>Log In</button></NavLink>
   </>
 )
-const Nav = ({ user }) => {
+const Nav = ({ token }) => {
   return (
     <nav>
-      <div className={Navcss.navbar}>
+      <div className="nav">
         <NavLink className="logo" to="/">Gameterest</NavLink>
         <div className="links">
-          {user && <div className="link welcome">Welcome, {user.username}</div>}
-          {user ? authenticatedOptions : unauthenticatedOptions}
+          {token ? unauthenticatedOptions : authenticatedOptions}
         </div>
       </div>
     </nav>

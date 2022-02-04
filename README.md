@@ -20,17 +20,20 @@ GameTerest allows users to view and comment on anticpated videogames. Users will
 ```
 const commentSchema = mongoose.Schema(
     {
+        game: { type: String, required: true, trim: true},
         comment: { type: String, required: true, trim: true},
+        likes: { type: Number, required: true, trim: true}
     },
     { timestamps: true }
 );
 
-// const favoriteSchema = mongoose.Schema(
-//     {
-//         favorite:
-//     }
-// )
-
+const favoriteSchema = mongoose.Schema(
+    {
+        gameId: { type: String, required: true, trim: true},
+        name: { type: String, required: true, trim: true},
+        image: { type: String, required: true, trim: true},
+    }
+)
 
 const userSchema = mongoose.Schema(
     {
