@@ -1,0 +1,23 @@
+.navbar{
+  background-color: #D40107;
+  position: relative;
+  display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+button{
+  pointer-events: auto;
+	cursor: pointer;
+	background: black;
+	border: none;
+  border-radius: 60px;
+  color: white;
+	padding: 20px;
+	margin: 10px;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+}

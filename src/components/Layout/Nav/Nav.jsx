@@ -4,14 +4,14 @@ import Navcss from './Nav.module.css'
 
 const authenticatedOptions = (
   <>
-    <NavLink className="link" to="/">Home</NavLink>
-    <NavLink className="link" to="/Logout">Logout</NavLink>
+    <NavLink className="link" to="/"><button>Home</button></NavLink>
+    <NavLink className="link" to="/Logout"><button>Log Out</button></NavLink>
   </>
 )
 const unauthenticatedOptions = (
   <>
-    <NavLink className="link" to="/signup">Sign Up</NavLink>
-    <NavLink className="link" to="/login">Log In</NavLink>
+    <NavLink className="link" to="/signup"><button>Sign Up</button></NavLink>
+    <NavLink className="link" to="/login"><button>Log In</button></NavLink>
   </>
 )
 const Nav = ({ user }) => {
