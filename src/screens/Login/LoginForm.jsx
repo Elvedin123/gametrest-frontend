@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react"
-import { Navigate } from "react-router";
 import { loginUser } from "../../services/apiConfig.js"
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const defaultUser = {
   email: "",
@@ -11,6 +10,7 @@ const defaultUser = {
   errorMsg: "",
 
 }
+const navigate = useNavigate()
 
 const onLogin = async (event) => {
   event.preventDefault()
@@ -18,7 +18,7 @@ const onLogin = async (event) => {
   try {
     const user = await loginUser(form)
     setUser(user)
-    Navigate('/')
+    navigate('/')
   } catch (error) {
     console.error(error)
     setForm({
@@ -62,7 +62,7 @@ function LoginForm(props) {
 
   return (
     <div>
-      <form>
+      <form onSubmit={onLogin}>
         <input
           required
           type="text"
