@@ -76,6 +76,7 @@ function SignupForm(props) {
         onSubmit={handleSubmit}>
         <h3>{validationMessage}</h3>
         <input
+          className={signupcss.input}
           required
           type="text"
           id="userName"
@@ -85,6 +86,7 @@ function SignupForm(props) {
         />
         <br />
         <input
+          className={signupcss.input}
           required
           type="text"
           id="firstName"
@@ -94,6 +96,7 @@ function SignupForm(props) {
         />
         <br />
         <input
+          className={signupcss.input}
           required
           type="text"
           id="lastName"
@@ -103,6 +106,7 @@ function SignupForm(props) {
         />
         <br />
         <input
+          className={signupcss.input}
           required
           type="text"
           id="email"
@@ -112,6 +116,7 @@ function SignupForm(props) {
         />
         <br />
         <input
+          className={signupcss.input}
           required
           type="password"
           id="password"
@@ -121,6 +126,7 @@ function SignupForm(props) {
         />
         <br />
         <input
+          className={signupcss.input}
           required
           type="password"
           id="confirmPassword"
@@ -130,6 +136,7 @@ function SignupForm(props) {
         />
         <br />
         <input
+          className={signupcss.input}
           required
           type="text"
           id="avatar"
@@ -138,7 +145,7 @@ function SignupForm(props) {
           onChange={handelChange}
         />
         <br />
-        <button disabled={!valid}>
+        <button className={signupcss.button} disabled={!valid}>
           SignUp
         </button>
       </form>
