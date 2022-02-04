@@ -103,7 +103,7 @@ export const logoutUser = () =>
       url: `${apiUrls.production}/comment/${userId}`,
       headers: {authorization: `${token}`},
       data: comment
-
+    })
     .then((res) => {
       return res.data
 
@@ -111,14 +111,15 @@ export const logoutUser = () =>
     .catch((error) => {
       console.log(error)
     })
+    
 
-const token = localStorage.getItem('token')
-export const addComment = (comment, userId) =>
+
+export const addFavorite = (favorite, userId) =>
   axios({
     method: "post",
-    url: `${apiUrls.production}/comment/${userId}`,
+    url: `${apiUrls.production}/favorite/${userId}`,
     headers: { authorization: `${token}` },
-    data: comment
+    data: favorite
   })
     .then((res) => {
       return res.data
