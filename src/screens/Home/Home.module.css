@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  gap: 25px;
+  gap: 10px;
   flex-wrap: wrap;
   align-content: stretch;
   justify-content: space-evenly;
