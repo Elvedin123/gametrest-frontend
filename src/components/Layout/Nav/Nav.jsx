@@ -1,5 +1,6 @@
 // import './Nav.css'
 import { NavLink } from 'react-router-dom'
+import Logout from '../../Logout/Logout'
 // import Navcss from './Nav.module.css'
 
 // if token is true, 
@@ -8,7 +9,7 @@ const authenticatedOptions = (
   <>
 
     <NavLink className="link" to="/"><button>Home</button></NavLink>
-    <NavLink className="link" to="/Logout"><button>Log Out</button></NavLink>
+    <Logout />
 
   </>
 )

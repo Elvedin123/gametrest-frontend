@@ -82,3 +82,15 @@ export const verifyUser = (props) =>
 //   }
 //   return false
 // }
+
+export const logoutUser = () => 
+  axios({
+    method: 'get',
+    url: `${apiUrls.production}/logout`
+  })
+  .then((res) => {
+    return res.data
+  })
+  .catch((error) => {
+    console.log(error)
+  })
