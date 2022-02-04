@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home user={user} />}></Route>
+        <Route path="/" element={user ? <Home user={user} /> : <Home />}></Route>
         <Route path="/login" element={<LoginForm />}></Route>
         <Route path="/signup" element={<SignupForm setUser={setUser} />}></Route>
         <Route path="/games/:id" element={<GameDetail />} />
