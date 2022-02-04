@@ -31,8 +31,8 @@ const Home = () => {
         {games.map((game) => {
 
           return (
-            <Link to={`/games/${game.id}`}>
-              <div key={game.id}>
+            <Link key={game.id} to={`/games/${game.id}`}>
+              <div>
                 <Cards
                   imageURL={game.background_image}
                   title={game.name}
