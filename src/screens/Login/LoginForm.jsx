@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react"
-// import { loggingIn } from "../../services/apiConfig.js"
+import { Navigate } from "react-router";
+import { loginUser } from "../../services/apiConfig.js"
 // import { useNavigate } from "react-router-dom";
 
 const defaultUser = {
@@ -11,7 +12,23 @@ const defaultUser = {
 
 }
 
-
+const onLogin = async (event) => {
+  event.preventDefault()
+  const { setUser } = props
+  try {
+    const user = await loginUser(form)
+    setUser(user)
+    Navigate('/')
+  } catch (error) {
+    console.error(error)
+    setForm({
+      isError: true,
+      errorMsg: "Invalid Credentials",
+      email: '',
+      password: '',
+    })
+  }
+}
 
 
 function LoginForm(props) {
@@ -35,10 +52,12 @@ function LoginForm(props) {
           {form.errorMsg}
         </button>
       );
+    } else {
+      return <button type='submit'>Log in</button>
     }
   };
 
-
+  const { email, password } = form
 
 
   return (
