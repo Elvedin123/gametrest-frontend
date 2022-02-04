@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react"
 import { loginUser } from "../../services/apiConfig.js"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import logincss from './LoginForm.module.css'
 
 const defaultUser = {
@@ -71,6 +71,7 @@ function LoginForm(props) {
 
   return (
     <div>
+      <Link className={logincss.back_arrow} to='/'>GameTerest</Link>
       <h3 className={logincss.header}>Login</h3>
       <div className={logincss.form_body}>
         <form
