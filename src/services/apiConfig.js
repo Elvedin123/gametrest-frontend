@@ -83,11 +83,12 @@ export const verifyUser = (props) =>
 //   return false
 // }
 
-export const logoutUser = () => 
+export const logoutUser = () =>
   axios({
     method: 'get',
     url: `${apiUrls.production}/logout`
   })
+
   .then((res) => {
     return res.data
   })
@@ -102,7 +103,23 @@ export const logoutUser = () =>
       url: `${apiUrls.production}/comment/${userId}`,
       headers: {authorization: `${token}`},
       data: comment
+
+    .then((res) => {
+      return res.data
+
     })
+    .catch((error) => {
+      console.log(error)
+    })
+
+const token = localStorage.getItem('token')
+export const addComment = (comment, userId) =>
+  axios({
+    method: "post",
+    url: `${apiUrls.production}/comment/${userId}`,
+    headers: { authorization: `${token}` },
+    data: comment
+  })
     .then((res) => {
       return res.data
     })

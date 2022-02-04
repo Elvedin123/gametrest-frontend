@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react"
 import { loginUser } from "../../services/apiConfig.js"
 import { useNavigate } from "react-router-dom";
+import logincss from './LoginForm.module.css'
 
 const defaultUser = {
   email: "",
@@ -70,28 +71,34 @@ function LoginForm(props) {
 
   return (
     <div>
-      <form onSubmit={onLogin}>
-        <input
-          required
-          type="text"
-          id="email"
-          value={email}
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          required
-          type="password"
-          id="password"
-          value={password}
-          placeholder="password"
-          onChange={handleChange}
-        />
-        <br />
-        {handleError()}
-        <button>Login</button>
-      </form>
+      <h3 className={logincss.header}>Login</h3>
+      <div className={logincss.form_body}>
+        <form
+          // className={logincss.input}
+          onSubmit={onLogin}>
+          <input
+            className={logincss.input}
+            required
+            type="text"
+            id="email"
+            value={email}
+            placeholder="Email"
+            onChange={handleChange}
+          />
+          <br />
+          <input
+            className={logincss.input}
+            required
+            type="password"
+            id="password"
+            value={password}
+            placeholder="password"
+            onChange={handleChange} />
+          <br />
+          {handleError()}
+          <button className={logincss.button}>Login</button>
+        </form>
+      </div>
     </div>)
 }
 
