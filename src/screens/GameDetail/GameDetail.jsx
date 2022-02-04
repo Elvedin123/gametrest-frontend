@@ -31,12 +31,12 @@ export default function GameDetail() {
   return (
     <Layout>
       <div className={gamesdetailcss.game_container}>
-        <div className={gamesdetailcss.image}>
-          <img src={games.background_image} alt={games.name} />
+        <div className={gamesdetailcss.image_container}>
+          <img className={gamesdetailcss.image} src={games.background_image} alt={games.name} />
         </div>
 
         <div className={gamesdetailcss.detail_container}>
-          <h1>{games.name}</h1>
+          <h1 className={gamesdetailcss.game_name}>{games.name}</h1>
           <div className={gamesdetailcss.games_details}>
             <h3>
               Description
@@ -49,7 +49,7 @@ export default function GameDetail() {
               )
             })}
           </div>
-          <h1>Reviews</h1>
+          <h1 className={gamesdetailcss.reviews}>Reviews</h1>
           <div className={gamesdetailcss.review_section}>
             {            //backend comments
             }          </div>
