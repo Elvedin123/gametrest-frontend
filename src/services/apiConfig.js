@@ -48,15 +48,38 @@ export const logout = (props) =>
       console.log(error)
     })
 
-  // export const createComment = (props) => 
-  // axios({
-  //   method: 'post',
-  //   url: `${devProxy}${apiUrls.production}/signup`,
-  //   data: props,
-  // })
-  //   .then((res) => {
-  //     return res.data
-  //   })
-  //   .catch((error) => {
-  //     console.log(error)
-  //   })
+// export const createComment = (props) => 
+// axios({
+//   method: 'post',
+//   url: `${devProxy}${apiUrls.production}/signup`,
+//   data: props,
+// })
+//   .then((res) => {
+//     return res.data
+//   })
+//   .catch((error) => {
+//     console.log(error)
+//   })
+
+export const verifyUser = (props) =>
+  axios({
+    method: 'get',
+    url: `${apiUrls.production}/`,
+    data: props
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+
+// export const verifyUser = async () => {
+//   const token = localStorage.getItem('token')
+//   if (token) {
+//     const res = await axios.get('/verify')
+//     return res.data
+//   }
+//   return false
+// }
