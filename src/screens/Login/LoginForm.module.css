@@ -30,3 +30,17 @@
   /* border: 2px solid blue; */
 }
 
+@media screen and (min-width: 800px) {
+  .header {
+    font-size: 6vw;
+  }
+
+  .form_body {
+    margin: 0px 300px;
+  }
+
+  .button {
+    font-size: 2vw;
+  }
+
+}
