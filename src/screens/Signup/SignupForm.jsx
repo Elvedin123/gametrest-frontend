@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { createUser } from "../../services/apiConfig.js";
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import signupcss from './SignupForm.module.css'
 
 const defaultNewUser = {
@@ -70,6 +70,7 @@ function SignupForm(props) {
 
   return (
     <div>
+      <Link className={signupcss.back_arrow} to='/'>GameTerest</Link>
       <h3 className={signupcss.header}>Free Sign Up</h3>
       <form
         className={signupcss.form_body}
