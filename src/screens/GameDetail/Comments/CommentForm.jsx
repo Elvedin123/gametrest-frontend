@@ -23,7 +23,7 @@ export default function CommentForm() {
 
   return (
     <form>
-      <input
+      <textarea
         id='comment'
         value={comment.comment} //Bad naming convention?
         type="text"

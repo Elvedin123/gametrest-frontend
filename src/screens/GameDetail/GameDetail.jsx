@@ -38,16 +38,19 @@ export default function GameDetail() {
         <div className={gamesdetailcss.detail_container}>
           <h1 className={gamesdetailcss.game_name}>{games.name}</h1>
           <div className={gamesdetailcss.games_details}>
+            <div className={gamesdetailcss.genre}>
+              <h2>Genre:  </h2>
+              {games.genres.map((genre) => {
+                return (
+                  <p key={genre.id}> {genre.name}</p>
+                )
+              })}
+            </div>
             <h3>
               Description
             </h3>
             <p>{games.description_raw}</p>
-            <h2>Genre</h2>
-            {games.genres.map((genre) => {
-              return (
-                <p key={genre.id}>{genre.name}</p>
-              )
-            })}
+
           </div>
           <h1 className={gamesdetailcss.reviews}>Reviews</h1>
           <div className={gamesdetailcss.review_section}>

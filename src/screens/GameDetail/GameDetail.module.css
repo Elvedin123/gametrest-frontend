@@ -35,6 +35,9 @@ height: 100%;
   width: 30vw;
   padding:20px
 }
+.genre{
+  display: flex;
+}
 
 .reviews{
   color: white;
