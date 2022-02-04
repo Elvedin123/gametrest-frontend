@@ -1,6 +1,6 @@
-import './Footer.css'
+import footercss from './Footer.module.css'
 
 const Footer = () =>
-  <footer></footer>
+  <footer className={footercss.footer}></footer>
 
 export default Footer
