@@ -3,6 +3,11 @@ import { createUser } from "../../services/apiConfig.js";
 import { useNavigate } from "react-router-dom"
 import signupcss from './SignupForm.module.css'
 
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fas } from '@fortawesome/free-solid-svg-icons';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+// library.add(fas, fab);
+
 const defaultNewUser = {
   userName: "",
   firstName: "",
@@ -70,6 +75,8 @@ function SignupForm(props) {
 
   return (
     <div>
+      <i className="fas fa-arrow-left"></i>
+      <h2 className={signupcss.back_arrow}></h2>
       <h3 className={signupcss.header}>Free Sign Up</h3>
       <form
         className={signupcss.form_body}
