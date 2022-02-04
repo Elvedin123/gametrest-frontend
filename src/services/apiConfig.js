@@ -117,7 +117,7 @@ export const logoutUser = () =>
 export const addFavorite = (favorite, userId) =>
   axios({
     method: "post",
-    url: `${apiUrls.production}/favorite/${userId}`,
+    url: `${devProxy}${apiUrls.production}/favorite/${userId}`,
     headers: { authorization: `${token}` },
     data: favorite
   })

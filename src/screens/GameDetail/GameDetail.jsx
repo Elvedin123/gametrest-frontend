@@ -6,6 +6,7 @@ import Layout from '../../components/Layout/Layout.jsx';
 // import { DeleteComment } from './DeleteComment' 
 import { getGames } from '../../services/gamesApi.js';
 import CommentForm from './Comments/CommentForm.jsx';
+import AddFavorites from './Favorites/AddFavorites.jsx'
 import gamesdetailcss from './GameDetail.module.css'
 
 export default function GameDetail() {
@@ -60,6 +61,11 @@ export default function GameDetail() {
       </div>
       <div className={gamesdetailcss.comment_section}>
         <CommentForm gameId={games.id}/>
+        <AddFavorites 
+        gameId={games.id}
+        gameName={games.name}
+        gameImg={games.background_image}
+        />
       </div>
 
     </Layout>
