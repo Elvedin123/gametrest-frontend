@@ -59,7 +59,7 @@ export default function GameDetail() {
         </div>
       </div>
       <div className={gamesdetailcss.comment_section}>
-        <CommentForm />
+        <CommentForm gameId={games.id}/>
       </div>
 
     </Layout>
