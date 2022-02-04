@@ -1,5 +1,5 @@
 import homepagecss from './Home.module.css'
-import Layout from '../../components/Layout/Layout.jsx'
+import Footer from '../../components/Layout/Footer/Footer.jsx'
 import { useState, useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
 
@@ -22,7 +22,7 @@ const Home = () => {
   }, [])
   // console.log(games);
   return (
-    <Layout >
+    <div>
       <Header
         title="Red Dead Redemption 2"
       />
@@ -44,7 +44,8 @@ const Home = () => {
           )
         })}
       </div>
-    </Layout>
+      <Footer />
+    </div>
   )
 }
 
