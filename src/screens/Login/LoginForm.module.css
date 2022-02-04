@@ -30,17 +30,32 @@
   /* border: 2px solid blue; */
 }
 
+.back_arrow {
+  display: flex;
+  justify-content: flex-start;
+  /* border: 2px solid cyan; */
+  margin: 4px 10px;
+  color: white;
+  font-size: 6vw;
+  text-decoration: none;
+}
+
 @media screen and (min-width: 800px) {
   .header {
     font-size: 6vw;
   }
 
   .form_body {
-    margin: 0px 300px;
+    margin: 80px 300px;
   }
 
   .button {
     font-size: 2vw;
+  }
+
+  .back_arrow {
+    font-size: 3vw;
+
   }
 
 }
