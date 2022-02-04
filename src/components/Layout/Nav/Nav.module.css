@@ -16,9 +16,18 @@
     justify-content: space-between;
 }
 
-.noauth{
+.noAuth{
   background-color: #D40107;
   position: relative;
+  display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+.noAuthHeader{
+  background-color: #d4010800;
+  position: absolute;
   display: flex;
     flex-wrap: wrap;
     align-content: stretch;
