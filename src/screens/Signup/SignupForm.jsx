@@ -1,6 +1,6 @@
-import React, {useCallback, useState, useEffect} from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { createUser } from "../../services/apiConfig.js";
-import {useNavigate}from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 const defaultNewUser = {
@@ -10,7 +10,7 @@ const defaultNewUser = {
   email: "",
   password: "",
   confirmPassword: "",
-  avatar:""
+  avatar: ""
 }
 
 function SignupForm(props) {
@@ -20,19 +20,19 @@ function SignupForm(props) {
   const { userName, firstName, lastName, email, password, confirmPassword, avatar } = props
   const navigate = useNavigate();
 
-  const validate = useCallback(()=>{
-  if (password !== confirmPassword) {
-    setMessage("Password does not match!");
-    setValid(false);
-  } else if (password === "" || confirmPassword === "") {
-    setMessage("");
-    setValid(false);
-  } else {
-    setMessage("");
-    setValid(true);
-  }
-},[setValid, setMessage, password, confirmPassword]);
- const handelChange = (event) => {
+  const validate = useCallback(() => {
+    if (password !== confirmPassword) {
+      setMessage("Password does not match!");
+      setValid(false);
+    } else if (password === "" || confirmPassword === "") {
+      setMessage("");
+      setValid(false);
+    } else {
+      setMessage("");
+      setValid(true);
+    }
+  }, [setValid, setMessage, password, confirmPassword]);
+  const handelChange = (event) => {
     const { id, value } = event.target;
     setNewUser((prevState) => ({
       ...prevState,
@@ -44,6 +44,7 @@ function SignupForm(props) {
     event.preventDefault();
     await createUser(newUser);
     console.log(newUser);
+    navigate('/')
   };
 
   // const checkIfValid = () => {
@@ -65,7 +66,7 @@ function SignupForm(props) {
     return function cleanUp() {
       navigate("/")
     }
-}, [password, confirmPassword, navigate, validate]);
+  }, [password, confirmPassword, navigate, validate]);
 
   return (
     <div>
@@ -132,8 +133,8 @@ function SignupForm(props) {
           value={avatar}
           placeholder="A picture of you!"
           onChange={handelChange}
-        /> 
-        <br/>
+        />
+        <br />
         <button disabled={!valid}>
           SignUp
         </button>
