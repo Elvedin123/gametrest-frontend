@@ -58,11 +58,12 @@ export const logout = (props) =>
 //   .catch((error) => {
 //     console.log(error)
 //   })
-
+const id = localStorage.getItem('id')
 export const verifyUser = (props) =>
+
   axios({
     method: 'get',
-    url: `${apiUrls.production}/`,
+    url: `${apiUrls.production}/users/${id}`,
     data: props
   })
     .then((res) => {
