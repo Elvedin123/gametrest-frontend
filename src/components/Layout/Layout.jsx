@@ -1,9 +1,9 @@
-import './Layout.css'
+import layoutcss from './Layout.module.css'
 import Nav from '../Layout/Nav/Nav.jsx'
 import Footer from '../Layout/Footer/Footer.jsx'
 
 const Layout = (props) => (
-  <div className='layout'>
+  <div className={layoutcss.layout}>
     <Nav />
     <div className="layout-children">
       {props.children}
