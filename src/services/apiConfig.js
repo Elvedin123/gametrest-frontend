@@ -94,3 +94,18 @@ export const logoutUser = () =>
   .catch((error) => {
     console.log(error)
   })
+
+  const token = localStorage.getItem('token')
+  export const addComment = (comment, userId) => 
+    axios({
+      method: "post",
+      url: `${devProxy}${apiUrls.production}/comment/${userId}`,
+      headers: {authorization: `${token}`},
+      data: comment
+    })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
