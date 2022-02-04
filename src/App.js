@@ -1,7 +1,7 @@
 import Home from "./screens/Home/Home.jsx"
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
-// import LoginForm from "./screens/Login/LoginForm.jsx"
+import LoginForm from "./screens/Login/LoginForm.jsx"
 import SignupForm from "./screens/Signup/SignupForm.jsx";
 import GameDetail from "./screens/GameDetail/GameDetail.jsx";
 import { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home user={user} />}></Route>
-        {/* <Route path="/login" element={<LoginForm />}></Route> */}
+        <Route path="/login" element={<LoginForm />}></Route>
         <Route path="/signup" element={<SignupForm setUser={setUser} />}></Route>
         <Route path="/games/:id" element={<GameDetail />} />
         {/* <Route path="/" elements={<Logout/>}></Route> */}

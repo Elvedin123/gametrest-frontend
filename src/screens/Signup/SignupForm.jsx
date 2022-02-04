@@ -44,7 +44,7 @@ function SignupForm(props) {
     event.preventDefault();
     await createUser(newUser);
     console.log(newUser);
-    navigate('/')
+    navigate('/login')
   };
 
   // const checkIfValid = () => {
@@ -64,7 +64,7 @@ function SignupForm(props) {
     validate();
     console.log("validator");
     return function cleanUp() {
-      navigate("/")
+      // navigate("/")
     }
   }, [password, confirmPassword, navigate, validate]);
 

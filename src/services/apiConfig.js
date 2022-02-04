@@ -1,5 +1,3 @@
-
-
 import axios from 'axios'
 
 const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
