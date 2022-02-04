@@ -1,11 +1,17 @@
 .home{
-  max-width: 80%;
- max-height: 100%;
-  display: grid;
-  grid-template-rows: repeat(3, 500px);
-  gap: 50px;
-  grid-auto-flow: column;
-  grid-auto-columns: 500px;
-  justify-content: center;
-  margin:50px auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin-top: 100px;
 }
+
+.title{
+  color:white
+}
+
+

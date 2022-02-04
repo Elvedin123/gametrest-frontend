@@ -26,6 +26,7 @@ const Home = () => {
       <Header
         title="Red Dead Redemption 2"
       />
+      <h3 className={homepagecss.title} >Hot Games</h3>
       <div className={homepagecss.home}>
 
         {games.map((game) => {
