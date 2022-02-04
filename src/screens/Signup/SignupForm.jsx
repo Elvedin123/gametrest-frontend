@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { createUser } from "../../services/apiConfig.js";
 import { useNavigate } from "react-router-dom"
-
+import signupcss from './SignupForm.module.css'
 
 const defaultNewUser = {
   userName: "",
@@ -70,7 +70,10 @@ function SignupForm(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <h3 className={signupcss.header}>Free Sign Up</h3>
+      <form
+        className={signupcss.form_body}
+        onSubmit={handleSubmit}>
         <h3>{validationMessage}</h3>
         <input
           required
