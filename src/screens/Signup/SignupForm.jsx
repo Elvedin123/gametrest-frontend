@@ -141,7 +141,7 @@ function SignupForm(props) {
           type="text"
           id="avatar"
           value={avatar}
-          placeholder="A picture of you!"
+          placeholder="Profile Avatar URL!"
           onChange={handelChange}
         />
         <br />

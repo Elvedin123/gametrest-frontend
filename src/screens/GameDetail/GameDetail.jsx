@@ -4,9 +4,10 @@ import Layout from '../../components/Layout/Layout.jsx';
 // import { EditComment } from './EditComment'
 // import { CommentForm } from './CommentForm'
 // import { DeleteComment } from './DeleteComment' 
+import Favorites from './Favorites/AddFavorites.jsx';
+
 import { getGames } from '../../services/gamesApi.js';
 import CommentForm from './Comments/CommentForm.jsx';
-import AddFavorites from './Favorites/AddFavorites.jsx'
 import gamesdetailcss from './GameDetail.module.css'
 
 export default function GameDetail() {
@@ -40,7 +41,7 @@ export default function GameDetail() {
           <h1 className={gamesdetailcss.game_name}>{games.name}</h1>
           <div className={gamesdetailcss.games_details}>
             <div className={gamesdetailcss.genre}>
-              <h2>Genre:  </h2>
+              <h2>Genre:</h2>
               {games.genres.map((genre) => {
                 return (
                   <p key={genre.id}> {genre.name}</p>
@@ -60,11 +61,11 @@ export default function GameDetail() {
         </div>
       </div>
       <div className={gamesdetailcss.comment_section}>
-        <CommentForm gameId={games.id}/>
-        <AddFavorites 
-        gameId={games.id}
-        gameName={games.name}
-        gameImg={games.background_image}
+        <CommentForm />
+        <Favorites
+          gameId={games.id}
+          gameName={games.name}
+          gameImg={games.background_image}
         />
       </div>
 
