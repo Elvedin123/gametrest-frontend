@@ -99,7 +99,7 @@ export const logoutUser = () =>
   export const addComment = (comment, userId) => 
     axios({
       method: "post",
-      url: `${devProxy}${apiUrls.production}/comment/${userId}`,
+      url: `${apiUrls.production}/comment/${userId}`,
       headers: {authorization: `${token}`},
       data: comment
     })
