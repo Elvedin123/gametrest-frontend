@@ -10,7 +10,7 @@ const apiUrls = {
 export const createUser = (props) =>
   axios({
     method: 'post',
-    url: `${apiUrls.production}/signup`,
+    url: `${devProxy}${apiUrls.production}/signup`,
     data: props,
   })
     .then((res) => {
@@ -23,7 +23,7 @@ export const createUser = (props) =>
 export const loginUser = (props) =>
   axios({
     method: 'post',
-    url: `${apiUrls.production}/login`,
+    url: `${devProxy}${apiUrls.production}/login`,
     data: props,
   })
     .then((res) => {
@@ -36,7 +36,7 @@ export const loginUser = (props) =>
 export const logout = (props) =>
   axios({
     method: 'get',
-    url: `${apiUrls.production}/logout`,
+    url: `${devProxy}${apiUrls.production}/logout`,
     data: props
   })
     .then((res) => {
@@ -52,7 +52,7 @@ export const verifyUser = (props) =>
 
   axios({
     method: 'get',
-    url: `${apiUrls.production}/users/${id}`,
+    url: `${devProxy}${apiUrls.production}/users/${id}`,
     data: props
   })
     .then((res) => {
@@ -68,7 +68,7 @@ export const verifyUser = (props) =>
 export const logoutUser = () =>
   axios({
     method: 'get',
-    url: `${apiUrls.production}/logout`
+    url: `${devProxy}${apiUrls.production}/logout`
   })
 
     .then((res) => {
@@ -99,7 +99,7 @@ export const addComment = (comment, userId) =>
 export const addFavorite = (favorite, userId) =>
   axios({
     method: "post",
-    url: `${apiUrls.production}/favorite/${userId}`,
+    url: `${devProxy}${apiUrls.production}/favorite/${userId}`,
     headers: { authorization: `${token}` },
     data: favorite
   })
@@ -131,7 +131,7 @@ export const getAllComments = () =>
 export const editUserComments = (comment, userId) => {
   axios({
     method: "put",
-    url: `${apiUrls.production}/users/comments/${userId}`,
+    url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
     data: comment
   })
     .then((res) => {
@@ -147,7 +147,7 @@ export const editUserComments = (comment, userId) => {
 export const deleteUserComments = (comment, userId) => {
   axios({
     method: "delete",
-    url: `${apiUrls.production}/users/comments/${userId}`,
+    url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
     data: comment
   })
     .then((res) => {

@@ -1,6 +1,18 @@
 import Layout from "../../components/Layout/Layout"
 import profilepagecss from "./ProfilePage.module.css"
+import { addFavorite } from "../../services/apiConfig.js"
+import { useEffect, useState } from "react"
 function ProfilePage() {
+  const [favorites, setFavorites] = useState([])
+
+  useEffect(() => {
+    const displayFavs = async () => {
+      const showFavs = await addFavorite()
+      setFavorites(showFavs)
+      console.log(showFavs);
+    }
+    displayFavs()
+  }, [])
   return (
     <div >
       <Layout>
