@@ -10,8 +10,15 @@
   margin-top: 100px;
 }
 
+
 .title{
-  color:white
+  color: red;
+  position: relative;
+  top: 100px;
+  margin-left: -70%;
+  font-size: 36px;
 }
 
-
+Link{
+  text-decoration: none;
+}

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+
+
 /* /.navbar{
   background-color: #D40107;
   position: relative;
@@ -13,8 +17,8 @@
   display: flex;
     flex-wrap: wrap;
     align-content: stretch;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
+    justify-content: space-between;  
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
 }
 
  .noauth{
@@ -24,8 +28,29 @@
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
 } 
+
+
+.logo{
+  padding: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: black;
+
+}
+
+.white_logo{
+  color:white
+}
+
+.black_logo{
+  color:black
+}
+link{
+  text-decoration: none;
+}
+
 /* .noAuthHeader{
   background-color: #ff0008;
   position: absolute;

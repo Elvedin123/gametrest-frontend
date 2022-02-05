@@ -4,12 +4,12 @@ import cardscss from "./Cards.module.css";
 
 
 export default function Cards(props) {
-  const { imageURL, title, genre } = props;
+  const { imageURL, title } = props;
 
   return (
     <div className={cardscss.card_container}>
       <div className={cardscss.card_content} >
-        <a><button className={cardscss.like_button} >Like</button></a>
+        <button className={cardscss.like_button} >Like</button>
         <div className={cardscss.image_container}>
           <img className={cardscss.game_image} src={imageURL} alt='' />
         </div>

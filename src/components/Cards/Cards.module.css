@@ -2,13 +2,16 @@
   border-radius: 0%;
   /* display: flex;
 justify-content: flex-end; */
-  position: absolute;
-padding-left: 20px;
+position: relative;
+top: 80px; 
+left: 120px; 
   padding: 0;
   height: 30px;
   width: 50px;
   background-color: white;
   color: black;
+  /* border: solid 1px black; */
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
 }
 .game_image{
   /* position: relative; */

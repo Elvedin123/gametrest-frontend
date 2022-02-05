@@ -70,7 +70,7 @@ function SignupForm(props) {
 
   return (
     <div>
-      <Link className={signupcss.back_arrow} to='/'>GameTerest</Link>
+      <Link className={signupcss.back_arrow} to='/'><span className={signupcss.white_logo}>Game</span><span className={signupcss.red_logo}>terest</span></Link>
       <h3 className={signupcss.header}>Free Sign Up</h3>
       <form
         className={signupcss.form_body}

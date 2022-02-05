@@ -1,0 +1,19 @@
+.form {
+  width: 40%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 20px;
+ 
+}
+.form_body{
+  display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: baseline;
+    margin-left: 50px;
+}
+
+.button{
+background-color: #D40107
+}

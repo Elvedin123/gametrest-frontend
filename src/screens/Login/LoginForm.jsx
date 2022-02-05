@@ -73,7 +73,7 @@ function LoginForm(props) {
 
   return (
     <div>
-      <Link className={logincss.back_arrow} to='/'>GameTerest</Link>
+      <Link className={logincss.back_arrow} to='/'><span className={logincss.white_logo}>Game</span><span className={logincss.black_logo}>terest</span></Link>
       <h3 className={logincss.header}>Login</h3>
       <div className={logincss.form_body}>
         <form

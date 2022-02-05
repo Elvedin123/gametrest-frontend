@@ -1,3 +1,5 @@
+@i@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Poppins:wght@300&family=Raleway:wght@200;300;500&display=swap');
+
 /* import */
 .game_container{
   display: flex;
@@ -39,9 +41,32 @@ height: 100%;
   display: flex;
 }
 
+.genre_text{
+ padding-top: 12px;
+ padding-left: 5px;
+ font-family: 'Raleway', sans-serif;
+}
+
+.decription_text{
+  font-family: 'Raleway', sans-serif;
+}
+
 .reviews{
   color: white;
 }
 .review_section{
   background-color: white ;
+}
+
+.fav_button{
+border-radius: 0%;
+position: relative;
+top: 110px; 
+left: 320px; 
+  padding: 0;
+  height: 50px;
+  width: 90px;
+  background-color: #D40107;
+  color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
 }
