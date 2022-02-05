@@ -10,6 +10,7 @@ left: 120px;
   width: 50px;
   background-color: white;
   color: black;
+  border: solid 1px black;
 }
 .game_image{
   /* position: relative; */

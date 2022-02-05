@@ -19,7 +19,7 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
   <div className={navcss.noauth} >
     <div className={navcss.logo}>
-      <NavLink className="logo" to="/"><span>Game</span>terest</NavLink>
+      <NavLink className="logo" to="/"><span className={navcss.white_logo}>Game</span><span className={navcss.black_logo}>terest</span></NavLink>
     </div>
     <div className={navcss.nav_buttons}>
       <NavLink to="/signup"><button>Sign Up</button></NavLink>
