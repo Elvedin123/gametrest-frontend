@@ -23,7 +23,7 @@ export const createUser = (props) =>
 export const loginUser = (props) =>
   axios({
     method: 'post',
-    url: `${apiUrls.production}/login`,
+    url: `${devProxy}${apiUrls.production}/login`,
     data: props,
   })
     .then((res) => {
@@ -46,18 +46,7 @@ export const logout = (props) =>
       console.log(error)
     })
 
-// export const createComment = (props) => 
-// axios({
-//   method: 'post',
-//   url: `${devProxy}${apiUrls.production}/signup`,
-//   data: props,
-// })
-//   .then((res) => {
-//     return res.data
-//   })
-//   .catch((error) => {
-//     console.log(error)
-//   })
+
 const id = localStorage.getItem('id')
 export const verifyUser = (props) =>
 
@@ -74,20 +63,14 @@ export const verifyUser = (props) =>
     })
 
 
-// export const verifyUser = async () => {
-//   const token = localStorage.getItem('token')
-//   if (token) {
-//     const res = await axios.get('/verify')
-//     return res.data
-//   }
-//   return false
-// }
+
 
 export const logoutUser = () =>
   axios({
     method: 'get',
     url: `${apiUrls.production}/logout`
   })
+
     .then((res) => {
       return res.data
     })
@@ -102,6 +85,23 @@ export const addComment = (comment, userId) =>
     url: `${apiUrls.production}/comment/${userId}`,
     headers: { authorization: `${token}` },
     data: comment
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+
+
+export const addFavorite = (favorite, userId) =>
+  axios({
+    method: "post",
+    url: `${devProxy}${apiUrls.production}/favorite/${userId}`,
+    headers: { authorization: `${token}` },
+    data: favorite
   })
     .then((res) => {
       return res.data

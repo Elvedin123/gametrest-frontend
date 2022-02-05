@@ -22,8 +22,7 @@ export default function CommentForm(props) {
     }))
   }
   
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+    const handleSubmit = async () => {
       await addComment(comment, userId)
       console.log(comment)
     }
@@ -35,9 +34,9 @@ export default function CommentForm(props) {
         value={comment.comment} //Bad naming convention?
         type="text"
         placeholder="Tell us your thoughts on this game!"
-        onChange={(e) => {handleChange(e)}}
+        onChange={handleChange}
       />
-      <button onClick={(e) => {handleSubmit(e)}}>Submit</button>
+      <button onClick={handleSubmit}>Submit</button>
     </form>
   );
 }

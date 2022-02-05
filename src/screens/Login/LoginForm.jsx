@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react"
 import { loginUser } from "../../services/apiConfig.js"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import logincss from './LoginForm.module.css'
 
 const defaultUser = {
@@ -40,11 +40,12 @@ function LoginForm(props) {
       // console.log(user.data.user.userName)
       console.log(user.data.user._id)
       localStorage.setItem("token", user.data.token);
-      localStorage.setItem("id", user?.data.user._id);
+      localStorage.setItem("id", user?.data?.user._id);
 
       navigate('/')
     } catch (error) {
       console.error(error)
+      console.log(form)
 
       setForm({
         isError: true,
@@ -54,6 +55,7 @@ function LoginForm(props) {
       })
     }
   }
+  // console.log(form)
 
   const handleError = () => {
     const toggleForm = form.isError ? "danger" : "";
@@ -71,6 +73,7 @@ function LoginForm(props) {
 
   return (
     <div>
+      <Link className={logincss.back_arrow} to='/'>GameTerest</Link>
       <h3 className={logincss.header}>Login</h3>
       <div className={logincss.form_body}>
         <form
