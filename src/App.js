@@ -6,6 +6,7 @@ import SignupForm from "./screens/Signup/SignupForm.jsx";
 import GameDetail from "./screens/GameDetail/GameDetail.jsx";
 import { useEffect, useState } from "react";
 import { verifyUser } from "./services/apiConfig.js";
+import ProfilePage from "./screens/Profilepage/ProfilePage.jsx";
 
 // import Logout from "./screens/Logout/Logout.jsx"
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<LoginForm />}></Route>
         <Route path="/signup" element={<SignupForm setUser={setUser} />}></Route>
         <Route path="/games/:id" element={<GameDetail />} />
+        <Route path="/profile" element={<ProfilePage />} />
         {/* <Route path="/" elements={<Logout/>}></Route> */}
       </Routes>
     </div>
