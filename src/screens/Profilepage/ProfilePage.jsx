@@ -13,7 +13,9 @@ function ProfilePage() {
             <button>Edit</button>
           </div>
           <h2 className={profilepagecss.favorites_title}>Favorites</h2>
-          <div className={profilepagecss.favorites_container}></div>
+          <div className={profilepagecss.favorites_container}>
+
+          </div>
         </div>
       </Layout>
     </div>

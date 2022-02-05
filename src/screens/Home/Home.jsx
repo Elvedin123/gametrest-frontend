@@ -32,7 +32,7 @@ const Home = () => {
         {games.map((game) => {
 
           return (
-            <Link key={game.id} to={`/games/${game.id}`}>
+            <Link className={homepagecss.title_test} key={game.id} to={`/games/${game.id}`}>
               <div>
                 <Cards
                   imageURL={game.background_image}
