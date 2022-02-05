@@ -126,3 +126,35 @@ export const getAllComments = () =>
     .catch((error) => {
       console.log(error)
     })
+
+// For Editing user comments THIS COULD BE WRONG, IDK - Hampton
+export const editUserComments = (comment, userId) => {
+  axios({
+    method: "put",
+    url: `${apiUrls.production}/users/comments/${userId}`,
+    data: comment
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+//For Deleting user comments THIS COULD BE WRONG, IDK - Hampton
+export const deleteUserComments = (comment, userId) => {
+  axios({
+    method: "delete",
+    url: `${apiUrls.production}/users/comments/${userId}`,
+    data: comment
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}

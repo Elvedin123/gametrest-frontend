@@ -24,7 +24,7 @@ export default function GameDetail() {
     fetchGames();
   }, [id])
 
-  console.log(games)
+  // console.log(games)
 
   if (!isLoaded) {
     return <h1>Spawning...</h1>
@@ -34,7 +34,11 @@ export default function GameDetail() {
     <Layout>
       <div className={gamesdetailcss.game_container}>
         <div className={gamesdetailcss.image_container}>
-          <button className={gamesdetailcss.fav_button}>Add To Favorites</button>
+          <Favorites
+            gameId={games.id}
+            gameName={games.name}
+            gameImg={games.background_image}
+          />
           <img className={gamesdetailcss.image} src={games.background_image} alt={games.name} />
         </div>
 
@@ -65,11 +69,6 @@ export default function GameDetail() {
       </div>
       <div className={gamesdetailcss.comment_section}>
         <CommentForm />
-        <Favorites
-          gameId={games.id}
-          gameName={games.name}
-          gameImg={games.background_image}
-        />
       </div>
 
     </Layout>
