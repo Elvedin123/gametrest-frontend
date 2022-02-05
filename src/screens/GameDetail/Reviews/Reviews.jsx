@@ -23,7 +23,6 @@ export default function Reviews(props) {
   return (
 
     <div>
-      TEST 1
       {comments.map((comment) => {
         return (
           comment.comments.map((review) => {

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
+const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
 
   production: 'https://gameterest-backend.herokuapp.com/api',
@@ -82,7 +82,7 @@ const token = localStorage.getItem('token')
 export const addComment = (comment, userId) =>
   axios({
     method: "post",
-    url: `${apiUrls.production}/comment/${userId}`,
+    url: `${devProxy}${apiUrls.production}/comment/${userId}`,
     headers: { authorization: `${token}` },
     data: comment
   })
@@ -117,7 +117,7 @@ export const addFavorite = (favorite, userId) =>
 export const getAllComments = () =>
   axios({
     method: "get",
-    url: `${apiUrls.production}/users`,
+    url: `${devProxy}${apiUrls.production}/users`,
   })
     .then((res) => {
       return res.data
