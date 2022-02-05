@@ -23,7 +23,7 @@ export const createUser = (props) =>
 export const loginUser = (props) =>
   axios({
     method: 'post',
-    url: `${apiUrls.production}/login`,
+    url: `${devProxy}${apiUrls.production}/login`,
     data: props,
   })
     .then((res) => {
@@ -63,7 +63,7 @@ export const verifyUser = (props) =>
 
   axios({
     method: 'get',
-    url: `${devProxy}${apiUrls.production}/users/${id}`,
+    url: `${apiUrls.production}/users/${id}`,
     data: props
   })
     .then((res) => {
