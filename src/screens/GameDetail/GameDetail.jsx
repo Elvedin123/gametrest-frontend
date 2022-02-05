@@ -5,7 +5,7 @@ import Layout from '../../components/Layout/Layout.jsx';
 // import { CommentForm } from './CommentForm'
 // import { DeleteComment } from './DeleteComment' 
 import Favorites from './Favorites/AddFavorites.jsx';
-import Reviews from './Reviews/Reviews.jsx';
+// import Reviews from './Reviews/Reviews.jsx';
 import { getGames } from '../../services/gamesApi.js';
 import CommentForm from './Comments/CommentForm.jsx';
 import gamesdetailcss from './GameDetail.module.css'
@@ -30,6 +30,7 @@ export default function GameDetail() {
     return <h1>Spawning...</h1>
   }
 
+  // console.log(games.id)
   return (
     <Layout>
       <div className={gamesdetailcss.game_container}>
