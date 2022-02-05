@@ -57,14 +57,16 @@ export default function GameDetail() {
           </div>
           <h1 className={gamesdetailcss.reviews}>Reviews</h1>
           <div className={gamesdetailcss.review_section}>
-            <Reviews
+            {/* <Reviews
               gameId={games.id}
-            />
+            /> */}
           </div>
         </div>
       </div>
       <div className={gamesdetailcss.comment_section}>
-        <CommentForm />
+        <CommentForm
+          gameId={games.id}
+        />
         <Favorites
           gameId={games.id}
           gameName={games.name}
