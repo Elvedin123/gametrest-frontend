@@ -1,6 +1,7 @@
 .footer{
   display: block;
-    height: 300px;
+    height: 250px;
+    margin-top: auto;
     background-color: #D40107;
 }
 
