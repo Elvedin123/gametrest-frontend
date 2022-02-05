@@ -1,6 +1,7 @@
 import Layout from "../../components/Layout/Layout"
 import profilepagecss from "./ProfilePage.module.css"
 function ProfilePage() {
+
   return (
     <div >
       <Layout>
@@ -14,7 +15,7 @@ function ProfilePage() {
           </div>
           <h2 className={profilepagecss.favorites_title}>Favorites</h2>
           <div className={profilepagecss.favorites_container}>
-
+            { }
           </div>
         </div>
       </Layout>

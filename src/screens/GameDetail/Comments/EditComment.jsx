@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { getAllComments, editUserComments } from '../../../services/apiConfig.js';
 
 const default_input = {
   comment: "",
@@ -11,7 +12,7 @@ export default function EditComment() {
 
   useEffect(() => {
     const fetchComment = async () => {
-      const comment = await getComment(id) //Depends on ConfigApi?
+      const comment = await getAllComments(id) //Depends on ConfigApi?
       setComment(comment)
     }
     fetchComment();
@@ -27,7 +28,7 @@ export default function EditComment() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    await updateComment(id, comment) //Also from api??
+    await editUserComments(id, comment) //Also from api??
 
   }
 

@@ -30,10 +30,8 @@ export default function Reviews(props) {
             // console.log(review.game)
             if (Number(review.game) === props.gameId) {
               return (
-                <div>
-                  TEST 2
+                <div key={comment._id}>
                   <p>
-                    test
                     {review.comment}
                   </p>
                 </div>
