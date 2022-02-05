@@ -68,5 +68,5 @@ left: 320px;
   width: 90px;
   background-color: #D40107;
   color: white;
-  border: solid 1px black;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
 }
