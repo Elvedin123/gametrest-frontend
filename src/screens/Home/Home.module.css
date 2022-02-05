@@ -18,7 +18,9 @@
   margin-left: -70%;
   font-size: 36px;
 }
-
+.title_test{
+  text-decoration: none;
+}
 Link{
   text-decoration: none;
 }

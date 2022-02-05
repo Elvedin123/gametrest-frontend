@@ -7,7 +7,7 @@ import navcss from './Nav.module.css'
 const authenticatedOptions = (
   <div className={navcss.auth}>
     <div className={navcss.logo}>
-      <NavLink to="/"><span className={navcss.white_logo}>Game</span><span className={navcss.black_logo}>terest</span></NavLink>
+      <NavLink className={navcss.logo_title} to="/"><span className={navcss.white_logo}>Game</span><span className={navcss.black_logo}>terest</span></NavLink>
     </div>
     <div className={navcss.nav_buttons}>
       <NavLink className="link" to="/"><button>Home</button></NavLink>
