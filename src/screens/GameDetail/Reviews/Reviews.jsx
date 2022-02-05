@@ -23,12 +23,11 @@ export default function Reviews(props) {
   return (
 
     <div>
-      TEST 1
       {comments.map((comment) => {
         return (
           comment.comments.map((review) => {
 
-            console.log(review.game)
+            // console.log(review.game)
             if (Number(review.game) === props.gameId) {
               return (
                 <div>

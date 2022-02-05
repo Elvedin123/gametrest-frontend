@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { addFavorite } from "../../../services/apiConfig";
-
+import favbuttoncss from './AddFavorite.module.css'
 export default function Favorites(props) {
 
   const newFavorite = {
@@ -20,8 +20,13 @@ export default function Favorites(props) {
   }
 
   return (
-  <div>
-    <button onClick={(e) => {handleSubmit(e)}}>Add to Favorites</button>
-  </div>
+    <div>
+      <button
+        className={favbuttoncss.fav_button}
+        onClick={(e) => { handleSubmit(e) }}
+      >Add to Favorites</button>
+
+      <button ></button>
+    </div>
   );
 }
