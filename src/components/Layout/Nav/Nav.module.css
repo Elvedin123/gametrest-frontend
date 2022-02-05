@@ -33,3 +33,12 @@
     align-content: stretch;
     justify-content: space-between;
 }
+
+.authHeader{
+  background-color: #d4010800;
+  position: absolute;
+  display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+}

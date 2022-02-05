@@ -6,7 +6,7 @@ import navcss from './Nav.module.css'
 // if token is true, 
 
 const authenticatedOptions = (
-  <div className={navcss.auth}>
+  <div className={navcss.authHeader} className={navcss.auth}>
     <NavLink className="logo" to="/">Gameterest</NavLink>
     <NavLink className="link" to="/"><button>Home</button></NavLink>
     <Logout />
@@ -14,10 +14,10 @@ const authenticatedOptions = (
   </div>
 )
 const unauthenticatedOptions = (
-  <div className={navcss.noauthheader} className={navcss.noauth}>
+  <div className={navcss.noAuthHeader} className={navcss.noauth}>
     <NavLink className="logo" to="/">Gameterest</NavLink>
-    <NavLink className={navcss.noauth} to="/signup"><button>Sign Up</button></NavLink>
-    <NavLink className={navcss.noauth} to="/login"><button>Log In</button></NavLink>
+    <NavLink to="/signup"><button>Sign Up</button></NavLink>
+    <NavLink to="/login"><button>Log In</button></NavLink>
   </div>
 )
 const Nav = () => {
