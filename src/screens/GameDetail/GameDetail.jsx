@@ -34,6 +34,7 @@ export default function GameDetail() {
     <Layout>
       <div className={gamesdetailcss.game_container}>
         <div className={gamesdetailcss.image_container}>
+          <button className={gamesdetailcss.fav_button}>Add To Favorites</button>
           <img className={gamesdetailcss.image} src={games.background_image} alt={games.name} />
         </div>
 

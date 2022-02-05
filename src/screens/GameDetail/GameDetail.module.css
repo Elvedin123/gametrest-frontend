@@ -57,3 +57,16 @@ height: 100%;
 .review_section{
   background-color: white ;
 }
+
+.fav_button{
+border-radius: 0%;
+position: relative;
+top: 110px; 
+left: 320px; 
+  padding: 0;
+  height: 50px;
+  width: 90px;
+  background-color: #D40107;
+  color: white;
+  border: solid 1px black;
+}
