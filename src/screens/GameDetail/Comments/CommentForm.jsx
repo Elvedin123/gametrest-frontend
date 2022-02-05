@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { addComment } from '../../../services/apiConfig';
 import commentformcss from './CommentForm.module.css'
+// import { useParams } from 'react-router-dom';
 
 
 
 export default function CommentForm(props) {
   // Schema calls for game, comment, and likes. I am assuming we just want to  edit the comment
-
+console.log(props.gameId)
+  // const { id } = useParams()
   const default_input = {
     game: props.gameId,
     comment: "",
@@ -24,6 +26,7 @@ export default function CommentForm(props) {
   }
 
   const handleSubmit = async () => {
+    // e.preventDefault()
     await addComment(comment, userId)
     console.log(comment)
   }
@@ -36,7 +39,7 @@ export default function CommentForm(props) {
         value={comment.comment} //Bad naming convention?
         type="text"
         placeholder="Tell us your thoughts on this game!"
-        onChange={handleChange}
+        onChange={(e) => {handleChange(e)}}
       />
       <button className={commentformcss.button} onClick={handleSubmit}>Submit</button>
     </form>
