@@ -40,11 +40,12 @@ function LoginForm(props) {
       // console.log(user.data.user.userName)
       console.log(user.data.user._id)
       localStorage.setItem("token", user.data.token);
-      localStorage.setItem("id", user?.data.user._id);
+      localStorage.setItem("id", user?.data?.user._id);
 
       navigate('/')
     } catch (error) {
       console.error(error)
+      console.log(form)
 
       setForm({
         isError: true,
@@ -54,6 +55,7 @@ function LoginForm(props) {
       })
     }
   }
+  // console.log(form)
 
   const handleError = () => {
     const toggleForm = form.isError ? "danger" : "";
