@@ -22,7 +22,7 @@ const Home = () => {
   }, [])
   // console.log(games);
   return (
-    <Layout >
+    <div>
       <Header
         title="Red Dead Redemption 2"
       />
@@ -43,7 +43,7 @@ const Home = () => {
           )
         })}
       </div>
-    </Layout>
+    </div>
   )
 }
 
