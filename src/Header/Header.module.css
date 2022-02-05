@@ -8,7 +8,7 @@
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  /* position: relative; */
 
 }
 
@@ -22,4 +22,15 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+}
+
+.title_container{
+ position: relative;
+ top: 245px; 
+ right: 290px; 
+ font-size: 95px;
+ color: white;
+ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
 }

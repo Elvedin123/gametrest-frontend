@@ -1,17 +1,33 @@
+.like_button{
+  border-radius: 0%;
+  /* display: flex;
+justify-content: flex-end; */
+position: relative;
+top: 80px; 
+left: 120px; 
+  padding: 0;
+  height: 30px;
+  width: 50px;
+  background-color: white;
+  color: black;
+}
 .game_image{
+  /* position: relative; */
+  
   width:350px;
    height: 400px;
    object-position: center;
    object-fit: cover;
    margin-right: 10px;
    border-radius: 10%;
-   margin-top: 20px;
+   margin-top: 5px;
   
   
   }
   .card_container {
+   
     width: 400px;
-    height: 500px;
+    height: 600px;
     overflow: hidden;
     color:white;
     margin:25px;
