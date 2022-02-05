@@ -22,7 +22,8 @@ const unauthenticatedOptions = (
       <NavLink className="logo" to="/"><span className={navcss.white_logo}>Game</span><span className={navcss.black_logo}>terest</span></NavLink>
     </div>
     <div className={navcss.nav_buttons}>
-      <NavLink to="/signup"><button>Sign Up</button></NavLink>
+      <NavLink
+        to="/signup"><button>Sign Up</button></NavLink>
       <NavLink to="/login"><button>Log In</button></NavLink>
     </div>
   </div>
