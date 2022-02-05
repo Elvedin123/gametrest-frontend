@@ -22,10 +22,11 @@ const Home = () => {
   }, [])
   // console.log(games);
   return (
-    <div>
+    <Layout>
       <Header
         title="Red Dead Redemption 2"
       />
+      <h3 className={homepagecss.title} >Hot Games</h3>
       <div className={homepagecss.home}>
 
         {games.map((game) => {
@@ -43,7 +44,7 @@ const Home = () => {
           )
         })}
       </div>
-    </div>
+    </Layout>
   )
 }
 

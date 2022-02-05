@@ -1,35 +1,36 @@
-.navbar{
+/* /.navbar{
   background-color: #D40107;
   position: relative;
   display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-between;
-}
+}  */
 
-.auth{
+ .auth{
   background-color: #D40107;
   position: relative;
   display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-between;
+    border-bottom: 1px solid black;
 }
 
-.noAuth{
+ .noauth{
   background-color: #D40107;
   position: relative;
   display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-between;
-}
-
-.noAuthHeader{
-  background-color: #d4010800;
+    border-bottom: 1px solid black;
+} 
+/* .noAuthHeader{
+  background-color: #ff0008;
   position: absolute;
   display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-between;
-}
+}  */

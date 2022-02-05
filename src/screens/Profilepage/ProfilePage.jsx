@@ -1,8 +1,8 @@
 import Nav from "../../components/Layout/Nav/Nav.jsx"
-import profilepagecss from "./ProfilePage.module.css"
+// import profilepagecss from "./ProfilePage.module.css"
 function ProfilePage() {
   return (<div>
-    <Nav className={profilepagecss.profilenav} />
+    <Nav />
     <div className=""></div>
   </div>
   )
