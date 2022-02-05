@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
+// const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
 
   production: 'https://gameterest-backend.herokuapp.com/api',
@@ -10,7 +10,7 @@ const apiUrls = {
 export const createUser = (props) =>
   axios({
     method: 'post',
-    url: `${devProxy}${apiUrls.production}/signup`,
+    url: `${apiUrls.production}/signup`,
     data: props,
   })
     .then((res) => {
@@ -23,7 +23,7 @@ export const createUser = (props) =>
 export const loginUser = (props) =>
   axios({
     method: 'post',
-    url: `${devProxy}${apiUrls.production}/login`,
+    url: `${apiUrls.production}/login`,
     data: props,
   })
     .then((res) => {
@@ -99,12 +99,29 @@ export const addComment = (comment, userId) =>
 export const addFavorite = (favorite, userId) =>
   axios({
     method: "post",
-    url: `${devProxy}${apiUrls.production}/favorite/${userId}`,
+    url: `${apiUrls.production}/favorite/${userId}`,
     headers: { authorization: `${token}` },
     data: favorite
   })
     .then((res) => {
       return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+// Getting the Comments
+// const token = localStorage.getItem('token')
+
+//Fetching all users
+export const getAllComments = () =>
+  axios({
+    method: "get",
+    url: `${apiUrls.production}/users`,
+  })
+    .then((res) => {
+      return res.data
+
     })
     .catch((error) => {
       console.log(error)
