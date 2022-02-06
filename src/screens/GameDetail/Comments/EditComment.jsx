@@ -35,14 +35,14 @@ export default function EditComment() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        id="comment"
-        input={comment}
-        value={comment.comment} //This is supposed to call from the schema
-        onChange={handleChange}
-      />
-      <button>Edit</button>
-    </form>
+    // <form onSubmit={handleSubmit}>
+    //   <input
+    //     id="comment"
+    //     input={comment}
+    //     value={comment.comment} //This is supposed to call from the schema
+    //     onChange={handleChange}
+    //   />
+    <button onChange={handleChange} onClick={handleSubmit}>Edit</button>
+    // {/* </form> */}
   );
 }
