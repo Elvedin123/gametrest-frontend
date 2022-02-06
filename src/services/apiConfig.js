@@ -176,10 +176,10 @@ export const getUserFavorites = (userId) => {
 }
 
 //FINDING SPECIFIC USER'S AVATAR
-export const findUserAvatar = (props) => {
+export const findUserAvatar = () => {
   axios({
     method: "get",
-    url: `${apiUrls.production}/${props}`,
+    url: `${devProxy}${apiUrls.production}/users/${id}`,
   })
     .then((res) => {
       return res.data
