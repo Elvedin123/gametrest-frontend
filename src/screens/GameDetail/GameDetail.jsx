@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout.jsx';
-// import { CommentForm } from './CommentForm'
-// import { DeleteComment } from './DeleteComment' 
 import Favorites from './Favorites/AddFavorites.jsx';
 import Reviews from './Reviews/Reviews.jsx';
 import { getGames } from '../../services/gamesApi.js';

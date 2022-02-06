@@ -31,12 +31,11 @@ export default function Reviews(props) {
         return (
           comment.comments.map((review) => {
 
-            console.log(review.game)
+            // console.log(review.game)
             if (Number(review.game) === props.gameId) {
               return (
 
                 <div key={review._id} >
-                  TEST 2
 
                   <p>
                     {review.comment}
@@ -46,7 +45,7 @@ export default function Reviews(props) {
                   />
                   <DeleteComment
                     // handleToggle={handleToggle}
-                    _id={comment._id}
+                    comment={comment.id}
                   />
                 </div>
 

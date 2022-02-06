@@ -110,8 +110,6 @@ export const addFavorite = (favorite, userId) =>
       console.log(error)
     })
 
-// Getting the Comments
-// const token = localStorage.getItem('token')
 
 //Fetching all users
 export const getAllComments = () =>
@@ -127,12 +125,13 @@ export const getAllComments = () =>
       console.log(error)
     })
 
-// For Editing user comments THIS COULD BE WRONG, IDK - Hampton
-export const editUserComments = (comment, userId) => {
+// /update/comment/:userid/:id  <---- This the route (line 32 routes/users.js)  
+// For Editing user comments 
+export const editUserComments = (comment, userId, id) => {
   axios({
     method: "put",
-    url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
-    header: { authorization: `${token}` },
+    url: `${devProxy}${apiUrls.production}/update/comment/${userId}/${id}`,
+    headers: { authorization: `${token}` },
     data: comment
   })
     .then((res) => {
@@ -144,13 +143,13 @@ export const editUserComments = (comment, userId) => {
     })
 }
 
-//For Deleting user comments THIS COULD BE WRONG, IDK - Hampton
-export const deleteUserComments = (comment, userId) => {
+// /delete/:userid/:id  <---- This the route (line 30 routes/users.js)
+//For Deleting user comments 
+export const deleteUserComments = (userid, id) => {
   axios({
     method: "delete",
-    url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
-    header: { authorization: `${token}` },
-    data: comment
+    url: `${devProxy}${apiUrls.production}/delete/${userid}/${id}`,
+    headers: { authorization: `${token}` },
   })
     .then((res) => {
       return res.data
