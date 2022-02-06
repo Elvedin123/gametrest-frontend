@@ -10,9 +10,10 @@
 .form_body {
   padding: 10px 0px;
   background-color: lightgray;
-  margin: 70px 70px;
+  margin: 50px, auto;
   border-radius: 10px;
-  width: 70vh;
+  max-width:500px; 
+  margin:50px auto; 
   height: 100%;
   text-align: center;
   justify-content: center;

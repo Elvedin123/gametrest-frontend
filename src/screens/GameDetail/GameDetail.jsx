@@ -68,7 +68,7 @@ export default function GameDetail() {
       </div>
       <div className={gamesdetailcss.comment_section}>
 
-        <h3>Share Your Thoughts</h3>
+        <h3 className={gamesdetailcss.comment_text}>Share Your Thoughts</h3>
 
 
         <CommentForm
