@@ -110,6 +110,19 @@ export const addFavorite = (favorite, userId) =>
       console.log(error)
     })
 
+export const getFavorites = (userId) =>
+  axios({
+    method: 'get',
+    url: `${devProxy}${apiUrls.production}/user/favorites/${userId}`,
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+
 // Getting the Comments
 // const token = localStorage.getItem('token')
 
