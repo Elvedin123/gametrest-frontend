@@ -56,7 +56,7 @@ height: 80vh;
   background-color: white ;
 }
 
-.fav_button{
+/* .fav_button{
 border-radius: 0%;
 position: relative;
 top: 20%; 
@@ -67,5 +67,9 @@ left: 80%;
   background-color: #D40107;
   color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
+
   text-align: center;
 }
+
+} */
+

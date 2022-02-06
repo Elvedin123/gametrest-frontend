@@ -36,7 +36,7 @@ export const loginUser = (props) =>
 export const logout = (props) =>
   axios({
     method: 'get',
-    url: `${apiUrls.production}/logout`,
+    url: `${devProxy}${apiUrls.production}/logout`,
     data: props
   })
     .then((res) => {
@@ -52,7 +52,7 @@ export const verifyUser = (props) =>
 
   axios({
     method: 'get',
-    url: `${apiUrls.production}/users/${id}`,
+    url: `${devProxy}${apiUrls.production}/users/${id}`,
     data: props
   })
     .then((res) => {
@@ -68,7 +68,7 @@ export const verifyUser = (props) =>
 export const logoutUser = () =>
   axios({
     method: 'get',
-    url: `${apiUrls.production}/logout`
+    url: `${devProxy}${apiUrls.production}/logout`
   })
 
     .then((res) => {
@@ -82,7 +82,7 @@ const token = localStorage.getItem('token')
 export const addComment = (comment, userId) =>
   axios({
     method: "post",
-    url: `${apiUrls.production}/comment/${userId}`,
+    url: `${devProxy}${apiUrls.production}/comment/${userId}`,
     headers: { authorization: `${token}` },
     data: comment
   })
@@ -109,3 +109,68 @@ export const addFavorite = (favorite, userId) =>
     .catch((error) => {
       console.log(error)
     })
+
+
+//Fetching all users
+export const getAllComments = () =>
+  axios({
+    method: "get",
+    url: `${devProxy}${apiUrls.production}/users`,
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+// /update/comment/:userid/:id  <---- This the route (line 32 routes/users.js)  
+// For Editing user comments 
+export const editUserComments = (comment, userId, id) => {
+  axios({
+    method: "put",
+    url: `${devProxy}${apiUrls.production}/update/comment/${userId}/${id}`,
+    headers: { authorization: `${token}` },
+    data: comment
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+// /delete/:userid/:id  <---- This the route (line 30 routes/users.js)
+//For Deleting user comments 
+export const deleteUserComments = (userid, id) => {
+  axios({
+    method: "delete",
+    url: `${devProxy}${apiUrls.production}/delete/${userid}/${id}`,
+    headers: { authorization: `${token}` },
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+// FOR FETCHNIG USER FAVORITE GAMES
+export const getUserFavorites = (userId) => {
+  axios({
+    method: "get",
+    url: `${devProxy}${apiUrls.production}/users/favorites/${userId}`,
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
