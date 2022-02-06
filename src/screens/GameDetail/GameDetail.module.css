@@ -28,12 +28,14 @@ height: 80vh;
 }
 .detail_container{
   margin: 40px 80px 80px 80px;
+
 }
 .games_details{
   background-color: white;
   border-radius: 5%;
   width: 30vw;
-  padding:20px
+  padding:20px;
+  
 }
 .genre{
   display: flex;
@@ -71,5 +73,55 @@ left: -80%;
   text-align: center;
 }
 
+.comment_section{
+  margin-top: -25%;
+}
+
+.decription_text{
+  overflow: auto;
+}
+
+@media (max-width: 500px) {
+  .games_details {
+    width: 35vh;
+    height: auto;
+   
+  }
+  .image_container{
+  width: 40vh;
+  height: 60vh;
+  margin-right: 30px;
+  }
+
+  .image{
+    width: 40vh;
+  height: 40vh;
+  margin-left: 15px;
+
+  }
+  .game_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: baseline;
+    margin-top: -20px;
+    margin-bottom: -40px;
+  }
+  .fav_button{
+    border-radius: 0%;
+    position: relative;
+    top: 20%; 
+    left: 20px; 
+      padding: 0;
+      height: 50px;
+      width: 90px;
+    }
+    .comment_section{
+      text-align: center;
+    }
+  
+}
 
 
