@@ -25,3 +25,17 @@
 Link{
   text-decoration: none;
 }
+
+@media (max-width: 500px) {
+  .home {
+    width: 100%;
+    height: auto;
+  }
+  .title{
+    color: red;
+    position: relative;
+    top: 100px;
+   
+    font-size: 18px;
+  }
+}
