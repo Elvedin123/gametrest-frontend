@@ -110,6 +110,7 @@ export const addFavorite = (favorite, userId) =>
       console.log(error)
     })
 
+<<<<<<< HEAD
 export const getFavorites = (userId) =>
   axios({
     method: 'get',
@@ -125,6 +126,8 @@ export const getFavorites = (userId) =>
 
 // Getting the Comments
 // const token = localStorage.getItem('token')
+=======
+>>>>>>> 3330d189d45c94ebd31d87e6d441ce9eba980b63
 
 //Fetching all users
 export const getAllComments = () =>
@@ -140,11 +143,13 @@ export const getAllComments = () =>
       console.log(error)
     })
 
-// For Editing user comments THIS COULD BE WRONG, IDK - Hampton
-export const editUserComments = (comment, userId) => {
+// /update/comment/:userid/:id  <---- This the route (line 32 routes/users.js)  
+// For Editing user comments 
+export const editUserComments = (comment, userId, id) => {
   axios({
     method: "put",
-    url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
+    url: `${devProxy}${apiUrls.production}/update/comment/${userId}/${id}`,
+    headers: { authorization: `${token}` },
     data: comment
   })
     .then((res) => {
@@ -156,12 +161,13 @@ export const editUserComments = (comment, userId) => {
     })
 }
 
-//For Deleting user comments THIS COULD BE WRONG, IDK - Hampton
-export const deleteUserComments = (comment, userId) => {
+// /delete/:userid/:id  <---- This the route (line 30 routes/users.js)
+//For Deleting user comments 
+export const deleteUserComments = (userid, id) => {
   axios({
     method: "delete",
-    url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
-    data: comment
+    url: `${devProxy}${apiUrls.production}/delete/${userid}/${id}`,
+    headers: { authorization: `${token}` },
   })
     .then((res) => {
       return res.data
