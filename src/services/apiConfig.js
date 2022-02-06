@@ -171,3 +171,18 @@ export const deleteUserComments = (comment, userId) => {
       console.log(error)
     })
 }
+
+// FOR FETCHNIG USER FAVORITE GAMES
+export const getUserFavorites = (userId) => {
+  axios({
+    method: "get",
+    url: `${devProxy}${apiUrls.production}/users/favorites/${userId}`,
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}

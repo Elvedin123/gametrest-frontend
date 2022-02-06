@@ -16,7 +16,11 @@ function ProfilePage() {
           </div>
           <h2 className={profilepagecss.favorites_title}>Favorites</h2>
           <div className={profilepagecss.favorites_container}>
+<<<<<<< HEAD
             <Userfavorites />
+=======
+            { }
+>>>>>>> 92edfa4ed1fc151fd25164ee0552a3f824006e01
           </div>
         </div>
       </Layout>
