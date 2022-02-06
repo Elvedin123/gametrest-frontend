@@ -1,6 +1,6 @@
 import React from 'react';
 import headercss from './Header.module.css'
-import Nav from '../components/Layout/Nav/Nav.jsx'
+// import Nav from '../components/Layout/Nav/Nav.jsx'
 function Header(props) {
   const { title } = props;
 

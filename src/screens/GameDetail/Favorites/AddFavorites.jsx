@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { addFavorite } from "../../../services/apiConfig";
-
+import favbuttoncss from './AddFavorite.module.css'
+import { useNavigate } from "react-router-dom";
 export default function Favorites(props) {
-
+  const navigate = useNavigate()
   const newFavorite = {
     gameId: props.gameId,
     name: props.gameName,
@@ -17,11 +18,17 @@ export default function Favorites(props) {
     setFavorite(newFavorite)
     await addFavorite(favorite, userId)
     console.log(favorite)
+    navigate("/profile")
   }
 
   return (
-  <div>
-    <button onClick={(e) => {handleSubmit(e)}}>Add to Favorites</button>
-  </div>
+    <div>
+      <button
+        className={favbuttoncss.fav_button}
+        onClick={(e) => { handleSubmit(e) }}
+      >Add to Favorites</button>
+
+      <button ></button>
+    </div>
   );
 }
