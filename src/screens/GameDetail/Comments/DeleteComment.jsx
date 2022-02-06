@@ -1,8 +1,8 @@
-// need to call for api?
+import { deleteUserComments } from "../../../services/apiConfig";
 
-export default function DeleteComment() {
+export default function DeleteComment(props) {
   const handleDelete = async () => {
-    await deletePost(props._id);
+    deleteUserComments(props._id);
     props.handleToggle()
   };
 

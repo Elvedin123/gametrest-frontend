@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAllComments, editUserComments } from '../../../services/apiConfig.js';
+import { useParams } from 'react-router-dom';
 
 const default_input = {
   comment: "",
@@ -28,20 +29,19 @@ export default function EditComment() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    await editUserComments(id, comment) //Also from api??
+    editUserComments(id, comment) //Also from api??
 
   }
 
   return (
-    <Layout>
-      <form onSubmit={handleSubmit}>
-        <input
-          id="comment"
-          input={comment}
-          value={comment.comment} //This is supposed to call from the schema
-          onChange={handleChange}
-        />
-      </form>
-    </Layout>
+    // <form onSubmit={handleSubmit}>
+    //   <input
+    //     id="comment"
+    //     input={comment}
+    //     value={comment.comment} //This is supposed to call from the schema
+    //     onChange={handleChange}
+    //   />
+    // </form>
+    <button onSubmit={handleSubmit} onChange={handleChange}>Edit</button>
   );
 }

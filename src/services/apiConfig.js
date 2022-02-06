@@ -132,6 +132,7 @@ export const editUserComments = (comment, userId) => {
   axios({
     method: "put",
     url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
+    header: { authorization: `${token}` },
     data: comment
   })
     .then((res) => {

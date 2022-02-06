@@ -1,6 +1,8 @@
 
 import { getAllComments } from '../../../services/apiConfig.js';
 import { useState, useEffect } from 'react';
+import EditComment from '../Comments/EditComment.jsx';
+import DeleteComment from '../Comments/DeleteComment.jsx';
 
 export default function Reviews(props) {
 
@@ -37,6 +39,8 @@ export default function Reviews(props) {
                   <p>
                     {review.comment}
                   </p>
+                  <EditComment />
+                  <DeleteComment />
                 </div>
 
               )
@@ -44,8 +48,8 @@ export default function Reviews(props) {
 
           })
         )
-      })}
 
+      })}
     </div>
   );
 }
