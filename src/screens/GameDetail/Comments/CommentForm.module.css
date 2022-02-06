@@ -17,3 +17,13 @@
 .button{
 background-color: #D40107
 }
+
+@media (max-width: 500px) {
+  .form_body{
+    display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+    margin-left: 15px;
+  }
+}

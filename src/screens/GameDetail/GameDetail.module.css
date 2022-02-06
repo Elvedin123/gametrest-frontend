@@ -69,3 +69,45 @@ left: 80%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
   text-align: center;
 }
+
+@media (max-width: 500px) {
+  .games_details {
+    width: 35vh;
+    height: auto;
+   
+  }
+  .image_container{
+  width: 40vh;
+  height: 60vh;
+  margin-right: 30px;
+  }
+
+  .image{
+    width: 40vh;
+  height: 40vh;
+  margin-left: 15px;
+
+  }
+  .game_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: baseline;
+    margin-top: -20px;
+    margin-bottom: -40px;
+  }
+  .fav_button{
+    border-radius: 0%;
+    position: relative;
+    top: 20%; 
+    left: 70%; 
+      padding: 0;
+      height: 50px;
+      width: 90px;
+    }
+    .comment_section{
+      text-align: center;
+    }
+}
