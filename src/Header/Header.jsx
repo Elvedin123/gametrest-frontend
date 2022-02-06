@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <div className={headercss.header_container}>
       {/* <Nav /> */}
-      <div>
+      <div className={headercss.title_box}>
         <h1 className={headercss.title_container}>
           {title}
         </h1>

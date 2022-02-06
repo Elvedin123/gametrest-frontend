@@ -2,13 +2,14 @@
 
 
 
-.App {
+/* .App {
   text-align: center;
   
-}
+} */
 
 h1, h2, h3{
   font-family: 'Poppins', sans-serif;
+  color: #D40107;
 }
 body{
   background-color: black;

@@ -62,6 +62,7 @@ export default function GameDetail() {
         </div>
       </div>
       <div className={gamesdetailcss.comment_section}>
+        <h3>Share Your Thoughts</h3>
         <CommentForm />
         <Favorites
           gameId={games.id}
