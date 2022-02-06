@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout/Layout"
 import profilepagecss from "./ProfilePage.module.css"
+import { addFavorite } from "../../services/apiConfig.js"
+import { useEffect, useState } from "react"
 function ProfilePage() {
 
   return (

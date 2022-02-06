@@ -1,4 +1,4 @@
-// import React from 'react';
+
 import { getAllComments } from '../../../services/apiConfig.js';
 import { useState, useEffect } from 'react';
 
@@ -10,9 +10,9 @@ export default function Reviews(props) {
     const grabComments = async () => {
       const fetchComments = await getAllComments()
       setComments(fetchComments.data)
-      // console.log(fetchComments.data[0].comments);
+
       // setAvatar(fetchComments)
-      // console.log(fetchComments.data)
+
     }
     grabComments()
   }, [])
@@ -27,10 +27,13 @@ export default function Reviews(props) {
         return (
           comment.comments.map((review) => {
 
-            // console.log(review.game)
+            console.log(review.game)
             if (Number(review.game) === props.gameId) {
               return (
-                <div key={comment._id}>
+
+                <div key={review._id} >
+                  TEST 2
+
                   <p>
                     {review.comment}
                   </p>
