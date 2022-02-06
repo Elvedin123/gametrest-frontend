@@ -42,6 +42,9 @@
 .logo_title{
   text-decoration: none;
 }
+.logo_title2{
+  text-decoration: none;
+}
 
 .white_logo{
   color:white
@@ -62,3 +65,19 @@ link{
     align-content: stretch;
     justify-content: space-between;
 }  */
+@media (max-width: 500px) {
+  .nav{
+  align-content: center;
+  
+  }
+  .logo{
+    font-size: 25px;
+    margin-left: 20px;
+  }
+  
+.nav_buttons{
+  size: 20%;
+  text-align: center;
+  margin-left: 20px;
+}
+}
