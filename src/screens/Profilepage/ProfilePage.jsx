@@ -3,16 +3,7 @@ import profilepagecss from "./ProfilePage.module.css"
 import { addFavorite } from "../../services/apiConfig.js"
 import { useEffect, useState } from "react"
 function ProfilePage() {
-  const [favorites, setFavorites] = useState([])
 
-  useEffect(() => {
-    const displayFavs = async () => {
-      const showFavs = await addFavorite()
-      setFavorites(showFavs)
-      console.log(showFavs);
-    }
-    displayFavs()
-  }, [])
   return (
     <div >
       <Layout>
@@ -26,7 +17,7 @@ function ProfilePage() {
           </div>
           <h2 className={profilepagecss.favorites_title}>Favorites</h2>
           <div className={profilepagecss.favorites_container}>
-
+            { }
           </div>
         </div>
       </Layout>
