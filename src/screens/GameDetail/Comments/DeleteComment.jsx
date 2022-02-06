@@ -1,4 +1,4 @@
-import { deleteUserComments } from "../../../services/apiConfig";
+import { deleteUserComments } from "../../../services/apiConfig.js";
 
 export default function DeleteComment(props) {
   const handleDelete = async () => {

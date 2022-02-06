@@ -7,6 +7,7 @@ import DeleteComment from '../Comments/DeleteComment.jsx';
 export default function Reviews(props) {
 
   const [comments, setComments] = useState([]);
+  // const [toggle, setToggle] = useState(true);
   // const [avatar, setAvatar] = useState([]);
   useEffect(() => {
     const grabComments = async () => {
@@ -19,8 +20,9 @@ export default function Reviews(props) {
     grabComments()
   }, [])
 
-
-
+  // const handleToggle = () => {
+  //   setToggle(!toggle);
+  // }
 
   return (
 
@@ -39,8 +41,13 @@ export default function Reviews(props) {
                   <p>
                     {review.comment}
                   </p>
-                  <EditComment />
-                  <DeleteComment />
+                  <EditComment
+                  // handleToggle={handleToggle}
+                  />
+                  <DeleteComment
+                    // handleToggle={handleToggle}
+                    _id={comment._id}
+                  />
                 </div>
 
               )

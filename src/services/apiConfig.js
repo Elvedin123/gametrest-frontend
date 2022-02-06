@@ -149,6 +149,7 @@ export const deleteUserComments = (comment, userId) => {
   axios({
     method: "delete",
     url: `${devProxy}${apiUrls.production}/users/comments/${userId}`,
+    header: { authorization: `${token}` },
     data: comment
   })
     .then((res) => {
