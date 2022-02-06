@@ -174,3 +174,18 @@ export const getUserFavorites = (userId) => {
       console.log(error)
     })
 }
+
+//FINDING SPECIFIC USER'S AVATAR
+export const findUserAvatar = (props) => {
+  axios({
+    method: "get",
+    url: `${apiUrls.production}/${props}`,
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
