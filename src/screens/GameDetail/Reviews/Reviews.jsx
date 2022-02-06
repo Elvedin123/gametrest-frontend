@@ -13,7 +13,7 @@ export default function Reviews(props) {
     const grabComments = async () => {
       const fetchComments = await getAllComments()
       setComments(fetchComments.data)
-
+      console.log(fetchComments)
       // setAvatar(fetchComments)
 
     }

@@ -12,14 +12,15 @@ export default function Avatar() {
 
 
   useEffect(() => {
-    const fetchAvatar = async () => {
-      const getAvatar = await findUserAvatar(`users/${id}`)
-      // console.log(getAvatar.data.user)
+    const fetchAvatar = () => {
+      const getAvatar = findUserAvatar(`users/${id}`)
+      console.log(getAvatar)
       setAvatar(getAvatar)
 
     }
     fetchAvatar()
-  }, [userId])
+  }, [id])
+
   console.log(avatar)
   return (
     <div>
