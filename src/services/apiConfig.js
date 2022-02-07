@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
+const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
 
   production: 'https://gameterest-backend.herokuapp.com/api',
@@ -110,6 +110,21 @@ export const addFavorite = (favorite, userId) =>
       console.log(error)
     })
 
+export const getFavorites = (userId) =>
+  axios({
+    method: 'get',
+    url: `${devProxy}${apiUrls.production}/user/favorites/${userId}`,
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+
+// Getting the Comments
+// const token = localStorage.getItem('token')
 
 //Fetching all users
 export const getAllComments = () =>

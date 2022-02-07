@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/Layout"
 import profilepagecss from "./ProfilePage.module.css"
-
+import Userfavorites from "./Userfavorites.jsx"
 // import { addFavorite } from "../../services/apiConfig.js"
 // import { useEffect, useState } from "react"
 import Avatar from "../GameDetail/Avatar/Avatar.jsx"
@@ -18,7 +18,7 @@ function ProfilePage() {
           </div>
           <h2 className={profilepagecss.favorites_title}>Favorites</h2>
           <div className={profilepagecss.favorites_container}>
-            { }
+            <Userfavorites />
           </div>
         </div>
       </Layout>
