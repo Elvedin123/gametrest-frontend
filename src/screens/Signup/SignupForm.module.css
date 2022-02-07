@@ -22,12 +22,12 @@
 
 .button {
   /* border: 2px solid red; */
-  border-radius: 5px;
+  border-radius: 100px;
   color: white;
   background-color: black;
   padding: 0px 10px;
   height: 5vh;
-  font-size: 5vw;
+  font-size: 25px;
   margin: 10px 0px;
 }
 
