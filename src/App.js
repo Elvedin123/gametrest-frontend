@@ -1,7 +1,7 @@
-import Home from "./screens/Home/Home.jsx"
+import Home from "./screens/Home/Home.jsx";
 import './App.css';
-import { Routes, Route } from 'react-router-dom'
-import LoginForm from "./screens/Login/LoginForm.jsx"
+import { Routes, Route } from 'react-router-dom';
+import LoginForm from "./screens/Login/LoginForm.jsx";
 import SignupForm from "./screens/Signup/SignupForm.jsx";
 import GameDetail from "./screens/GameDetail/GameDetail.jsx";
 import { useEffect, useState } from "react";
@@ -12,15 +12,15 @@ import Logout from "./components/Logout/Logout.jsx";
 
 // import Logout from "./screens/Logout/Logout.jsx"
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await verifyUser()
-      user ? setUser(user) : setUser(null)
+      const user = await verifyUser();
+      user ? setUser(user) : setUser(null);
     }
-    fetchUser()
-  }, [])
+    fetchUser();
+  }, []);
 
   return (
     <div className="App">
@@ -31,7 +31,6 @@ function App() {
         <Route path="/games/:id" element={<GameDetail />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/edit-profile" element={<AvatarEdit />} />
-        <Route path="/Logout" elements={<Logout/>}></Route>
       </Routes>
     </div>
   );
