@@ -13,7 +13,7 @@ export default function Reviews(props) {
     const grabComments = async () => {
       const fetchComments = await getAllComments()
       setComments(fetchComments.data)
-
+      console.log(fetchComments.data)
       // setAvatar(fetchComments)
 
     }
@@ -23,6 +23,8 @@ export default function Reviews(props) {
   // const handleToggle = () => {
   //   setToggle(!toggle);
   // }
+
+  const id = localStorage.getItem("id")
 
   return (
     <div className={reviewcss.reviewbox}>
@@ -41,13 +43,15 @@ export default function Reviews(props) {
                     <p>
                       {review.comment}
                     </p>
-                    <EditComment
+
+                    <div>{comment._id === id ? <div>  <EditComment
                     // handleToggle={handleToggle}
                     />
-                    <DeleteComment
-                      // handleToggle={handleToggle}
-                      comment={review._id}
-                    />
+                      <DeleteComment
+                        // handleToggle={handleToggle}
+                        comment={review._id}
+                      /> </div> : ""}</div>
+
                   </div>
 
                 )
