@@ -7,6 +7,7 @@ import GameDetail from "./screens/GameDetail/GameDetail.jsx";
 import { useEffect, useState } from "react";
 import { verifyUser } from "./services/apiConfig.js";
 import ProfilePage from "./screens/Profilepage/ProfilePage.jsx";
+import AvatarEdit from "./screens/Profilepage/AvatarEdit.jsx";
 
 // import Logout from "./screens/Logout/Logout.jsx"
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/signup" element={<SignupForm setUser={setUser} />}></Route>
         <Route path="/games/:id" element={<GameDetail />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/edit-profile" element={<AvatarEdit />} />
         {/* <Route path="/" elements={<Logout/>}></Route> */}
       </Routes>
     </div>

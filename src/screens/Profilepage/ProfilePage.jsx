@@ -1,40 +1,10 @@
 import Layout from "../../components/Layout/Layout";
 import profilepagecss from "./ProfilePage.module.css";
 import Userfavorites from "./Userfavorites.jsx";
-import { updateAvatar, verifyUser } from "../../services/apiConfig.js";
-import { useEffect, useState } from "react";
 import Avatar from "../GameDetail/Avatar/Avatar.jsx";
-
-const default_input = {
-  avatar: "",
-}
+import { Link } from 'react-router-dom';
 
 function ProfilePage() {
-
-  const [image, setImage] = useState(default_input);
-  const id = localStorage.getItem('id');
-
-  useEffect(() => {
-    const fetchAvatar = async () => {
-      const getAvatar = await verifyUser();
-      setImage(getAvatar.data?.user);
-    }
-    fetchAvatar()
-  }, [id]);
-
-  const handleTextInput = (e) => {
-    const { id, value } = e.target;
-    setImage(prevImage => ({
-      ...prevImage,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateAvatar(image);
-  }
-
   return (
     <div >
       <Layout>
@@ -43,11 +13,10 @@ function ProfilePage() {
 
 
             <Avatar />
-            <form onSubmit={handleSubmit}>
-              <input type="text" id="avatar" name="avatar" value={image.avatar} placeholder="Profile url" onChange={handleTextInput} />
-              <br />
-              <button>Edit</button>
-            </form>
+            <Link to="/edit-profile" >
+              Edit your Avatar
+            </Link>
+
 
 
           </div>

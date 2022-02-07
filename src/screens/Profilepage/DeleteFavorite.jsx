@@ -20,6 +20,8 @@ export default function DeleteFavorite(props) {
   };
 
   return <div>
+
     <button className={Deletefavcss.button} onClick={(e) => { handleDelete(e, props.favid) }}>Delete</button>
+
   </div>;
 }

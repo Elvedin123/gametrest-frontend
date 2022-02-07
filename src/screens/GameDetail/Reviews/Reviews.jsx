@@ -1,7 +1,6 @@
 
 import { getAllComments } from '../../../services/apiConfig.js';
 import { useState, useEffect } from 'react';
-import EditComment from '../Comments/EditComment.jsx';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
 export default function Reviews(props) {
@@ -45,7 +44,6 @@ export default function Reviews(props) {
                     </p>
 
                     <div>{comment._id === id ? <div>
-                      <EditComment />
 
                       <DeleteComment
                         // handleToggle={handleToggle}
