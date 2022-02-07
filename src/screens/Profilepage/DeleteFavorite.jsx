@@ -3,9 +3,9 @@ import Deletefavcss from "./DeleteFav.module.css"
 
 
 export default function DeleteFavorite(props) {
-  function refreshPage() {
-    window.location.reload(false)
-  }
+  // function refreshPage() {
+  //   window.location.reload(false)
+  // }
   const handleDelete = (e, favorite) => {
     e.preventDefault()
     console.log(favorite)
@@ -15,7 +15,7 @@ export default function DeleteFavorite(props) {
       console.log(res)
     }
     Delete()
-    refreshPage()
+    // refreshPage()
     console.log(props.favid)
   };
 
