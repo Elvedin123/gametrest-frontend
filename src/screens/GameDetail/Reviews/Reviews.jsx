@@ -14,7 +14,7 @@ export default function Reviews(props) {
     const grabComments = async () => {
       const fetchComments = await getAllComments()
       setComments(fetchComments.data)
-
+      console.log(fetchComments.data)
       // setAvatar(fetchComments)
 
     }
@@ -48,9 +48,9 @@ export default function Reviews(props) {
                     <DeleteComment
                       // handleToggle={handleToggle}
 
-                    comment={review._id}
-                  />
-                </div>
+                      comment={review._id}
+                    />
+                  </div>
 
 
                 )
