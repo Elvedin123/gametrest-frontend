@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
+const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
 
   production: 'https://gameterest-backend.herokuapp.com/api',

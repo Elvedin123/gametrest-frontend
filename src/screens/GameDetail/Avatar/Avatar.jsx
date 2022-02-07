@@ -2,6 +2,8 @@ import { verifyUser } from '../../../services/apiConfig.js';
 import { useEffect, useState } from 'react'
 
 export default function Avatar() {
+
+
   const [avatar, setAvatar] = useState()
   // const userId = localStorage.getItem('id')
   const id = localStorage.getItem('id')
