@@ -1,0 +1,19 @@
+.favorites_container{
+  display: flex;
+  color: white;
+  width: 100vw;
+  border: 1px solid white;
+}
+.favorites_card{
+  display: flex;
+  flex-direction: column;
+  width:350px;
+  height: 400px;
+  object-position: center;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10%;
+  margin-top: 5px;
+  border: 1px solid white;
+ 
+}

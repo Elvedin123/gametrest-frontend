@@ -10,7 +10,7 @@ const apiUrls = {
 export const createUser = (props) =>
   axios({
     method: 'post',
-    url: `${devProxy}${apiUrls.production}/signup`,
+    url: `${apiUrls.production}/signup`,
     data: props,
   })
     .then((res) => {
@@ -23,7 +23,7 @@ export const createUser = (props) =>
 export const loginUser = (props) =>
   axios({
     method: 'post',
-    url: `${devProxy}${apiUrls.production}/login`,
+    url: `${apiUrls.production}/login`,
     data: props,
   })
     .then((res) => {
@@ -36,7 +36,7 @@ export const loginUser = (props) =>
 export const logout = (props) =>
   axios({
     method: 'get',
-    url: `${devProxy}${apiUrls.production}/logout`,
+    url: `${apiUrls.production}/Logout`,
     data: props
   })
     .then((res) => {
@@ -52,7 +52,7 @@ export const verifyUser = (props) =>
 
   axios({
     method: 'get',
-    url: `${devProxy}${apiUrls.production}/users/${id}`,
+    url: `${apiUrls.production}/users/${id}`,
     data: props
   })
     .then((res) => {
@@ -68,7 +68,7 @@ export const verifyUser = (props) =>
 export const logoutUser = () =>
   axios({
     method: 'get',
-    url: `${devProxy}${apiUrls.production}/logout`
+    url: `${apiUrls.production}/logout`
   })
 
     .then((res) => {
@@ -82,7 +82,7 @@ const token = localStorage.getItem('token')
 export const addComment = (comment, userId) =>
   axios({
     method: "post",
-    url: `${devProxy}${apiUrls.production}/comment/${userId}`,
+    url: `${apiUrls.production}/comment/${userId}`,
     headers: { authorization: `${token}` },
     data: comment
   })
@@ -99,7 +99,7 @@ export const addComment = (comment, userId) =>
 export const addFavorite = (favorite, userId) =>
   axios({
     method: "post",
-    url: `${devProxy}${apiUrls.production}/favorite/${userId}`,
+    url: `${apiUrls.production}/favorite/${userId}`,
     headers: { authorization: `${token}` },
     data: favorite
   })
@@ -110,12 +110,40 @@ export const addFavorite = (favorite, userId) =>
       console.log(error)
     })
 
+export const getFavorites = (userId) =>
+  axios({
+    method: 'get',
+    url: `${devProxy}${apiUrls.production}/user/favorites/${userId}`,
+  })
+    .then((res) => {
+      return res.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+export const deleteUserFavorites = (userid, id) => {
+  axios({
+    method: "delete",
+    url: `${apiUrls.production}/delete/favorite/${userid}/${id}`,
+    headers: { authorization: `${token}` },
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
+// Getting the Comments
+// const token = localStorage.getItem('token')
 
 //Fetching all users
 export const getAllComments = () =>
   axios({
     method: "get",
-    url: `${devProxy}${apiUrls.production}/users`,
+    url: `${apiUrls.production}/users`,
   })
     .then((res) => {
       return res.data
@@ -130,7 +158,7 @@ export const getAllComments = () =>
 export const editUserComments = (comment, userId, id) => {
   axios({
     method: "put",
-    url: `${devProxy}${apiUrls.production}/update/comment/${userId}/${id}`,
+    url: `${apiUrls.production}/update/comment/${userId}/${id}`,
     headers: { authorization: `${token}` },
     data: comment
   })
@@ -148,7 +176,7 @@ export const editUserComments = (comment, userId, id) => {
 export const deleteUserComments = (userid, id) => {
   axios({
     method: "delete",
-    url: `${devProxy}${apiUrls.production}/delete/${userid}/${id}`,
+    url: `${apiUrls.production}/delete/${userid}/${id}`,
     headers: { authorization: `${token}` },
   })
     .then((res) => {
@@ -164,7 +192,7 @@ export const deleteUserComments = (userid, id) => {
 export const getUserFavorites = (userId) => {
   axios({
     method: "get",
-    url: `${devProxy}${apiUrls.production}/users/favorites/${userId}`,
+    url: `${apiUrls.production}/users/favorites/${userId}`,
   })
     .then((res) => {
       return res.data

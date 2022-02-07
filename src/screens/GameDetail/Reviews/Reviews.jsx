@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import EditComment from '../Comments/EditComment.jsx';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css'
-
 export default function Reviews(props) {
 
   const [comments, setComments] = useState([]);
@@ -14,7 +13,7 @@ export default function Reviews(props) {
     const grabComments = async () => {
       const fetchComments = await getAllComments()
       setComments(fetchComments.data)
-
+      console.log(fetchComments.data)
       // setAvatar(fetchComments)
 
     }
@@ -25,9 +24,12 @@ export default function Reviews(props) {
   //   setToggle(!toggle);
   // }
 
+  const id = localStorage.getItem("id")
+
   return (
     <div className={reviewcss.reviewbox}>
       <div className={reviewcss.review}>
+
         {comments.map((comment) => {
           return (
             comment.comments.map((review) => {
@@ -41,13 +43,15 @@ export default function Reviews(props) {
                     <p>
                       {review.comment}
                     </p>
-                    <EditComment
+
+                    <div>{comment._id === id ? <div>  <EditComment
                     // handleToggle={handleToggle}
                     />
-                    <DeleteComment
-                      // handleToggle={handleToggle}
-                      comment={comment.id}
-                    />
+                      <DeleteComment
+                        // handleToggle={handleToggle}
+                        comment={review._id}
+                      /> </div> : ""}</div>
+
                   </div>
 
                 )
