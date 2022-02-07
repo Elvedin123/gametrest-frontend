@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
-=======
-/* 
->>>>>>> 9d4e7703ca4342d37d6bf2aae566ad8a85b09ed0
+
 .reviewbox {
   width: 40vh;
   height: 40vh;
@@ -10,10 +7,7 @@
   border-radius: 50px;
   overflow: auto;
 }
-<<<<<<< HEAD
 
-=======
 .review{
-
-} */
->>>>>>> 9d4e7703ca4342d37d6bf2aae566ad8a85b09ed0
+  overflow: auto;
+} 
