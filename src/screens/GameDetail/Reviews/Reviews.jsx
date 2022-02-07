@@ -43,12 +43,15 @@ export default function Reviews(props) {
                     </p>
                     <EditComment
                     // handleToggle={handleToggle}
+
                     />
                     <DeleteComment
                       // handleToggle={handleToggle}
-                      comment={comment.id}
-                    />
-                  </div>
+
+                    comment={review._id}
+                  />
+                </div>
+
 
                 )
               }
