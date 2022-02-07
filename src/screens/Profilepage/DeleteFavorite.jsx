@@ -1,4 +1,5 @@
 import { deleteUserFavorites } from "../../services/apiConfig.js";
+import Deletefavcss from "./DeleteFav.module.css"
 
 
 export default function DeleteFavorite(props) {
@@ -19,6 +20,6 @@ export default function DeleteFavorite(props) {
   };
 
   return <div>
-    <button onClick={(e) => { handleDelete(e, props.favid) }}>gtfo</button>
+    <button className={Deletefavcss.button} onClick={(e) => { handleDelete(e, props.favid) }}>Delete</button>
   </div>;
 }
