@@ -55,8 +55,11 @@ height: 80vh;
   color: white;
 }
 .review_section{
+  width: 50vh;
+  height: 40vh;
   background-color: white ;
   border-radius: 20px;
+  margin-left: 66%;
 }
 
 .fav_button{
@@ -75,7 +78,7 @@ left: -80%;
 }
 
 .comment_section{
-  margin-top: -30%;
+  margin-top: -25%;
   padding-top: 80px;
 }
 
@@ -138,7 +141,7 @@ left: -80%;
       padding: 10px;
       border-radius: 50px;
       overflow: auto;
-      margin-left: 35px;
+      margin-left: 20px;
     }
 
     .game_name{

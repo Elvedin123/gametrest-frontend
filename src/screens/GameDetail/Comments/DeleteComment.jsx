@@ -5,7 +5,9 @@ import { deleteUserComments } from "../../../services/apiConfig.js";
 
 export default function DeleteComment(props) {
   // const navigate = useNavigate()
-
+  function refreshPage() {
+    window.location.reload(false)
+  }
   const handleDelete = (e, comment) => {
     e.preventDefault()
     console.log(comment)
@@ -15,6 +17,7 @@ export default function DeleteComment(props) {
       console.log(res)
     }
     Delete()
+    refreshPage()
     console.log(props.comment)
   };
 
