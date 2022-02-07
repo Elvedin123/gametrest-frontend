@@ -3,6 +3,7 @@ import { getAllComments } from '../../../services/apiConfig.js';
 import { useState, useEffect } from 'react';
 import EditComment from '../Comments/EditComment.jsx';
 import DeleteComment from '../Comments/DeleteComment.jsx';
+import reviewcss from './Reviews.module.css'
 
 export default function Reviews(props) {
 
@@ -25,37 +26,41 @@ export default function Reviews(props) {
   // }
 
   return (
+    <div className={reviewcss.reviewbox}>
+      <div className={reviewcss.review}>
+        {comments.map((comment) => {
+          return (
+            comment.comments.map((review) => {
 
-    <div>
-      {comments.map((comment) => {
-        return (
-          comment.comments.map((review) => {
+              // console.log(review.game)
+              if (Number(review.game) === props.gameId) {
+                return (
 
-            // console.log(review.game)
-            if (Number(review.game) === props.gameId) {
-              return (
+                  <div key={review._id} >
 
-                <div key={review._id} >
-
-                  <p>
-                    {review.comment}
-                  </p>
-                  <EditComment
-                  // handleToggle={handleToggle}
-                  />
-                  <DeleteComment
+                    <p>
+                      {review.comment}
+                    </p>
+                    <EditComment
                     // handleToggle={handleToggle}
-                    comment={comment.id}
+
+                    />
+                    <DeleteComment
+                      // handleToggle={handleToggle}
+
+                    comment={review._id}
                   />
                 </div>
 
-              )
-            }
 
-          })
-        )
+                )
+              }
 
-      })}
+            })
+          )
+
+        })}
+      </div>
     </div>
   );
 }

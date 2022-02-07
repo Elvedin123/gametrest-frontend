@@ -54,20 +54,21 @@ export default function GameDetail() {
             <h3>
               Description
             </h3>
-            <p className={gamesdetailcss.decription_text}>{games.description_raw}</p>
-
+            <div className={gamesdetailcss.decription_box}>
+              <p className={gamesdetailcss.decription_text}>{games.description_raw}</p>
+            </div>
           </div>
           <h1 className={gamesdetailcss.reviews}>Reviews</h1>
-          <div className={gamesdetailcss.review_section}>
-            <Reviews
-              gameId={games.id}
-            />
-          </div>
         </div>
+      </div>
+      <div className={gamesdetailcss.review_section}>
+        <Reviews
+          gameId={games.id}
+        />
       </div>
       <div className={gamesdetailcss.comment_section}>
 
-        <h3>Share Your Thoughts</h3>
+        <h3 className={gamesdetailcss.comment_text}>Share Your Thoughts</h3>
 
 
         <CommentForm

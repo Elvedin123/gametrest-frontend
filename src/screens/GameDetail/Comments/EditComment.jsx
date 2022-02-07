@@ -9,6 +9,8 @@ const default_input = {
 export default function EditComment() {
   const [comment, setComment] = useState(default_input);
 
+  const userId = localStorage.getItem('id')
+
   let { id } = useParams();
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function EditComment() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    editUserComments(id, comment) //Also from api??
+    editUserComments(userId, comment) //Also from api??
 
   }
 
@@ -43,6 +45,6 @@ export default function EditComment() {
     //     onChange={handleChange}
     //   />
     <button onChange={handleChange} onClick={handleSubmit}>Edit</button>
-    // {/* </form> */}
+    // {/* // </form> */ }
   );
 }

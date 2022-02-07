@@ -1,13 +1,12 @@
 .home{
   width: 100%;
-  height: auto;
+  height: 70%;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   align-content: stretch;
   justify-content: space-evenly;
   align-items: flex-end;
-  margin-top: 100px;
   text-align: center;
 }
 
@@ -15,8 +14,8 @@
 .title{
   color: red;
   position: relative;
-  top: 100px;
-  margin-left: -70%;
+  top: 60px;
+  margin-left: 8%;
   font-size: 36px;
 }
 .title_test{
@@ -34,8 +33,7 @@ Link{
   .title{
     color: red;
     position: relative;
-    top: 100px;
-   
-    font-size: 18px;
+    top: 50px;
+    font-size: 30px;
   }
 }
