@@ -22,6 +22,10 @@ export default function AvatarEdit() {
     fetchAvatar()
   }, [id]);
 
+  function refreshPage() {
+    window.location.reload(false)
+  }
+
   const handleTextInput = (e) => {
     const { id, value } = e.target;
     setImage(prevImage => ({
@@ -33,7 +37,8 @@ export default function AvatarEdit() {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateAvatar(image);
-    navigate('/profile')
+    navigate('/profile');
+    refreshPage();
   }
   return (
     <div>

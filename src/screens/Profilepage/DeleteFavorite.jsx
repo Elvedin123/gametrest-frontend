@@ -14,6 +14,6 @@ export default function DeleteFavorite(props) {
   };
 
   return <div>
-    <button onClick={(e) => { handleDelete(e, props.favid) }}>gtfo</button>
+    <button onClick={(e) => { handleDelete(e, props.favid) }}>Remove</button>
   </div>;
 }
