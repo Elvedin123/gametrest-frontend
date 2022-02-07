@@ -1,27 +1,31 @@
-
 import { getAllComments } from '../../../services/apiConfig.js';
 import { useState, useEffect } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
+
+
 export default function Reviews(props) {
 
   const [comments, setComments] = useState([]);
-  // const [toggle, setToggle] = useState(true);
   // const [avatar, setAvatar] = useState([]);
   useEffect(() => {
-    const grabComments = async () => {
-      const fetchComments = await getAllComments()
-      setComments(fetchComments.data)
-      console.log(fetchComments.data)
-      // setAvatar(fetchComments)
 
-    }
+    grabComments()
+  }, [comments])
+
+
+  useEffect(() => {
+
     grabComments()
   }, [])
 
-  // const handleToggle = () => {
-  //   setToggle(!toggle);
-  // }
+  const grabComments = async () => {
+    const fetchComments = await getAllComments()
+    setComments(fetchComments.data)
+    console.log(fetchComments.data)
+    // setAvatar(fetchComments)
+
+  }
 
   const id = localStorage.getItem("id")
 
@@ -47,6 +51,8 @@ export default function Reviews(props) {
 
                       <DeleteComment
                         // handleToggle={handleToggle}
+                        setComments={setComments}
+                        grabComments={grabComments}
                         comment={review._id}
                       /> </div> : ""}</div>
 
