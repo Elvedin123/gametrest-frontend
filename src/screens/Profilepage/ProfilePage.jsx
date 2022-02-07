@@ -10,7 +10,6 @@ function ProfilePage() {
       <Layout>
         <div className={profilepagecss.parent_profile}>
           <div className={profilepagecss.profilepic_container}>
-            <h3>yoooo</h3>
             <Avatar />
             <input type="text" name="" placeholder="Profile url" id="" />
             <br />
