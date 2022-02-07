@@ -24,6 +24,8 @@ export default function Reviews(props) {
   //   setToggle(!toggle);
   // }
 
+  const id = localStorage.getItem("id")
+
   return (
     <div className={reviewcss.reviewbox}>
       <div className={reviewcss.review}>
@@ -41,13 +43,15 @@ export default function Reviews(props) {
                     <p>
                       {review.comment}
                     </p>
-                    <EditComment
+
+                    <div>{comment._id === id ? <div>  <EditComment
                     // handleToggle={handleToggle}
                     />
-                    <DeleteComment
-                      // handleToggle={handleToggle}
-                      comment={review._id}
-                    />
+                      <DeleteComment
+                        // handleToggle={handleToggle}
+                        comment={review._id}
+                      /> </div> : ""}</div>
+
                   </div>
 
                 )
