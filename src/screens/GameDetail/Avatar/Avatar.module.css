@@ -1,9 +1,10 @@
 .image{
   border-radius: 50%;
-  height: 65%;
-  width: 65%;
+  height: 100px;
+  width: 100px;
   margin-bottom: 25px;
   margin-left: 25px;
+  display: cover;
 }
 
 .contentave{

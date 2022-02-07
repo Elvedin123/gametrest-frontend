@@ -34,6 +34,7 @@ height: 80vh;
   background-color: white;
   border-radius: 5%;
   width: 30vw;
+  height: 50vh;
   padding:20px;
   
 }
@@ -141,7 +142,7 @@ left: -80%;
       padding: 10px;
       border-radius: 50px;
       overflow: auto;
-      margin-left: 20px;
+      margin-left: 35px;
     }
 
     .game_name{
