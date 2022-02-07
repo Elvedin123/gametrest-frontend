@@ -11,6 +11,8 @@
   background-color: lightgray;
   margin: 70px 70px;
   border-radius: 10px;
+  max-width:500px; 
+  margin:50px auto;
   /* border: 2px solid pink; */
 }
 
@@ -51,7 +53,7 @@ color: #D40107;
   text-decoration: none;
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (max-width: 500px) {
   .header {
     font-size: 6vw;
   }
@@ -69,4 +71,23 @@ color: #D40107;
 
   }
 
+} */
+
+@media (max-width: 500px) {
+  .button {
+    font-size: 5vw;
+    margin-bottom: 10px;
+  }
+  .form_body{
+    width: 40vh;
+    height: 30vh;
+    text-align: center;
+    width:500px; 
+  margin:50px auto;
+  
+  }
+  .header {
+    font-size: 10vw;
+    text-align: center;
+  }
 }
