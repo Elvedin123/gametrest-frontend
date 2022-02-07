@@ -1,9 +1,8 @@
 
 import { getAllComments } from '../../../services/apiConfig.js';
 import { useState, useEffect } from 'react';
-import EditComment from '../Comments/EditComment.jsx';
 import DeleteComment from '../Comments/DeleteComment.jsx';
-import reviewcss from './Reviews.module.css'
+import reviewcss from './Reviews.module.css';
 export default function Reviews(props) {
 
   const [comments, setComments] = useState([]);
@@ -44,9 +43,8 @@ export default function Reviews(props) {
                       {review.comment}
                     </p>
 
-                    <div>{comment._id === id ? <div>  <EditComment
-                    // handleToggle={handleToggle}
-                    />
+                    <div>{comment._id === id ? <div>
+
                       <DeleteComment
                         // handleToggle={handleToggle}
                         comment={review._id}
