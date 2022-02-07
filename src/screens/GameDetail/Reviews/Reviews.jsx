@@ -42,6 +42,7 @@ export default function Reviews(props) {
                 return (
 
                   <div key={review._id} >
+                    <img src={comment.avatar} alt={comment.userName} />
 
                     <p>
                       {review.comment}

@@ -9,7 +9,7 @@ export default function Cards(props) {
   return (
     <div className={cardscss.card_container}>
       <div className={cardscss.card_content} >
-        <button className={cardscss.like_button} >Like</button>
+        {/* <button className={cardscss.like_button} >Like</button> */}
         <div className={cardscss.image_container}>
           <img className={cardscss.game_image} src={imageURL} alt='' />
         </div>
