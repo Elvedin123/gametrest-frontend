@@ -1,5 +1,4 @@
 
-
 .reviewbox {
   width: 40vh;
   height: 40vh;
@@ -7,6 +6,7 @@
   border-radius: 50px;
   overflow: auto;
 }
+
 
 .review{
   overflow: auto;

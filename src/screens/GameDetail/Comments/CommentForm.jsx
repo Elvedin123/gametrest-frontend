@@ -24,10 +24,13 @@ export default function CommentForm(props) {
       [id]: value,
     }))
   }
-
+  function refreshPage() {
+    window.location.reload(false)
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
     await addComment(comment, userId)
+    refreshPage()
     console.log(comment)
   }
 
@@ -41,7 +44,7 @@ export default function CommentForm(props) {
         placeholder="Tell us your thoughts on this game!"
         onChange={(e) => { handleChange(e) }}
       />
-      <button className={commentformcss.button} onClick={(e) => {handleSubmit(e)}}>Submit</button>
+      <button className={commentformcss.button} onClick={(e) => { handleSubmit(e) }}>Submit</button>
     </form>
   );
 }
