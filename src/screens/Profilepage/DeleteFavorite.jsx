@@ -15,7 +15,7 @@ export default function DeleteFavorite(props) {
       console.log(res)
     }
     Delete()
-    props.gabFavorites()
+    // props.grabFavorites()
     // refreshPage()
     console.log(props.favid)
   };

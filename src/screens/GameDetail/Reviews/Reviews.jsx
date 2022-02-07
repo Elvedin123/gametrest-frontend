@@ -1,31 +1,24 @@
 import { getAllComments } from '../../../services/apiConfig.js';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
+import { useStateIfMounted } from 'use-state-if-mounted';
 
 
 export default function Reviews(props) {
 
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useStateIfMounted([]);
   // const [avatar, setAvatar] = useState([]);
   useEffect(() => {
-
-    grabComments()
-  }, [comments])
-
-
-  useEffect(() => {
-
+    const grabComments = async () => {
+      const fetchComments = await getAllComments()
+      setComments(fetchComments.data)
+      // console.log(fetchComments.data)
+      // setAvatar(fetchComments)
+  
+    }
     grabComments()
   }, [])
-
-  const grabComments = async () => {
-    const fetchComments = await getAllComments()
-    setComments(fetchComments.data)
-    console.log(fetchComments.data)
-    // setAvatar(fetchComments)
-
-  }
 
   const id = localStorage.getItem("id")
 
@@ -36,8 +29,6 @@ export default function Reviews(props) {
         {comments.map((comment) => {
           return (
             comment.comments.map((review) => {
-
-              // console.log(review.game)
               if (Number(review.game) === props.gameId) {
                 return (
 
@@ -52,7 +43,6 @@ export default function Reviews(props) {
                       <DeleteComment
                         // handleToggle={handleToggle}
                         setComments={setComments}
-                        grabComments={grabComments}
                         comment={review._id}
                       /> </div> : ""}</div>
 

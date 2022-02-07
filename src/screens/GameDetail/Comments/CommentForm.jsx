@@ -7,7 +7,7 @@ import commentformcss from './CommentForm.module.css'
 
 export default function CommentForm(props) {
   // Schema calls for game, comment, and likes. I am assuming we just want to  edit the comment
-  console.log(props.gameId)
+  // console.log(props.gameId)
   // const { id } = useParams()
   const default_input = {
     game: props.gameId,
@@ -31,7 +31,7 @@ export default function CommentForm(props) {
     e.preventDefault()
     await addComment(comment, userId)
     refreshPage()
-    console.log(comment)
+    // console.log(comment)
   }
 
   return (
