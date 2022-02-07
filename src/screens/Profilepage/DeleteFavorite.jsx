@@ -1,6 +1,10 @@
 import { deleteUserFavorites } from "../../services/apiConfig.js";
 
+
 export default function DeleteFavorite(props) {
+  function refreshPage() {
+    window.location.reload(false)
+  }
   const handleDelete = (e, favorite) => {
     e.preventDefault()
     console.log(favorite)
@@ -10,6 +14,7 @@ export default function DeleteFavorite(props) {
       console.log(res)
     }
     Delete()
+    refreshPage()
     console.log(props.favid)
   };
 
