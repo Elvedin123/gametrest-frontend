@@ -36,7 +36,7 @@ export const loginUser = (props) =>
 export const logout = (props) =>
   axios({
     method: 'get',
-    url: `${apiUrls.production}/logout`,
+    url: `${apiUrls.production}/Logout`,
     data: props
   })
     .then((res) => {
@@ -121,7 +121,20 @@ export const getFavorites = (userId) =>
     .catch((error) => {
       console.log(error)
     })
+export const deleteUserFavorites = (userid, id) => {
+  axios({
+    method: "delete",
+    url: `${apiUrls.production}/delete/favorite/${userid}/${id}`,
+    headers: { authorization: `${token}` },
+  })
+    .then((res) => {
+      return res.data
 
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
 
 // Getting the Comments
 // const token = localStorage.getItem('token')
