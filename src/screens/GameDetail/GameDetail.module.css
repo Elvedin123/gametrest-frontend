@@ -34,7 +34,7 @@ height: 80vh;
   background-color: white;
   border-radius: 5%;
   width: 30vw;
-  height: 50vh;
+  /* height: 90%; */
   padding:20px;
   
 }
@@ -137,12 +137,12 @@ left: -80%;
     }
 
     .review_section{
-      width: 80%;
+      width: 40vh;
       height: 40vh;
       padding: 10px;
       border-radius: 50px;
       overflow: auto;
-      margin-left: 35px;
+      margin-left: 5%;
     }
 
     .game_name{
