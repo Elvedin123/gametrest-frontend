@@ -31,12 +31,14 @@ justify-content: center;
 
 @media (max-width: 500px) {
   .profilepic_container {
-    width:40%;
-    height: 50%;
-    margin: 50px;
-    font-size: 70%;
-    padding: 20px;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 80%;
+
+    border-radius: 100%;
+    flex-wrap: wrap;
+    align-items: center;
   }
   .favorites_title{
     font-size: 25px;

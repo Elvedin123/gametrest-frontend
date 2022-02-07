@@ -8,6 +8,7 @@
   justify-content: space-evenly;
   align-items: flex-end;
   text-align: center;
+  margin-bottom: 0;
 }
 
 
@@ -29,6 +30,7 @@ Link{
   .home {
     width: 100%;
     height: auto;
+    margin: 0;
   }
   .title{
     color: red;
