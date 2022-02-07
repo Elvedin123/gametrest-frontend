@@ -1,16 +1,9 @@
 import Layout from "../../components/Layout/Layout"
 import profilepagecss from "./ProfilePage.module.css"
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Userfavorites from "./Userfavorites.jsx"
-=======
-=======
-
->>>>>>> 420ec844ded54c5a99429ad6c9b06d5d83287eb5
 // import { addFavorite } from "../../services/apiConfig.js"
 // import { useEffect, useState } from "react"
 import Avatar from "../GameDetail/Avatar/Avatar.jsx"
->>>>>>> 63970fd62ff4dc10504dabb604628ff3ccce78ee
 function ProfilePage() {
 
   return (
