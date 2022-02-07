@@ -1,5 +1,6 @@
 import { verifyUser } from '../../../services/apiConfig.js';
 import { useEffect, useState } from 'react'
+import avatarcss from './Avatar.module.css'
 
 export default function Avatar() {
 
@@ -24,9 +25,9 @@ export default function Avatar() {
     )
   }
   return (
-    <div>
+    <div className={avatarcss.content}>
       <h3>Welcome, {avatar.userName}</h3>
-      <img className="profile_img" src={avatar.avatar} alt={avatar.userName} />
+      <img className={avatarcss.image} src={avatar.avatar} alt={avatar.userName} />
 
     </div>
   );
