@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllComments, editUserComments } from '../../../services/apiConfig.js';
 import { useParams } from 'react-router-dom';
-
+import GameDetail from '../GameDetail.jsx';
 const default_input = {
   comment: "",
 }
@@ -22,19 +22,28 @@ export default function EditComment() {
     fetchComment();
   }, [id]);
 
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    setComment(prevInput => ({
-      ...prevInput,
-      [id]: value,
-    }))
-  }
+  // const handleChange = (event) => {
+  //   const { id, value } = event.target;
+  //   setComment(prevInput => ({
+  //     ...prevInput,
+  //     [id]: value,
+  //   }))
+  // }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    editUserComments(userId, comment) //Also from api??
+    await editUserComments(userId, comment) //Also from api??
+    return (
+
+      <div>
+        <h1>HOPEFUL</h1>
+        <GameDetail />
+      </div>
+    )
 
   }
+
+
 
   return (
     // <form onSubmit={handleSubmit}>
@@ -44,7 +53,7 @@ export default function EditComment() {
     //     value={comment.comment} //This is supposed to call from the schema
     //     onChange={handleChange}
     //   />
-    <button onChange={handleChange} onClick={handleSubmit}>Edit</button>
+    <button onClick={handleSubmit}>Edit</button>
     // {/* // </form> */ }
   );
 }
