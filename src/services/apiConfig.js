@@ -110,7 +110,6 @@ export const addFavorite = (favorite, userId) =>
       console.log(error)
     })
 
-<<<<<<< HEAD
 export const getFavorites = (userId) =>
   axios({
     method: 'get',
@@ -126,8 +125,6 @@ export const getFavorites = (userId) =>
 
 // Getting the Comments
 // const token = localStorage.getItem('token')
-=======
->>>>>>> 3330d189d45c94ebd31d87e6d441ce9eba980b63
 
 //Fetching all users
 export const getAllComments = () =>
