@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { updateAvatar, verifyUser } from '../../services/apiConfig';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import avatareditcss from './AvatarEdit.module.css'
 
 const default_input = {
@@ -43,12 +43,16 @@ export default function AvatarEdit() {
   }
   return (
     <div>
+      <Link className={avatareditcss.back_arrow} to='/'><span className={avatareditcss.white_logo}>Game</span><span className={avatareditcss.red_logo}>terest</span></Link>
+
       <h1 className={avatareditcss.header}>Update your Avatar!</h1>
-      <form className={avatareditcss.form} onSubmit={handleSubmit}>
-        <input className={avatareditcss.input} type="text" id="avatar" name="avatar" value={image.avatar} placeholder="Profile url" onChange={handleTextInput} />
-        <br />
-        <button className={avatareditcss.button}>Save</button>
-      </form>
+      <div className={avatareditcss.overall_div}>
+        <form className={avatareditcss.form} onSubmit={handleSubmit}>
+          <input className={avatareditcss.input} type="text" id="avatar" name="avatar" value={image.avatar} placeholder="Profile url" onChange={handleTextInput} />
+          <br />
+          <button className={avatareditcss.button}>Save</button>
+        </form>
+      </div>
     </div>
   );
 }
