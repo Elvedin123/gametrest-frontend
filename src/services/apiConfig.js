@@ -202,3 +202,20 @@ export const getUserFavorites = (userId) => {
       console.log(error)
     })
 }
+
+//UPDATING USER AVATAR
+export const updateAvatar = (props) => {
+  axios({
+    method: "put",
+    url: `${apiUrls.production}/update/${id}`,
+    headers: { authorization: `${token}` },
+    data: props
+  })
+    .then((res) => {
+      return res.data
+
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
