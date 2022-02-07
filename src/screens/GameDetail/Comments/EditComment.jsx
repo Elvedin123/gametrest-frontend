@@ -37,7 +37,7 @@ export default function EditComment() {
     await editUserComments(userId, comment) //Also from api??
 
   }
-
+  // Click on edit, the reivew/comment populates within a form. The form will have a button to resubmit 
 
 
   return (
