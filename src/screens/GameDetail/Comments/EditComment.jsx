@@ -8,7 +8,6 @@ const default_input = {
 
 export default function EditComment() {
   const [comment, setComment] = useState(default_input);
-
   const userId = localStorage.getItem('id')
 
   let { id } = useParams();
@@ -22,38 +21,34 @@ export default function EditComment() {
     fetchComment();
   }, [id]);
 
-  // const handleChange = (event) => {
-  //   const { id, value } = event.target;
-  //   setComment(prevInput => ({
-  //     ...prevInput,
-  //     [id]: value,
-  //   }))
-  // }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleChange = async () => {
     await editUserComments(userId, comment) //Also from api??
-    return (
 
+    return (
       <div>
         <h1>HOPEFUL</h1>
         <GameDetail />
       </div>
     )
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await editUserComments(userId, comment) //Also from api??
 
   }
 
 
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <input
-    //     id="comment"
-    //     input={comment}
-    //     value={comment.comment} //This is supposed to call from the schema
-    //     onChange={handleChange}
-    //   />
-    <button onClick={handleSubmit}>Edit</button>
-    // {/* // </form> */ }
+    <form onSubmit={handleSubmit}>
+      <input
+        id="comment"
+        input={comment.comment}
+        value={comment.comment} //This is supposed to call from the schema
+        onChange={handleChange}
+      />
+      <button onClick={handleChange}>Edit</button>
+    </form>
   );
 }
