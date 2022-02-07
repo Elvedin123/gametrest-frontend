@@ -11,8 +11,8 @@ export default function Avatar() {
   useEffect(() => {
     const fetchAvatar = async () => {
       const getAvatar = await verifyUser()
-      // console.log(getAvatar.data.user.avatar)
-      setAvatar(getAvatar.data.user)
+      console.log(getAvatar.data?.user)
+      setAvatar(getAvatar.data?.user)
     }
     fetchAvatar()
   }, [id])
