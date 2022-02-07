@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { verifyUser } from "./services/apiConfig.js";
 import ProfilePage from "./screens/Profilepage/ProfilePage.jsx";
 import AvatarEdit from "./screens/Profilepage/AvatarEdit.jsx";
+import Logout from "./components/Logout/Logout.jsx";
 
 // import Logout from "./screens/Logout/Logout.jsx"
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path="/games/:id" element={<GameDetail />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/edit-profile" element={<AvatarEdit />} />
-        {/* <Route path="/" elements={<Logout/>}></Route> */}
+        <Route path="/Logout" elements={<Logout/>}></Route>
       </Routes>
     </div>
   );

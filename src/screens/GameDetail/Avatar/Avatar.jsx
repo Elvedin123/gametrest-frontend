@@ -1,21 +1,22 @@
 import { verifyUser } from '../../../services/apiConfig.js';
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import avatarcss from "./Avatar.module.css"
+import { useStateIfMounted } from 'use-state-if-mounted';
 export default function Avatar() {
 
 
-  const [avatar, setAvatar] = useState()
+  const [avatar, setAvatar] = useStateIfMounted()
   // const userId = localStorage.getItem('id')
   const id = localStorage.getItem('id')
 
   useEffect(() => {
     const fetchAvatar = async () => {
-      const getAvatar = await verifyUser()
+      const getAvatar = await verifyUser(id)
       console.log(getAvatar.data?.user)
       setAvatar(getAvatar.data?.user)
     }
     fetchAvatar()
-  }, [id])
+  }, [id, setAvatar])
 
   // console.log(avatar)
   if (!avatar) {

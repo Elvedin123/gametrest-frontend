@@ -12,10 +12,10 @@ export default function Userfavorites() {
 
       const showFavs = await getFavorites(userid)
       setFavorites(showFavs.data)
-      console.log(showFavs.data);
+      // console.log(showFavs.data);
     }
     displayFavs()
-  }, [userid])
+  }, [])
   return (
     <div className={Userfavoritescss.favorites_container} >
       {favorites.map((favorite) => {

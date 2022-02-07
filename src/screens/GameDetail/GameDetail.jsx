@@ -19,7 +19,7 @@ export default function GameDetail() {
       setLoaded(true);
     }
     fetchGames();
-  }, [id])
+  }, [])
 
   // console.log(games)
 
