@@ -1,4 +1,5 @@
 import { deleteUserComments } from "../../../services/apiConfig.js";
+import deletecommetcss from './DeleteComment.module.css'
 // import { useNavigate } from "react-router";
 
 // const userId = localStorage.getItem('userId')
@@ -18,5 +19,5 @@ export default function DeleteComment(props) {
     console.log(props.comment)
   };
 
-  return <button onClick={(e) => { handleDelete(e, props.comment) }}>Delete Comment</button>;
+  return <button className={deletecommetcss.button} onClick={(e) => { handleDelete(e, props.comment) }}>Delete Comment</button>;
 }
