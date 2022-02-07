@@ -13,7 +13,7 @@ function ProfilePage() {
 
 
             <Avatar />
-            <Link to="/edit-profile" >
+            <Link to="/edit-profile" className={profilepagecss.edit_avatar} >
               Edit your Avatar
             </Link>
 
