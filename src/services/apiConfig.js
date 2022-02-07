@@ -48,12 +48,12 @@ export const logout = (props) =>
 
 
 const id = localStorage.getItem('id')
-export const verifyUser = (props) =>
+export const verifyUser = (userId) =>
 
   axios({
     method: 'get',
-    url: `${apiUrls.production}/users/${id}`,
-    data: props
+    url: `${apiUrls.production}/users/${userId}`,
+    // data: props
   })
     .then((res) => {
       return res.data

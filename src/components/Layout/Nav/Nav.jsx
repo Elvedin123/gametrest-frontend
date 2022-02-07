@@ -34,23 +34,39 @@ const Nav = () => {
     </div>
   )
 
-  useEffect(() => {
-    const fetchAvatar = async () => {
-      const getAvatar = await verifyUser()
-      console.log(getAvatar.data?.user)
-      setAvatar(getAvatar.data?.user)
-    }
-    fetchAvatar()
-  }, [])
-  const token = localStorage.getItem('token')
+  const userId = localStorage.getItem('id')
+  
+
+  if (!userId) {
+    return (
+      <nav className={navcss.nav}>
+        <div>
+        <div className="links">{unauthenticatedOptions}</div>
+        </div>
+        </nav>
+  
+    )
+  }
+  // const token = localStorage.getItem('token')
+  if (userId) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+      const fetchAvatar = async () => {
+        const getAvatar = await verifyUser(userId)
+        console.log(getAvatar.data?.user)
+        setAvatar(getAvatar.data?.user)
+      }
+      fetchAvatar()
+    }, [userId])
   return (
     <nav className={navcss.nav}>
       <div >
         <div className="links">
-          {token ? authenticatedOptions : unauthenticatedOptions}
+          {authenticatedOptions}
         </div>
       </div>
     </nav>
   )
+}
 }
 export default Nav
