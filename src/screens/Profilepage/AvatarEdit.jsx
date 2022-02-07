@@ -21,11 +21,11 @@ export default function AvatarEdit() {
       setImage(getAvatar.data?.user);
     }
     fetchAvatar()
-  }, [id]);
+  }, []);
 
-  function refreshPage() {
-    window.location.reload(false)
-  }
+  // function refreshPage() {
+  //   window.location.reload(false)
+  // }
 
   const handleTextInput = (e) => {
     const { id, value } = e.target;
@@ -39,7 +39,7 @@ export default function AvatarEdit() {
     e.preventDefault();
     updateAvatar(image);
     navigate('/profile');
-    refreshPage();
+    // refreshPage();
   }
   return (
     <div>
