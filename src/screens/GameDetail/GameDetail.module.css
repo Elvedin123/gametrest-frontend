@@ -126,13 +126,24 @@ left: -80%;
     }
     .comment_section{
       text-align: center;
+      margin: 10px;
     }
     .comment_text{
       margin: 35px;
     }
 
     .review_section{
-margin: 50px, auto;
+      width: 80%;
+      height: 40vh;
+      padding: 10px;
+      border-radius: 50px;
+      overflow: auto;
+      margin-left: 35px;
+    }
+
+    .game_name{
+      font-size: 3vh;
+      margin: 10px;
     }
 }
 

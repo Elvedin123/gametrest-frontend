@@ -82,7 +82,8 @@ color: #D40107;
     width: 40vh;
     height: 30vh;
     text-align: center;
-    margin:50px auto;
+    width:500px; 
+  margin:50px auto;
   
   }
   .header {
