@@ -17,7 +17,7 @@ const Home = () => {
     const allGames = async () => {
       const everyGame = await fetchGames();
       setGames(everyGame.results)
-      console.log(everyGame.results);
+      // console.log(everyGame.results);
     }
     allGames();
   }, [setGames])

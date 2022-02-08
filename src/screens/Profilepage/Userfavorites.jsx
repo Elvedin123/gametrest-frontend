@@ -2,10 +2,11 @@ import { getFavorites } from "../../services/apiConfig.js"
 import { useEffect, useState } from "react"
 import Userfavoritescss from "./Userfavorites.module.css"
 import DeleteFavorite from "./DeleteFavorite.jsx"
+import { useStateIfMounted } from "use-state-if-mounted"
 
 
 export default function Userfavorites() {
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useStateIfMounted([])
   const userid = localStorage.getItem("id")
   useEffect(() => {
     const displayFavs = async () => {
