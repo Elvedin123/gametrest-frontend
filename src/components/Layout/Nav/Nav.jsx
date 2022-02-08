@@ -5,8 +5,8 @@ import Logout from '../../Logout/Logout'
 import navcss from './Nav.module.css'
 import { useState, useEffect } from 'react'
 
-// if token is true, 
 
+// if token is true, 
 const Nav = () => {
   const [avatar, setAvatar] = useState([])
   const authenticatedOptions = (
@@ -52,5 +52,6 @@ const Nav = () => {
       </div>
     </nav>
   )
+
 }
 export default Nav

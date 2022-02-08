@@ -37,6 +37,8 @@ export default function Reviews(props) {
                     <img className={reviewcss.reviewavatar} src={comment.avatar} alt={comment.userName} />
 
                     <p>
+                      <img className={reviewcss.avatar_icon} src={comment.avatar} alt={comment.userName} />
+
                       {review.comment}
                     </p>
 
