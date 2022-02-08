@@ -5,19 +5,18 @@ import deletecommetcss from './DeleteComment.module.css'
 // const userId = localStorage.getItem('userId')
 
 export default function DeleteComment(props) {
+  // function refreshPage() {
+  //   window.location.reload(false)
+  // }
 
-  const handleDelete = (e, comment) => {
-    e.preventDefault()
-    console.log(comment)
+  const handleDelete = async () => {
     const id = localStorage.getItem('id')
-    const Delete = async () => {
-      let res = deleteUserComments(id, comment)
-      console.log(res)
-    }
-    Delete()
-    props.grabComments();
-    console.log(props.comment)
+    await deleteUserComments(id, props.comment)
+    window.location.reload(false)
+      // console.log(res)
+    
+    
   };
 
-  return <button className={deletecommetcss.button} onClick={(e) => { handleDelete(e, props.comment) }}>Delete Comment</button>;
+  return <button className={deletecommetcss.button} onClick={handleDelete}>Delete Comment</button>;
 }

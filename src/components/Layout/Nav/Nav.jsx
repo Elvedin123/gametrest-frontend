@@ -16,7 +16,7 @@ const Nav = () => {
       </div>
       <div className={navcss.nav_buttons}>
         <NavLink className="link" to="/"><button>Home</button></NavLink>
-        <NavLink className="avatar" to="/profile"><img src={avatar.avatar} alt={avatar.userName} /></NavLink>
+        <NavLink className={navcss.navavatar} to="/profile"><img src={avatar.avatar} alt={avatar.userName} /></NavLink>
         <Logout />
       </div>
     </div>
