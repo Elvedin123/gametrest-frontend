@@ -16,7 +16,7 @@ export default function Avatar() {
       setAvatar(getAvatar.data?.user)
     }
     fetchAvatar()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // console.log(avatar)

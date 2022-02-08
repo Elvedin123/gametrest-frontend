@@ -20,7 +20,7 @@ const Home = () => {
       console.log(everyGame.results);
     }
     allGames();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   console.log(games);
   return (
@@ -31,7 +31,7 @@ const Home = () => {
       <h3 className={homepagecss.title} >Hot Games</h3>
       <div className={homepagecss.home}>
 
-        {games.map((game) => {
+        {games?.map((game) => {
 
           return (
             <Link className={homepagecss.title_test} key={game.id} to={`/games/${game.id}`}>

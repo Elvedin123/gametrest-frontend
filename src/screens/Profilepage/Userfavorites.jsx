@@ -1,5 +1,5 @@
 import { getFavorites } from "../../services/apiConfig.js"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import Userfavoritescss from "./Userfavorites.module.css"
 import DeleteFavorite from "./DeleteFavorite.jsx"
 import { useStateIfMounted } from "use-state-if-mounted"
@@ -16,6 +16,7 @@ export default function Userfavorites() {
       // console.log(showFavs.data);
     }
     displayFavs()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <div className={Userfavoritescss.favorites_container} >
@@ -23,7 +24,7 @@ export default function Userfavorites() {
         return (
           <div className={Userfavoritescss.favorites_card} key={favorite._id}>
             <h3>{favorite.name}</h3>
-            <img src={favorite.image} alt={favorite.name} />
+            <img className={Userfavoritescss.image} src={favorite.image} alt={favorite.name} />
             <DeleteFavorite
 
 
