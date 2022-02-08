@@ -2,11 +2,12 @@ import { getAllComments } from '../../../services/apiConfig.js';
 import { useEffect, useState } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
+import { useStateIfMounted } from 'use-state-if-mounted';
 
 
 export default function Reviews(props) {
 
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useStateIfMounted([]);
   // const [avatar, setAvatar] = useState([]);
   useEffect(() => {
     const grabComments = async () => {
