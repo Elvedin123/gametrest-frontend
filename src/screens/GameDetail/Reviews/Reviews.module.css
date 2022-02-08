@@ -11,3 +11,14 @@
 .review{
   overflow: auto;
 } 
+
+.avatar_icon {
+  max-width: 5vw;
+  max-height: 5vh;
+  border-radius: 40px;
+}
+
+.display_reviews {
+  background-color: white;
+  border-radius: 20px;
+}

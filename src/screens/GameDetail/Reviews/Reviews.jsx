@@ -33,9 +33,10 @@ export default function Reviews(props) {
               if (Number(review.game) === props.gameId) {
                 return (
 
-                  <div key={review._id} >
-                    <img src={comment.avatar} alt={comment.userName} />
+                  <div className={reviewcss.display_reviews} key={review._id} >
                     <p>
+                      <img className={reviewcss.avatar_icon} src={comment.avatar} alt={comment.userName} />
+
                       {review.comment}
                     </p>
 
