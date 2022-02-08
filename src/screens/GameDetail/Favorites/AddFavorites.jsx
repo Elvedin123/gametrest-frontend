@@ -1,7 +1,8 @@
-import { useState } from "react";
+
 import { addFavorite } from "../../../services/apiConfig";
 import favbuttoncss from './AddFavorite.module.css'
 import { useNavigate } from "react-router-dom";
+import { useStateIfMounted } from "use-state-if-mounted";
 export default function Favorites(props) {
   const navigate = useNavigate()
   const newFavorite = {
@@ -10,7 +11,7 @@ export default function Favorites(props) {
     image: props.gameImg
   }
 
-  const [favorite, setFavorite] = useState(newFavorite)
+  const [favorite, setFavorite] = useStateIfMounted(newFavorite)
   const userId = localStorage.getItem('id')
 
   const handleSubmit = async (e) => {
