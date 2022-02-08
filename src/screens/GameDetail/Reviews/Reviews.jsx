@@ -1,5 +1,5 @@
 import { getAllComments } from '../../../services/apiConfig.js';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
 
@@ -9,23 +9,16 @@ export default function Reviews(props) {
   const [comments, setComments] = useState([]);
   // const [avatar, setAvatar] = useState([]);
   useEffect(() => {
-
+    const grabComments = async () => {
+      const fetchComments = await getAllComments()
+      setComments(fetchComments.data)
+      // console.log(fetchComments.data)
+      // setAvatar(fetchComments)
+  
+    }
     grabComments()
-  }, [comments])
-
-
-  useEffect(() => {
-
-    grabComments()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  const grabComments = async () => {
-    const fetchComments = await getAllComments()
-    setComments(fetchComments.data)
-    // console.log(fetchComments.data)
-    // setAvatar(fetchComments)
-
-  }
 
   const id = localStorage.getItem("id")
 
@@ -35,9 +28,8 @@ export default function Reviews(props) {
 
         {comments.map((comment) => {
           return (
+            // eslint-disable-next-line array-callback-return
             comment.comments.map((review) => {
-
-              // console.log(review.game)
               if (Number(review.game) === props.gameId) {
                 return (
 
@@ -53,7 +45,6 @@ export default function Reviews(props) {
                       <DeleteComment
                         // handleToggle={handleToggle}
                         setComments={setComments}
-                        grabComments={grabComments}
                         comment={review._id}
                       /> </div> : ""}</div>
 

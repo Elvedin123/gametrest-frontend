@@ -6,17 +6,14 @@ export default function DeleteFavorite(props) {
   // function refreshPage() {
   //   window.location.reload(false)
   // }
-  const handleDelete = (e, favorite) => {
+  const handleDelete = async (e, favorite) => {
     e.preventDefault()
     console.log(favorite)
     const id = localStorage.getItem('id')
-    const Delete = () => {
-      let res = deleteUserFavorites(id, favorite)
+      let res = await deleteUserFavorites(id, favorite)
       console.log(res)
-    }
-    Delete()
-    props.gabFavorites()
-    // refreshPage()
+      window.location.reload(false)
+    
     console.log(props.favid)
   };
 

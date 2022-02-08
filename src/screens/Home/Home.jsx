@@ -1,25 +1,26 @@
 import homepagecss from './Home.module.css'
 import Layout from '../../components/Layout/Layout.jsx'
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
 
 import { Link } from 'react-router-dom';
 
 import Cards from '../../components/Cards/Cards';
 import Header from '../../Header/Header';
+import { useStateIfMounted } from 'use-state-if-mounted';
 
 
 
 const Home = () => {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useStateIfMounted([]);
   useEffect(() => {
     const allGames = async () => {
       const everyGame = await fetchGames();
       setGames(everyGame.results)
-      console.log(everyGame.results);
+      // console.log(everyGame.results);
     }
     allGames();
-  }, [])
+  }, [setGames])
   // console.log(games);
   return (
     <Layout>

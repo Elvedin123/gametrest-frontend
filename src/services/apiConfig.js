@@ -121,8 +121,8 @@ export const getFavorites = (userId) =>
     .catch((error) => {
       console.log(error)
     })
-export const deleteUserFavorites = (userid, id) => {
-  axios({
+export const deleteUserFavorites = async (userid, id) => {
+  await axios({
     method: "delete",
     url: `${apiUrls.production}/delete/favorite/${userid}/${id}`,
     headers: { authorization: `${token}` },
@@ -173,8 +173,8 @@ export const editUserComments = (comment, userId, id) => {
 
 // /delete/:userid/:id  <---- This the route (line 30 routes/users.js)
 //For Deleting user comments 
-export const deleteUserComments = (userid, id) => {
-  axios({
+export const deleteUserComments = async (userid, id) => {
+ await axios({
     method: "delete",
     url: `${apiUrls.production}/delete/${userid}/${id}`,
     headers: { authorization: `${token}` },
@@ -204,8 +204,8 @@ export const getUserFavorites = (userId) => {
 }
 
 //UPDATING USER AVATAR
-export const updateAvatar = (props) => {
-  axios({
+export const updateAvatar = async (props) => {
+ await axios({
     method: "put",
     url: `${apiUrls.production}/update/${id}`,
     headers: { authorization: `${token}` },
