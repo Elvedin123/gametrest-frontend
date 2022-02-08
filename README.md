@@ -52,6 +52,46 @@ const userSchema = mongoose.Schema(
 );
 
 ```
+## Code Snippet
+```
+const Nav = () => {
+  const token = localStorage.getItem('token');
+  return (
+    <nav className={navcss.nav}>
+      <div >
+        <div className="links">
+          {token ? authenticatedOptions : unauthenticatedOptions}
+        </div>
+      </div>
+    </nav>
+  );
+};
+export default Nav;
+```
+### Above: We created two variables: authenticatedOptions and unauthenticatedOptions. With the authenticatedOptions, what it contains in the Navbar is an option to select profile, while unauthenticated does not. So with the teniary conditional statement, it is asking if there is a token in the local storage, it will return the authenticatedOptions variable, allowing registered users to nagivate to their profile
+```
+Favorite.create(req.body, (error, favorite) => {
+        if (error) {
+          res.json(errorHandler(true, "error adding Favorite"))
+        }
+        let i = 0
+        while (i < user.favorites.length - 1) {
+          i++
+          // console.log(user.favorites[i].name)
+          if (user.favorites[i].name.includes(newFavorite.name)) {
+            return res.send(errorHandler(true, "already in your favorites"))
+          }
+        }
+        // console.log(i)
+        user.favorites.push(favorite)
+        user.save((error) => {
+          // console.log(error)
+          return res.json(errorHandler(false, "Added a favorite", favorite))
+        })
+      });
+    });
+```
+### Above: We created a variable (this is the middle part of it), to allow a user to add a game to their favorites. The while loop allows the user to select a game to their favorites but cannot add it again, preventing duplicates in their favorites section on their profile.
 
 #
 
