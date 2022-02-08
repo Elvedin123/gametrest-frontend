@@ -19,11 +19,11 @@ export default function GameDetail() {
       setLoaded(true);
     }
     fetchGames();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   console.log(games)
-
+  const token = localStorage.getItem("token")
   if (!isLoaded) {
     return <h1>Spawning...</h1>
   }
@@ -33,11 +33,11 @@ export default function GameDetail() {
     <Layout>
       <div className={gamesdetailcss.game_container}>
         <div className={gamesdetailcss.image_container}>
-          <Favorites
+          {token ? <Favorites
             gameId={games?.id}
             gameName={games.name}
             gameImg={games.background_image}
-          />
+          /> : null}
           <img className={gamesdetailcss.image} src={games.background_image} alt={games.name} />
         </div>
 
@@ -71,13 +71,10 @@ export default function GameDetail() {
       </div>
       <div className={gamesdetailcss.comment_section}>
 
-        <h3 className={gamesdetailcss.comment_text}>Share Your Thoughts</h3>
-
-
-        <CommentForm
-
-          gameId={games.id}
-        />
+        {token ? <div><h3 className={gamesdetailcss.comment_text}>Share Your Thoughts</h3>
+          <CommentForm
+            gameId={games.id}
+          /> </div> : null}
 
       </div>
 
