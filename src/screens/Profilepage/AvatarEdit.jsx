@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { updateAvatar, verifyUser } from '../../services/apiConfig';
+
+import { updateAvatar } from '../../services/apiConfig';
 import { useNavigate, Link } from 'react-router-dom';
 import avatareditcss from './AvatarEdit.module.css'
 import { useStateIfMounted } from 'use-state-if-mounted';
@@ -12,17 +12,17 @@ const default_input = {
 export default function AvatarEdit() {
   const [image, setImage] = useStateIfMounted(default_input);
 
-  const id = localStorage.getItem('id');
+  // const id = localStorage.getItem('id');
   const navigate = useNavigate()
 
 
-  useEffect(() => {
-    const fetchAvatar = async () => {
-      const getAvatar = await verifyUser(id);
-      setImage(getAvatar.data?.user);
-    }
-    fetchAvatar()
-  }, [id, setImage]);
+  // useEffect(() => {
+  //   const fetchAvatar = async () => {
+  //     const getAvatar = await verifyUser(id);
+  //     setImage(getAvatar.data?.user);
+  //   }
+  //   fetchAvatar()
+  // }, [id, setImage]);
 
   // function refreshPage() {
   //   window.location.reload(false)
