@@ -45,7 +45,7 @@ const userSchema = mongoose.Schema(
         confirmPassword: { type: String, required: true, trim: true},
         avatar: { type: String, required: true, trim: true},
         comments: [commentSchema],
-        // favorites: [favoriteSchema],
+        favorites: [favoriteSchema],
         isAdmin: false,
     },
     { timestamps: true }
