@@ -1,13 +1,32 @@
 
 .reviewbox {
-  width: 40vh;
+  width: 35vh;
   height: 40vh;
   padding: 10px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   overflow: auto;
 }
 
 
 .review{
   overflow: auto;
+  overflow: hidden;
 } 
+
+.reviewavatar{
+  border-radius: solid 1px black 50%;
+  height: 50px;
+  width: 50px;
+  margin-left: 50px
+}
+
+.reviewuserinfo{
+  display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right:15px;
+    margin-right: 0px;
+  
+}
