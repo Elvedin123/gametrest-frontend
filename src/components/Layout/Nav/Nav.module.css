@@ -57,6 +57,13 @@ link{
   text-decoration: none;
 }
 
+.avatar {
+  border: 2px solid white;
+  max-width: 10vw;
+  max-height: 10vh;
+  border-radius: 50px;
+}
+
 /* .noAuthHeader{
   background-color: #ff0008;
   position: absolute;

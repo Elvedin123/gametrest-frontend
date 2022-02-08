@@ -22,7 +22,7 @@ export default function Reviews(props) {
   const grabComments = async () => {
     const fetchComments = await getAllComments()
     setComments(fetchComments.data)
-    console.log(fetchComments.data)
+    // console.log(fetchComments.data)
     // setAvatar(fetchComments)
 
   }
@@ -41,9 +41,10 @@ export default function Reviews(props) {
               if (Number(review.game) === props.gameId) {
                 return (
 
-                  <div key={review._id} >
-                    <img src={comment.avatar} alt={comment.userName} />
+                  <div className={reviewcss.display_reviews} key={review._id} >
                     <p>
+                      <img className={reviewcss.avatar_icon} src={comment.avatar} alt={comment.userName} />
+
                       {review.comment}
                     </p>
 

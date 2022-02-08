@@ -16,7 +16,7 @@ const Nav = () => {
       </div>
       <div className={navcss.nav_buttons}>
         <NavLink className="link" to="/"><button>Home</button></NavLink>
-        <NavLink className="avatar" to="/profile"><img src={avatar.avatar} alt={avatar.userName} /></NavLink>
+        <NavLink to="/profile"><img className={navcss.avatar} src={avatar.avatar} alt={avatar.userName} /></NavLink>
         <Logout />
       </div>
     </div>
@@ -35,16 +35,16 @@ const Nav = () => {
   )
 
   const userId = localStorage.getItem('id')
-  
+
 
   if (!userId) {
     return (
       <nav className={navcss.nav}>
         <div>
-        <div className="links">{unauthenticatedOptions}</div>
+          <div className="links">{unauthenticatedOptions}</div>
         </div>
-        </nav>
-  
+      </nav>
+
     )
   }
   // const token = localStorage.getItem('token')
@@ -58,15 +58,15 @@ const Nav = () => {
       }
       fetchAvatar()
     }, [userId])
-  return (
-    <nav className={navcss.nav}>
-      <div >
-        <div className="links">
-          {authenticatedOptions}
+    return (
+      <nav className={navcss.nav}>
+        <div >
+          <div className="links">
+            {authenticatedOptions}
+          </div>
         </div>
-      </div>
-    </nav>
-  )
-}
+      </nav>
+    )
+  }
 }
 export default Nav
