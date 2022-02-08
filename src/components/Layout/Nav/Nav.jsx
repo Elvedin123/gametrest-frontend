@@ -1,6 +1,6 @@
 // import './Nav.css'
 import { NavLink } from 'react-router-dom'
-import { verifyUser } from '../../../services/apiConfig'
+// import { verifyUser } from '../../../services/apiConfig'
 import Logout from '../../Logout/Logout'
 import navcss from './Nav.module.css'
 

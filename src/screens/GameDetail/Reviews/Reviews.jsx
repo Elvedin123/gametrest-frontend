@@ -1,5 +1,5 @@
 import { getAllComments } from '../../../services/apiConfig.js';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
 import { useStateIfMounted } from 'use-state-if-mounted';
@@ -34,10 +34,9 @@ export default function Reviews(props) {
               if (Number(review.game) === props.gameId) {
                 return (
 
-                  <div className={reviewcss.reviewuserinfo} key={review._id} >
-                    <img className={reviewcss.reviewavatar} src={comment.avatar} alt={comment.userName} />
+                  <div className={reviewcss.display_reviews} key={review._id} >
 
-                    <p>
+                    <p className={reviewcss.review_container}>
                       <img className={reviewcss.avatar_icon} src={comment.avatar} alt={comment.userName} />
 
                       {review.comment}
