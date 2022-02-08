@@ -21,6 +21,11 @@
   margin-right: 50px; */
 }
 
+.rawlink{
+  text-decoration: none;
+  margin-left: 20px;
+}
+
 @media (max-width: 500px) {
   .logobox{
     display: flex;
