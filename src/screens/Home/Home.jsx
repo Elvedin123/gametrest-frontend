@@ -16,16 +16,11 @@ const Home = () => {
   useEffect(() => {
     const allGames = async () => {
       const everyGame = await fetchGames();
-<<<<<<< HEAD
-      setGames(everyGame?.results)
-      // console.log(everyGame.results);
-=======
       setGames(everyGame.results)
       console.log(everyGame.results);
->>>>>>> e9b7d616900ff9ed4953c255db4d71c5014c1e2d
     }
     allGames();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   console.log(games);
   return (
