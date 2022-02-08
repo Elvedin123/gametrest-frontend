@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     const allGames = async () => {
       const everyGame = await fetchGames();
-      setGames(everyGame.results)
+      setGames(everyGame?.results)
       // console.log(everyGame.results);
     }
     allGames();
@@ -30,7 +30,7 @@ const Home = () => {
       <h3 className={homepagecss.title} >Hot Games</h3>
       <div className={homepagecss.home}>
 
-        {games.map((game) => {
+        {games?.map((game) => {
 
           return (
             <Link className={homepagecss.title_test} key={game.id} to={`/games/${game.id}`}>
