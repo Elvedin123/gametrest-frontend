@@ -17,11 +17,12 @@ const Home = () => {
     const allGames = async () => {
       const everyGame = await fetchGames();
       setGames(everyGame.results)
-      // console.log(everyGame.results);
+      console.log(everyGame.results);
     }
     allGames();
-  }, [setGames])
-  // console.log(games);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  console.log(games);
   return (
     <Layout>
       <Header

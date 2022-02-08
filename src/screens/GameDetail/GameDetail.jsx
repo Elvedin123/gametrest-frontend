@@ -19,9 +19,10 @@ export default function GameDetail() {
       setLoaded(true);
     }
     fetchGames();
-  }, [id])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-  // console.log(games)
+  console.log(games)
 
   if (!isLoaded) {
     return <h1>Spawning...</h1>
