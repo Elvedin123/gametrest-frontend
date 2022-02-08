@@ -19,7 +19,7 @@ export default function GameDetail() {
       setLoaded(true);
     }
     fetchGames();
-  }, [])
+  }, [id])
 
   // console.log(games)
 
@@ -33,7 +33,7 @@ export default function GameDetail() {
       <div className={gamesdetailcss.game_container}>
         <div className={gamesdetailcss.image_container}>
           <Favorites
-            gameId={games.id}
+            gameId={games?.id}
             gameName={games.name}
             gameImg={games.background_image}
           />

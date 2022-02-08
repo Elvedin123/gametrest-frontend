@@ -9,16 +9,12 @@ export default function DeleteComment(props) {
   //   window.location.reload(false)
   // }
 
-  const handleDelete = () => {
-    // e.preventDefault()
-    // console.log(comment)
+  const handleDelete = async () => {
     const id = localStorage.getItem('id')
-    const Delete = async () => {
-    deleteUserComments(id, props.comment)
+    await deleteUserComments(id, props.comment)
+    window.location.reload(false)
       // console.log(res)
-    }
-    Delete()
-    // refreshPage()
+    
     
   };
 

@@ -1,13 +1,12 @@
 import { getAllComments } from '../../../services/apiConfig.js';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
-import { useStateIfMounted } from 'use-state-if-mounted';
 
 
 export default function Reviews(props) {
 
-  const [comments, setComments] = useStateIfMounted([]);
+  const [comments, setComments] = useState([]);
   // const [avatar, setAvatar] = useState([]);
   useEffect(() => {
     const grabComments = async () => {
@@ -18,6 +17,7 @@ export default function Reviews(props) {
   
     }
     grabComments()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const id = localStorage.getItem("id")
@@ -28,6 +28,7 @@ export default function Reviews(props) {
 
         {comments.map((comment) => {
           return (
+            // eslint-disable-next-line array-callback-return
             comment.comments.map((review) => {
               if (Number(review.game) === props.gameId) {
                 return (

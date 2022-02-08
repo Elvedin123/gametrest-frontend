@@ -24,13 +24,14 @@ export default function CommentForm(props) {
       [id]: value,
     }))
   }
-  function refreshPage() {
-    window.location.reload(false)
-  }
+  // function refreshPage() {
+  //   window.location.reload(false)
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault()
     await addComment(comment, userId)
-    refreshPage()
+    window.location.reload(false)
+    // refreshPage()
     // console.log(comment)
   }
 

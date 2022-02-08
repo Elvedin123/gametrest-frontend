@@ -36,11 +36,11 @@ export default function AvatarEdit() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    updateAvatar(image);
+    await updateAvatar(image);
     navigate('/profile');
-    // refreshPage();
+    window.location.reload(false)
   }
   return (
     <div>
