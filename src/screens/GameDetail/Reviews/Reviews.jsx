@@ -1,5 +1,5 @@
 import { getAllComments } from '../../../services/apiConfig.js';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import DeleteComment from '../Comments/DeleteComment.jsx';
 import reviewcss from './Reviews.module.css';
 import { useStateIfMounted } from 'use-state-if-mounted';
@@ -15,10 +15,10 @@ export default function Reviews(props) {
       setComments(fetchComments.data)
       // console.log(fetchComments.data)
       // setAvatar(fetchComments)
-  
+
     }
     grabComments()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const id = localStorage.getItem("id")
@@ -35,7 +35,8 @@ export default function Reviews(props) {
                 return (
 
                   <div className={reviewcss.display_reviews} key={review._id} >
-                    <p>
+
+                    <p className={reviewcss.review_container}>
                       <img className={reviewcss.avatar_icon} src={comment.avatar} alt={comment.userName} />
 
                       {review.comment}

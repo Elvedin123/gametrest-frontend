@@ -36,7 +36,6 @@ height: 80vh;
   width: 30vw;
   /* height: 90%; */
   padding:20px;
-  
 }
 .genre{
   display: flex;
@@ -87,6 +86,14 @@ left: -80%;
   margin-left: 65px;
 }
 .decription_text{
+  overflow: auto;
+}
+
+.infobox{
+  width: 40vh;
+  height: 50vh;
+  padding: 25px;
+  
   overflow: auto;
 }
 
@@ -142,12 +149,25 @@ left: -80%;
       padding: 10px;
       border-radius: 50px;
       overflow: auto;
-      margin-left: 5%;
+      margin-left: 20px;
     }
 
     .game_name{
       font-size: 3vh;
       margin: 10px;
+    }
+
+    .decription_text{
+      font-size: 12px;
+    }
+
+    .infobox{
+      width: 35vh;
+      height: 60vh;
+      padding: 10px;
+    
+      overflow: auto;
+      font-size: 18px;
     }
 }
 
