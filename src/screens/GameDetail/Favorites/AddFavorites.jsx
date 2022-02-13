@@ -17,7 +17,6 @@ export default function Favorites(props) {
     e.preventDefault();
     setFavorite(newFavorite);
     await addFavorite(favorite, userId);
-    console.log(favorite);
     navigate("/profile");
   }
 

@@ -35,14 +35,11 @@ export default function Reviews(props) {
 
                       {review.comment}
                     </p>
-
                     <div>{comment._id === id ? <div>
-
                       <DeleteComment
                         setComments={setComments}
                         comment={review._id}
                       /> </div> : ""}</div>
-
                   </div>
 
                 );
@@ -51,7 +48,7 @@ export default function Reviews(props) {
             })
           );
 
-        })};
+        })}
       </div>
     </div>
   );

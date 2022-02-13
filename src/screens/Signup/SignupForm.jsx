@@ -43,7 +43,6 @@ function SignupForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await createUser(newUser);
-    console.log(newUser);
     navigate('/login');
   };
 

@@ -5,7 +5,7 @@ export default function DeleteFavorite(props) {
   const handleDelete = async (e, favorite) => {
     e.preventDefault();
     const id = localStorage.getItem('id');
-    let res = await deleteUserFavorites(id, favorite);
+    await deleteUserFavorites(id, favorite);
     window.location.reload(false);
   };
 
