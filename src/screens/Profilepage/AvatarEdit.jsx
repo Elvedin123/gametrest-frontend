@@ -1,32 +1,16 @@
-
 import { updateAvatar } from '../../services/apiConfig';
 import { useNavigate, Link } from 'react-router-dom';
-import avatareditcss from './AvatarEdit.module.css'
+import avatareditcss from './AvatarEdit.module.css';
 import { useStateIfMounted } from 'use-state-if-mounted';
 
 const default_input = {
   avatar: "",
 }
 
-
 export default function AvatarEdit() {
   const [image, setImage] = useStateIfMounted(default_input);
 
-  // const id = localStorage.getItem('id');
-  const navigate = useNavigate()
-
-
-  // useEffect(() => {
-  //   const fetchAvatar = async () => {
-  //     const getAvatar = await verifyUser(id);
-  //     setImage(getAvatar.data?.user);
-  //   }
-  //   fetchAvatar()
-  // }, [id, setImage]);
-
-  // function refreshPage() {
-  //   window.location.reload(false)
-  // }
+  const navigate = useNavigate();
 
   const handleTextInput = (e) => {
     const { id, value } = e.target;
@@ -40,7 +24,7 @@ export default function AvatarEdit() {
     e.preventDefault();
     await updateAvatar(image);
     navigate('/profile');
-    window.location.reload(false)
+    window.location.reload(false);
   }
   return (
     <div>
@@ -56,4 +40,4 @@ export default function AvatarEdit() {
       </div>
     </div>
   );
-}
+};
