@@ -1,6 +1,4 @@
-import React from 'react';
-import headercss from './Header.module.css'
-// import Nav from '../components/Layout/Nav/Nav.jsx'
+import headercss from './Header.module.css';
 function Header(props) {
   const { title } = props;
 
@@ -13,6 +11,6 @@ function Header(props) {
         </h1>
       </div>
     </div>)
-}
+};
 
 export default Header;

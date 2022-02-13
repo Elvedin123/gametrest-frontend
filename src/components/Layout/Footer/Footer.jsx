@@ -1,4 +1,4 @@
-import footercss from './Footer.module.css'
+import footercss from './Footer.module.css';
 
 const Footer = () =>
   <footer className={footercss.footer}>
@@ -26,4 +26,4 @@ const Footer = () =>
     </div>
   </footer>
 
-export default Footer
+export default Footer;

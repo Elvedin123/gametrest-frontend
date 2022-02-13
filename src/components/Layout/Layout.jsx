@@ -1,6 +1,6 @@
-import layoutcss from './Layout.module.css'
-import Nav from '../Layout/Nav/Nav.jsx'
-import Footer from '../Layout/Footer/Footer.jsx'
+import layoutcss from './Layout.module.css';
+import Nav from '../Layout/Nav/Nav.jsx';
+import Footer from '../Layout/Footer/Footer.jsx';
 
 const Layout = (props) => (
   <div className={layoutcss.layout}>
@@ -10,6 +10,6 @@ const Layout = (props) => (
     </div>
     <Footer />
   </div>
-)
+);
 
-export default Layout
+export default Layout;

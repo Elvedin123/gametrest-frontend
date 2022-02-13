@@ -17,8 +17,6 @@
   background-image: url(http://www.w3.org/2000/svg);
   text-align: center;
   margin-top: 80px;
-  /* margin-left: 50px;
-  margin-right: 50px; */
 }
 
 .rawlink{
@@ -33,9 +31,6 @@
     justify-content: space-around;
     align-content: stretch;
     flex-wrap: nowrap;
-    align-items: flex-end;
-   
-    
+    align-items: flex-end; 
   }
- 
 }
