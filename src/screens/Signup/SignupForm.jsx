@@ -1,7 +1,7 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { createUser } from "../../services/apiConfig.js";
-import { useNavigate, Link } from "react-router-dom"
-import signupcss from './SignupForm.module.css'
+import { useNavigate, Link } from "react-router-dom";
+import signupcss from './SignupForm.module.css';
 
 const defaultNewUser = {
   userName: "",
@@ -11,13 +11,13 @@ const defaultNewUser = {
   password: "",
   confirmPassword: "",
   avatar: ""
-}
+};
 
 function SignupForm(props) {
   const [newUser, setNewUser] = useState(defaultNewUser);
   const [validationMessage, setMessage] = useState("");
   const [valid, setValid] = useState(false);
-  const { userName, firstName, lastName, email, password, confirmPassword, avatar } = props
+  const { userName, firstName, lastName, email, password, confirmPassword, avatar } = props;
   const navigate = useNavigate();
 
   const validate = useCallback(() => {
@@ -37,35 +37,20 @@ function SignupForm(props) {
     setNewUser((prevState) => ({
       ...prevState,
       [id]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     await createUser(newUser);
     console.log(newUser);
-    navigate('/login')
+    navigate('/login');
   };
-
-  // const checkIfValid = () => {
-  //   // if (password !== confirmPassword) {
-  //   //   setMessage("Password does not match!");
-  //   //   setValid(false);
-  //   // } else if (password === "" || confirmPassword === "") {
-  //   //   setMessage("");
-  //   //   setValid(false);
-  //   // } else {
-  //   //   setMessage("");
-  //   //   setValid(true);
-  //   // }
-  // };
 
   useEffect(() => {
     validate();
-    console.log("validator");
     return function cleanUp() {
-      // navigate("/")
-    }
+    };
   }, [password, confirmPassword, navigate, validate]);
 
   return (
@@ -150,7 +135,8 @@ function SignupForm(props) {
           SignUp
         </button>
       </form>
-    </div >)
-}
+    </div >
+  );
+};
 
 export default SignupForm;

@@ -9,7 +9,6 @@
   align-items: flex-end;
   text-align: center;
   overflow: auto;
-  /* overflow: hidden; */
 }
 .favorites_card{
   display: flex;

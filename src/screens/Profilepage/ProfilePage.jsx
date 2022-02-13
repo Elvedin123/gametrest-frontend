@@ -27,7 +27,7 @@ function ProfilePage() {
         </div>
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default ProfilePage
+export default ProfilePage;
