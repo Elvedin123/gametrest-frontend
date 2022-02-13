@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import {signOut} from '../../services' whatever the signout is
 
 export default function Logout(props) {
   const { setUser } = props;
@@ -8,7 +7,6 @@ export default function Logout(props) {
 
   useEffect(() => {
     const signOutUser = async () => {
-      // await signOut(); From backend
       setUser(null);
       navigate('/');
     }
