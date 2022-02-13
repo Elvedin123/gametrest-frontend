@@ -13,7 +13,6 @@ export default function Userfavorites() {
     const displayFavs = async () => {
       const showFavs = await getFavorites(userid);
       setFavorites(showFavs.data);
-      console.log(showFavs.data)
     }
     displayFavs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -24,7 +23,7 @@ export default function Userfavorites() {
       {favorites.map((favorite) => {
         return (
           <div className={Userfavoritescss.favorites_card} key={favorite._id}>
-            <Link to={`games/${favorite.gameId}`}>
+            <Link className={Userfavoritescss.favorites_link} to={`/games/${favorite.gameId}`}>
               <h3>{favorite.name}</h3>
               <img className={Userfavoritescss.image} src={favorite.image} alt={favorite.name} />
             </Link>
