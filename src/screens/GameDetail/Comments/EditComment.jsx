@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react';
+
+// We are not utilizing this component just yet. So it might rough around the edges.
+
+import { useEffect, useState } from 'react';
 import { getAllComments, editUserComments } from '../../../services/apiConfig.js';
 import { useParams } from 'react-router-dom';
 import GameDetail from '../GameDetail.jsx';
 const default_input = {
   comment: "",
-}
+};
 
 export default function EditComment() {
   const [comment, setComment] = useState(default_input);
-  const userId = localStorage.getItem('id')
-
+  const userId = localStorage.getItem('id');
   let { id } = useParams();
 
   useEffect(() => {
     const fetchComment = async () => {
       const getComments = await getAllComments(id) //Depends on ConfigApi?
-      setComment(getAllComments)
-      console.log(getComments.data)
-    }
+      setComment(getComments.data);
+    };
     fetchComment();
   }, [id]);
 
@@ -51,4 +52,4 @@ export default function EditComment() {
       <button onClick={handleChange}>Edit</button>
     </form>
   );
-}
+};

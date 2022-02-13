@@ -1,22 +1,13 @@
 import { deleteUserComments } from "../../../services/apiConfig.js";
-import deletecommetcss from './DeleteComment.module.css'
-// import { useNavigate } from "react-router";
-
-// const userId = localStorage.getItem('userId')
+import deletecommetcss from './DeleteComment.module.css';
 
 export default function DeleteComment(props) {
-  // function refreshPage() {
-  //   window.location.reload(false)
-  // }
 
   const handleDelete = async () => {
-    const id = localStorage.getItem('id')
-    await deleteUserComments(id, props.comment)
-    window.location.reload(false)
-      // console.log(res)
-    
-    
+    const id = localStorage.getItem('id');
+    await deleteUserComments(id, props.comment);
+    window.location.reload(false);
   };
 
   return <button className={deletecommetcss.button} onClick={handleDelete}>Delete Comment</button>;
-}
+};
