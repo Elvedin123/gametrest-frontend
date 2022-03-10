@@ -8,9 +8,7 @@ import { useEffect, useState } from "react";
 import { verifyUser } from "./services/apiConfig.js";
 import ProfilePage from "./screens/Profilepage/ProfilePage.jsx";
 import AvatarEdit from "./screens/Profilepage/AvatarEdit.jsx";
-// import Logout from "./components/Logout/Logout.jsx";
 
-// import Logout from "./screens/Logout/Logout.jsx"
 function App() {
   const [user, setUser] = useState(null);
 

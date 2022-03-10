@@ -1,12 +1,7 @@
-// import './Nav.css'
-import { NavLink } from 'react-router-dom'
-// import { verifyUser } from '../../../services/apiConfig'
-import Logout from '../../Logout/Logout'
-import navcss from './Nav.module.css'
+import { NavLink } from 'react-router-dom';
+import Logout from '../../Logout/Logout';
+import navcss from './Nav.module.css';
 
-
-
-// if token is true, 
 const Nav = () => {
 
   const authenticatedOptions = (
@@ -20,7 +15,8 @@ const Nav = () => {
         <Logout />
       </div>
     </div>
-  )
+  );
+
   const unauthenticatedOptions = (
     <div className={navcss.noauth} >
       <div className={navcss.logo}>
@@ -32,8 +28,7 @@ const Nav = () => {
         <NavLink to="/login"><button>Log In</button></NavLink>
       </div>
     </div>
-  )
-
+  );
 
   const token = localStorage.getItem('token')
   return (
@@ -44,7 +39,7 @@ const Nav = () => {
         </div>
       </div>
     </nav>
-  )
+  );
+};
 
-}
-export default Nav
+export default Nav;

@@ -1,11 +1,11 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const devProxy = 'https://secure-citadel-62036.herokuapp.com/'
 const apiUrls = {
 
   production: 'https://gameterest-backend.herokuapp.com/api',
   development: 'http://localhost:3000/api'
-}
+};
 
 export const createUser = (props) =>
   axios({
@@ -18,7 +18,7 @@ export const createUser = (props) =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
 export const loginUser = (props) =>
   axios({
@@ -31,7 +31,7 @@ export const loginUser = (props) =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
 export const logout = (props) =>
   axios({
@@ -44,7 +44,7 @@ export const logout = (props) =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
 
 const id = localStorage.getItem('id')
@@ -53,17 +53,13 @@ export const verifyUser = (userId) =>
   axios({
     method: 'get',
     url: `${apiUrls.production}/users/${userId}`,
-    // data: props
   })
     .then((res) => {
       return res.data
     })
     .catch((error) => {
       console.log(error)
-    })
-
-
-
+    });
 
 export const logoutUser = () =>
   axios({
@@ -76,7 +72,7 @@ export const logoutUser = () =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
 const token = localStorage.getItem('token')
 export const addComment = (comment, userId) =>
@@ -92,7 +88,7 @@ export const addComment = (comment, userId) =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
 
 
@@ -108,7 +104,7 @@ export const addFavorite = (favorite, userId) =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
 export const getFavorites = (userId) =>
   axios({
@@ -120,7 +116,8 @@ export const getFavorites = (userId) =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
+
 export const deleteUserFavorites = async (userid, id) => {
   await axios({
     method: "delete",
@@ -134,10 +131,7 @@ export const deleteUserFavorites = async (userid, id) => {
     .catch((error) => {
       console.log(error)
     })
-}
-
-// Getting the Comments
-// const token = localStorage.getItem('token')
+};
 
 //Fetching all users
 export const getAllComments = () =>
@@ -151,9 +145,8 @@ export const getAllComments = () =>
     })
     .catch((error) => {
       console.log(error)
-    })
+    });
 
-// /update/comment/:userid/:id  <---- This the route (line 32 routes/users.js)  
 // For Editing user comments 
 export const editUserComments = (comment, userId, id) => {
   axios({
@@ -169,12 +162,11 @@ export const editUserComments = (comment, userId, id) => {
     .catch((error) => {
       console.log(error)
     })
-}
+};
 
-// /delete/:userid/:id  <---- This the route (line 30 routes/users.js)
 //For Deleting user comments 
 export const deleteUserComments = async (userid, id) => {
- await axios({
+  await axios({
     method: "delete",
     url: `${apiUrls.production}/delete/${userid}/${id}`,
     headers: { authorization: `${token}` },
@@ -186,7 +178,7 @@ export const deleteUserComments = async (userid, id) => {
     .catch((error) => {
       console.log(error)
     })
-}
+};
 
 // FOR FETCHNIG USER FAVORITE GAMES
 export const getUserFavorites = (userId) => {
@@ -201,11 +193,11 @@ export const getUserFavorites = (userId) => {
     .catch((error) => {
       console.log(error)
     })
-}
+};
 
 //UPDATING USER AVATAR
 export const updateAvatar = async (props) => {
- await axios({
+  await axios({
     method: "put",
     url: `${apiUrls.production}/update/${id}`,
     headers: { authorization: `${token}` },
@@ -218,4 +210,4 @@ export const updateAvatar = async (props) => {
     .catch((error) => {
       console.log(error)
     })
-}
+};

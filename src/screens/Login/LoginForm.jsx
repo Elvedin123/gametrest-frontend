@@ -1,44 +1,33 @@
-import React from "react";
-import { useState } from "react"
-import { loginUser } from "../../services/apiConfig.js"
+import { useState } from "react";
+import { loginUser } from "../../services/apiConfig.js";
 import { useNavigate, Link } from "react-router-dom";
-import logincss from './LoginForm.module.css'
+import logincss from './LoginForm.module.css';
 
 const defaultUser = {
   email: "",
   password: "",
   isError: false,
   errorMsg: "",
-
-}
-
-
-
+};
 
 function LoginForm(props) {
   const [form, setForm] = useState(defaultUser);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const { email, password } = props
-  // const navigate = useNavigate();
+  const { email, password } = props;
 
   const handleChange = (event) => {
     const { id, value } = event.target;
     setForm((prevState) => ({
       ...prevState,
       [id]: value,
-    }))
-  }
+    }));
+  };
 
   const onLogin = async (event) => {
-    event.preventDefault()
-    // const { setUser } = props
+    event.preventDefault();
     try {
-      const user = await loginUser(form)
-      // setUser(user)
-      console.log(user)
-      // console.log(user.data.user.userName)
-      console.log(user.data.user._id)
+      const user = await loginUser(form);
       localStorage.setItem("token", user.data.token);
       localStorage.setItem("id", user?.data?.user._id);
 
@@ -52,10 +41,9 @@ function LoginForm(props) {
         errorMsg: "Invalid Credentials",
         email: '',
         password: '',
-      })
-    }
-  }
-  // console.log(form)
+      });
+    };
+  };
 
   const handleError = () => {
     const toggleForm = form.isError ? "danger" : "";
@@ -65,11 +53,8 @@ function LoginForm(props) {
           {form.errorMsg}
         </button>
       );
-    }
+    };
   };
-
-  // const { email, password } = form
-
 
   return (
     <div>
@@ -77,7 +62,6 @@ function LoginForm(props) {
       <h3 className={logincss.header}>Login</h3>
       <div className={logincss.form_body}>
         <form
-          // className={logincss.input}
           onSubmit={onLogin}>
           <input
             className={logincss.input}
@@ -102,7 +86,8 @@ function LoginForm(props) {
           <button className={logincss.button}>Login</button>
         </form>
       </div>
-    </div>)
-}
+    </div>
+  );
+};
 
 export default LoginForm;

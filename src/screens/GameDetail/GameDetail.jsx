@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/Layout/Layout.jsx';
 import Favorites from './Favorites/AddFavorites.jsx';
 import Reviews from './Reviews/Reviews.jsx';
 import { getGames } from '../../services/gamesApi.js';
 import CommentForm from './Comments/CommentForm.jsx';
-import gamesdetailcss from './GameDetail.module.css'
+import gamesdetailcss from './GameDetail.module.css';
 
 export default function GameDetail() {
   const [games, setGames] = useState([]);
@@ -20,15 +20,13 @@ export default function GameDetail() {
     }
     fetchGames();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
-  console.log(games)
   const token = localStorage.getItem("token")
   if (!isLoaded) {
     return <h1>Spawning...</h1>
-  }
+  };
 
-  // console.log(games.id)
   return (
     <Layout>
       <div className={gamesdetailcss.game_container}>
@@ -79,5 +77,5 @@ export default function GameDetail() {
       </div>
 
     </Layout>
-  )
-}
+  );
+};

@@ -1,33 +1,25 @@
 .like_button{
-  border-radius: 0%;
-  /* display: flex;
-justify-content: flex-end; */
+border-radius: 0%;
 position: relative;
 top: 80px; 
 left: 120px; 
-  padding: 0;
-  height: 30px;
-  width: 50px;
-  background-color: white;
-  color: black;
-  /* border: solid 1px black; */
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
+padding: 0;
+height: 30px;
+width: 50px;
+background-color: white;
+color: black;
+box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.478);
 }
 .game_image{
-  /* position: relative; */
-  
   width:350px;
-   height: 400px;
-   object-position: center;
-   object-fit: cover;
-   margin-right: 10px;
-   border-radius: 10%;
-   margin-top: 5px;
-  
-  
+  height: 400px;
+  object-position: center;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10%;
+  margin-top: 5px;  
   }
-  .card_container {
-   
+.card_container {
     width: 400px;
     height: 600px;
     overflow: hidden;
@@ -35,26 +27,21 @@ left: 120px;
     margin:25px;
     border-radius: 10%;
     align-content: center;
-    }
-    
-    .image_container{
-      
-    }
-    
-    @media (max-width: 500px) {
-      .card_container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        
-      }
-      .game_image {
-          width: 80%;
-         text-align: center;
-         align-content: center;
-      }
   }
+    
+@media (max-width: 500px) {
+  .card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+  .game_image {
+    width: 80%;
+    text-align: center;
+    align-content: center;
+  }
+}

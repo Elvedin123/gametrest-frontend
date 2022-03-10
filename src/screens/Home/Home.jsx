@@ -1,28 +1,22 @@
-import homepagecss from './Home.module.css'
-import Layout from '../../components/Layout/Layout.jsx'
+import homepagecss from './Home.module.css';
+import Layout from '../../components/Layout/Layout.jsx';
 import { useEffect } from "react";
 import { fetchGames } from "../../services/gamesApi.js";
-
 import { Link } from 'react-router-dom';
-
 import Cards from '../../components/Cards/Cards';
 import Header from '../../Header/Header';
 import { useStateIfMounted } from 'use-state-if-mounted';
-
-
 
 const Home = () => {
   const [games, setGames] = useStateIfMounted([]);
   useEffect(() => {
     const allGames = async () => {
       const everyGame = await fetchGames();
-      setGames(everyGame.results)
-      console.log(everyGame.results);
+      setGames(everyGame.results);
     }
     allGames();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  console.log(games);
   return (
     <Layout>
       <Header
@@ -43,11 +37,11 @@ const Home = () => {
               </div>
             </Link>
 
-          )
-        })}
+          );
+        })};
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
